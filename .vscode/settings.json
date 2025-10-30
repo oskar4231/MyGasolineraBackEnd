@@ -1,0 +1,6 @@
+{
+    "java.project.referencedLibraries": [
+        "basededatosjava/mariadb-java-client-3.5.6.jar",
+        "basededatosjava/json-20250517.jar"
+    ]
+}
