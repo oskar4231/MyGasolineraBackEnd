@@ -9,44 +9,51 @@
             "request": "launch",
             "type": "dart",
             "deviceId": "web-server",
-            "program": "lib/crear.dart"
+            "program": "lib/crear.dart",
+            "args": ["--web-port=5000"]
         },
         {
             "name": "MyGasolineraFlutter",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "args": ["--web-port=5000"]
         },
         {
             "name": "MyGasolineraFlutter (profile mode)",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "profile"
+            "flutterMode": "profile",
+            "args": ["--web-port=5000"]
         },
         {
             "name": "MyGasolineraFlutter (release mode)",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "release"
+            "flutterMode": "release",
+            "args": ["--web-port=5000"]
         },
         {
             "name": "MyGasolineraFlutter",
             "cwd": "MyGasolineraFlutter",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "args": ["--web-port=5000"]
         },
         {
             "name": "MyGasolineraFlutter (profile mode)",
             "cwd": "MyGasolineraFlutter",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "profile"
+            "flutterMode": "profile",
+            "args": ["--web-port=5000"]
         },
         {
             "name": "MyGasolineraFlutter (release mode)",
             "cwd": "MyGasolineraFlutter",
             "request": "launch",
             "type": "dart",
-            "flutterMode": "release"
+            "flutterMode": "release",
+            "args": ["--web-port=5000"]
         }
     ]
 }

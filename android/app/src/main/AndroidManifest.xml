@@ -1,4 +1,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!-- AGREGA ESTOS PERMISOS JUSTO DESPUÉS DE <manifest> -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- Para Android 10+ (API 29+) puedes usar: -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    
+    <!-- Para Android antiguos (menos de API 29) -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+                     android:maxSdkVersion="28" />
+					 
     <application
         android:label="my_gasolinera"
         android:name="${applicationName}"
