@@ -1,9 +1,0 @@
-{
-    "java.project.sourcePaths": [
-        "basededatosjava"
-    ],
-    "java.project.referencedLibraries": [
-        "basededatosjava/postgresql-42.7.8.jar",
-        "basededatosjava/json-20250517.jar"
-    ]
-}
