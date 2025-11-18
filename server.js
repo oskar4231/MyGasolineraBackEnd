@@ -1,20 +1,24 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const { Pool } = require('pg');
+const mysql = require('mysql2/promise');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 const app = express();
 
+// CORS
+app.use(cors({
+  origin: true,
+  credentials: true
+}));
+
 // Middleware
-app.use(cors());
 app.use(express.json());
 
-// Conexión a PostgreSQL (usando tu configuración)
-const pool = new Pool({
-  user: process.env.DB_USER,
+const pool = mysql.createPool({
   host: process.env.DB_HOST,
+  user: process.env.DB_USER,
   database: process.env.DB_NAME,
   password: process.env.DB_PASSWORD,
   port: process.env.DB_PORT,
@@ -23,7 +27,7 @@ const pool = new Pool({
 // Middleware para verificar token JWT
 const authenticateToken = (req, res, next) => {
   const authHeader = req.headers['authorization'];
-  const token = authHeader && authHeader.split(' ')[1]; // Bearer TOKEN
+  const token = authHeader && authHeader.split(' ')[1];
 
   if (!token) {
     return res.status(401).json({ error: 'Token de acceso requerido' });
@@ -38,12 +42,11 @@ const authenticateToken = (req, res, next) => {
   });
 };
 
-// REGISTER - Crear nuevo usuario
+// REGISTER
 app.post('/register', async (req, res) => {
   try {
     const { email, password, nombre } = req.body;
 
-    // Validaciones básicas
     if (!email || !password) {
       return res.status(400).json({ 
         status: 'error', 
@@ -51,62 +54,46 @@ app.post('/register', async (req, res) => {
       });
     }
 
+    const conn = await pool.getConnection();
+
     // Verificar si el usuario ya existe
-    const userExists = await pool.query(
-      'SELECT id FROM clientes WHERE email = $1',
+    const [userExists] = await conn.query(
+      'SELECT email FROM usuarios WHERE email = ?',
       [email]
     );
 
-    if (userExists.rows.length > 0) {
+    if (userExists.length > 0) {
+      conn.release();
       return res.status(409).json({
         status: 'error',
         message: 'El email ya está registrado'
       });
     }
 
-    // Hash de la contraseña (NO guardar en texto plano)
+    // Hash de la contraseña
     const saltRounds = 10;
     const passwordHash = await bcrypt.hash(password, saltRounds);
 
-    // Insertar nuevo usuario
-    const result = await pool.query(
-      'INSERT INTO clientes (email, contraseña, nombre) VALUES ($1, $2, $3) RETURNING id, email, nombre',
+    // Insertar usuario
+    await conn.query(
+      'INSERT INTO usuarios (email, contraseña, nombre) VALUES (?, ?, ?)',
       [email, passwordHash, nombre || '']
     );
 
+    conn.release();
     console.log('Usuario registrado:', email);
 
-    // Generar JWT token
-    const token = jwt.sign(
-      { 
-        userId: result.rows[0].id, 
-        email: result.rows[0].email 
-      },
-      process.env.JWT_SECRET,
-      { expiresIn: '24h' }
-    );
+    const token = jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: '24h' });
 
     res.status(201).json({
       status: 'success',
       message: 'Usuario creado correctamente',
-      user: {
-        id: result.rows[0].id,
-        email: result.rows[0].email,
-        nombre: result.rows[0].nombre
-      },
+      user: { email, nombre: nombre || '' },
       token
     });
 
   } catch (error) {
     console.error('Error en register:', error);
-    
-    if (error.code === '23505') { // Violación de unique constraint
-      return res.status(409).json({
-        status: 'error',
-        message: 'El email ya está registrado'
-      });
-    }
-
     res.status(500).json({
       status: 'error',
       message: 'Error en el servidor: ' + error.message
@@ -114,12 +101,11 @@ app.post('/register', async (req, res) => {
   }
 });
 
-// LOGIN - Autenticar usuario
+// LOGIN
 app.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    // Validaciones básicas
     if (!email || !password) {
       return res.status(400).json({ 
         status: 'error', 
@@ -127,13 +113,16 @@ app.post('/login', async (req, res) => {
       });
     }
 
-    // Buscar usuario por email
-    const result = await pool.query(
-      'SELECT * FROM clientes WHERE email = $1',
+    const conn = await pool.getConnection();
+
+    const [rows] = await conn.query(
+      'SELECT * FROM usuarios WHERE email = ?',
       [email]
     );
 
-    if (result.rows.length === 0) {
+    conn.release();
+
+    if (rows.length === 0) {
       console.log('Login fallido - usuario no encontrado:', email);
       return res.status(401).json({
         status: 'error',
@@ -141,9 +130,7 @@ app.post('/login', async (req, res) => {
       });
     }
 
-    const user = result.rows[0];
-
-    // Verificar contraseña (comparar hash)
+    const user = rows[0];
     const validPassword = await bcrypt.compare(password, user.contraseña);
 
     if (!validPassword) {
@@ -156,24 +143,12 @@ app.post('/login', async (req, res) => {
 
     console.log('Login exitoso:', email);
 
-    // Generar JWT token
-    const token = jwt.sign(
-      { 
-        userId: user.id, 
-        email: user.email 
-      },
-      process.env.JWT_SECRET,
-      { expiresIn: '24h' }
-    );
+    const token = jwt.sign({ email: user.email }, process.env.JWT_SECRET, { expiresIn: '24h' });
 
     res.json({
       status: 'success',
       message: 'Login exitoso',
-      user: {
-        id: user.id,
-        email: user.email,
-        nombre: user.nombre
-      },
+      user: { email: user.email, nombre: user.nombre },
       token
     });
 
@@ -186,71 +161,88 @@ app.post('/login', async (req, res) => {
   }
 });
 
-// Ruta protegida - ejemplo de perfil de usuario
+// PROFILE
 app.get('/profile', authenticateToken, async (req, res) => {
   try {
-    const result = await pool.query(
-      'SELECT id, email, nombre FROM clientes WHERE id = $1',
-      [req.user.userId]
+    const conn = await pool.getConnection();
+
+    const [rows] = await conn.query(
+      'SELECT email, nombre FROM usuarios WHERE email = ?',
+      [req.user.email]
     );
 
-    if (result.rows.length === 0) {
+    conn.release();
+
+    if (rows.length === 0) {
       return res.status(404).json({ error: 'Usuario no encontrado' });
     }
 
-    res.json({ user: result.rows[0] });
+    res.json({ user: rows[0] });
   } catch (error) {
     console.error('Error obteniendo perfil:', error);
     res.status(500).json({ error: 'Error del servidor' });
   }
 });
 
-// Health check y rutas de prueba
+// HEALTH CHECK
 app.get('/api/health', (req, res) => {
   res.json({ 
     status: 'OK', 
     message: 'MyGasolinera Backend running',
-    database: 'PostgreSQL'
+    database: 'MariaDB'
   });
 });
 
+// TEST DB
 app.get('/api/test-db', async (req, res) => {
   try {
-    const result = await pool.query('SELECT version()');
+    const conn = await pool.getConnection();
+    const [rows] = await conn.query('SELECT VERSION() AS version');
+    conn.release();
+
     res.json({ 
-      message: '✅ Conexión a PostgreSQL exitosa',
-      version: result.rows[0].version 
+      message: '✅ Conexión a MariaDB exitosa',
+      version: rows[0].version 
     });
   } catch (error) {
     res.status(500).json({ 
-      error: '❌ Error conectando a PostgreSQL',
+      error: '❌ Error conectando a MariaDB',
       details: error.message 
     });
   }
 });
 
-app.get('/api/clientes', async (req, res) => {
+// usuarios
+app.get('/api/usuarios', async (req, res) => {
   try {
-    const result = await pool.query('SELECT id, email, nombre FROM clientes');
+    const conn = await pool.getConnection();
+    const [rows] = await conn.query('SELECT email, nombre FROM usuarios');
+    conn.release();
+
     res.json({ 
-      message: `✅ Tabla 'clientes' encontrada`,
-      total: result.rows.length,
-      clientes: result.rows 
+      message: `✅ Tabla 'usuarios' encontrada`,
+      total: rows.length,
+      usuarios: rows 
     });
   } catch (error) {
     res.status(500).json({ 
-      error: '❌ Error accediendo a la tabla clientes',
+      error: '❌ Error accediendo a la tabla usuarios',
       details: error.message 
     });
   }
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+
+app.listen(PORT, '0.0.0.0', (err) => {
+  if (err) {
+    console.error('❌ Error iniciando servidor:', err);
+    return;
+  }
   console.log('=================================');
-  console.log('🚀 MyGasolinera Backend Node.js');
+  console.log('✅ SERVIDOR INICIADO CORRECTAMENTE');
   console.log(`📍 Puerto: ${PORT}`);
-  console.log(`🌐 URL: http://localhost:${PORT}`);
-  console.log('✅ Autenticación JWT habilitada');
+  console.log(`🌐 Local: http://localhost:${PORT}`);
+  console.log(`🌐 Red: http://127.0.0.1:${PORT}`);
   console.log('=================================');
 });
