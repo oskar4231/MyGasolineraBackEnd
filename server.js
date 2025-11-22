@@ -161,6 +161,73 @@ app.post('/login', async (req, res) => {
   }
 });
 
+//COCHES
+app.post('/insertCar', authenticateToken, async (req, res) => {
+  let conn;
+  try {
+    const { marca, modelo, combustible } = req.body;
+
+    if (!marca || !modelo || !combustible) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'Marca, modelo y combustible son requeridos'
+      });
+    }
+
+    conn = await pool.getConnection();
+
+    console.log('POST /insertCar recibida para:', req.user.email); // log diagnóstico
+
+    const [userRows] = await conn.query(
+      'SELECT id_usuario FROM usuarios WHERE email = ?',
+      [req.user.email]
+    );
+
+    if (userRows.length === 0) {
+      return res.status(404).json({
+        status: 'error',
+        message: 'Usuario no encontrado'
+      });
+    }
+
+    const id_usuario = userRows[0].id_usuario;
+
+    const [carExists] = await conn.query(
+      'SELECT id_coche FROM coches WHERE id_usuario = ? AND marca = ? AND modelo = ?',
+      [id_usuario, marca, modelo]
+    );
+
+    if (carExists.length > 0) {
+      return res.status(409).json({
+        status: 'error',
+        message: 'Este coche ya está registrado'
+      });
+    }
+
+    const [result] = await conn.query(
+      'INSERT INTO coches (id_usuario, marca, modelo, combustible) VALUES (?, ?, ?, ?)',
+      [id_usuario, marca, modelo, combustible]
+    );
+
+    console.log('Coche registrado:', { id: result.insertId, id_usuario, marca, modelo });
+
+    res.status(201).json({
+      status: 'success',
+      message: 'Coche creado correctamente',
+      carId: result.insertId
+    });
+
+  } catch (error) {
+    console.error('Error en insertCar:', error);
+    res.status(500).json({
+      status: 'error',
+      message: 'Error en el servidor: ' + error.message
+    });
+  } finally {
+    if (conn) conn.release();
+  }
+})
+
 // PROFILE
 app.get('/profile', authenticateToken, async (req, res) => {
   try {
