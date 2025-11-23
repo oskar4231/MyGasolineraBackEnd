@@ -228,6 +228,118 @@ app.post('/insertCar', authenticateToken, async (req, res) => {
   }
 })
 
+app.get('/coches', authenticateToken, async (req, res) => {
+  let conn;
+  try {
+    conn = await pool.getConnection();
+
+    const [userRows] = await conn.query(
+      'SELECT id_usuario FROM usuarios WHERE email = ?',
+      [req.user.email]
+    );
+
+    if (userRows.length === 0) {
+      return res.status(404).json({
+        status: 'error',
+        message: 'Usuario no encontrado'
+      });
+    }
+    
+    const id_usuario = userRows[0].id_usuario;
+
+
+    const [coches] = await conn.query(
+      'SELECT id_coche, marca, modelo, combustible FROM coches WHERE id_usuario = ?',
+      [id_usuario]
+    );
+
+    res.json(coches); 
+    
+  } catch (error) {
+    console.error('Error en /coches:', error);
+    res.status(500).json({ 
+      error: 'Error al obtener los coches' 
+    });
+  } finally {
+    if (conn) conn.release();
+  }
+});
+
+// ELIMINAR COCHE
+app.delete('/coches/:id_coche', authenticateToken, async (req, res) => {
+  let conn;
+  try {
+    const { id_coche } = req.params;
+
+    if (!id_coche) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'id_coche es requerido'
+      });
+    }
+
+    conn = await pool.getConnection();
+
+    console.log('DELETE /coches recibida para:', req.user.email);
+
+    const [userRows] = await conn.query(
+      'SELECT id_usuario FROM usuarios WHERE email = ?',
+      [req.user.email]
+    );
+
+    if (userRows.length === 0) {
+      return res.status(404).json({
+        status: 'error',
+        message: 'Usuario no encontrado'
+      });
+    }
+
+    const id_usuario = userRows[0].id_usuario;
+
+    // Verificar que el coche existe y pertenece al usuario
+    const [coche] = await conn.query(
+      'SELECT id_usuario FROM coches WHERE id_coche = ?',
+      [id_coche]
+    );
+
+    if (coche.length === 0) {
+      return res.status(404).json({
+        status: 'error',
+        message: 'Coche no encontrado'
+      });
+    }
+
+    if (coche[0].id_usuario !== id_usuario) {
+      return res.status(403).json({
+        status: 'error',
+        message: 'No tienes permiso para eliminar este coche'
+      });
+    }
+
+    // Eliminar el coche
+    const [result] = await conn.query(
+      'DELETE FROM coches WHERE id_coche = ?',
+      [id_coche]
+    );
+
+    console.log('Coche eliminado:', { id_coche, id_usuario });
+
+    res.json({
+      status: 'success',
+      message: 'Coche eliminado correctamente'
+    });
+
+  } catch (error) {
+    console.error('Error en DELETE /coches:', error);
+    res.status(500).json({
+      status: 'error',
+      message: 'Error en el servidor: ' + error.message
+    });
+  } finally {
+    if (conn) conn.release();
+  }
+});
+
 // PROFILE
 app.get('/profile', authenticateToken, async (req, res) => {
   try {
