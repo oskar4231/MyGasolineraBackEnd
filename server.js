@@ -164,9 +164,11 @@ app.post('/login', async (req, res) => {
 
 //COCHES
 app.post('/insertCar', authenticateToken, async (req, res) => {
-  let conn;
+  let conn; // Declarar conn al inicio del bloque
+
   try {
     const { marca, modelo, combustible } = req.body;
+    const userEmail = req.user.email; // Obtener email del token
 
     if (!marca || !modelo || !combustible) {
       return res.status(400).json({
@@ -175,26 +177,27 @@ app.post('/insertCar', authenticateToken, async (req, res) => {
       });
     }
 
+    console.log('POST /insertCar recibida para:', userEmail);
+
+    // Obtener conexión (solo una vez)
     conn = await pool.getConnection();
 
-    console.log('POST /insertCar recibida para:', req.user.email); // log diagnóstico
-    const conn = await pool.getConnection();
-
-    const [rows] = await conn.query(
-      'SELECT * FROM usuarios WHERE email = ? OR nombre = ?',
-      [email, email]
+    // 1. Primero obtener el ID del usuario actual
+    const [userRows] = await conn.query(
+      'SELECT id_usuario FROM usuarios WHERE email = ?',
+      [userEmail] // Usar el email del token
     );
 
-    if (rows.length > 0) {
-      conn.release();
-      return res.status(409).json({
+    if (userRows.length === 0) {
+      return res.status(404).json({
         status: 'error',
-        message: 'El email ya está registrado'
+        message: 'Usuario no encontrado'
       });
     }
 
-    const id_usuario = rows[0].id_usuario;
+    const id_usuario = userRows[0].id_usuario;
 
+    // 2. Verificar si el coche ya existe para este usuario
     const [carExists] = await conn.query(
       'SELECT id_coche FROM coches WHERE id_usuario = ? AND marca = ? AND modelo = ?',
       [id_usuario, marca, modelo]
@@ -207,12 +210,18 @@ app.post('/insertCar', authenticateToken, async (req, res) => {
       });
     }
 
+    // 3. Insertar el nuevo coche
     const [result] = await conn.query(
       'INSERT INTO coches (id_usuario, marca, modelo, combustible) VALUES (?, ?, ?, ?)',
       [id_usuario, marca, modelo, combustible]
     );
 
-    console.log('Coche registrado:', { id: result.insertId, id_usuario, marca, modelo });
+    console.log('Coche registrado:', { 
+      id: result.insertId, 
+      id_usuario, 
+      marca, 
+      modelo 
+    });
 
     res.status(201).json({
       status: 'success',
@@ -229,7 +238,7 @@ app.post('/insertCar', authenticateToken, async (req, res) => {
   } finally {
     if (conn) conn.release();
   }
-})
+});
 
 app.get('/coches', authenticateToken, async (req, res) => {
   let conn;
