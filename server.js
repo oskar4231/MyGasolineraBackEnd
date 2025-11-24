@@ -115,9 +115,10 @@ app.post('/login', async (req, res) => {
 
     const conn = await pool.getConnection();
 
+    // MODIFICADO: Buscar por email O por nombre
     const [rows] = await conn.query(
-      'SELECT * FROM usuarios WHERE email = ?',
-      [email]
+      'SELECT * FROM usuarios WHERE email = ? OR nombre = ?',
+      [email, email]
     );
 
     conn.release();
