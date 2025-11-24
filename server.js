@@ -352,6 +352,42 @@ app.delete('/coches/:id_coche', authenticateToken, async (req, res) => {
   }
 });
 
+app.update('editCoche/:id_coche', authenticateToken, async (req, res) =>{
+let conn;
+  try {
+    const { id_coche } = req.params;
+
+    if (!id_coche) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'id_coche es requerido'
+      });
+    }
+
+    conn = await pool.getConnection();
+
+    const [result] = await conn.query(
+      'UDATE coches SET marca = ?, modelo = ?, combustible = ? WHERE id_coche = ?',
+      [marca,modelo,combustible,id_coche]
+    );
+
+    console.log('Coche modificado:' , { id_coche});
+
+    res.json({
+      status: 'success',
+      message: 'Coche modificado correctamente'
+    })
+  }  catch (error) {
+    console.error('Error en UPDATE /coches:', error);
+    res.status(500).json({
+      status: 'error',
+      message: 'Error en el servidor: ' + error.message
+    });
+  } finally {
+    if (conn) conn.release();
+  }
+});
+
 // PROFILE
 app.get('/profile', authenticateToken, async (req, res) => {
   try {
