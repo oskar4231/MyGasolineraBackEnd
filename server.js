@@ -48,9 +48,9 @@ app.post('/register', async (req, res) => {
     const { email, password, nombre } = req.body;
 
     if (!email || !password) {
-      return res.status(400).json({ 
-        status: 'error', 
-        message: 'Email y contraseña son requeridos' 
+      return res.status(400).json({
+        status: 'error',
+        message: 'Email y contraseña son requeridos'
       });
     }
 
@@ -107,9 +107,9 @@ app.post('/login', async (req, res) => {
     const { email, password } = req.body;
 
     if (!email || !password) {
-      return res.status(400).json({ 
-        status: 'error', 
-        message: 'Email y contraseña son requeridos' 
+      return res.status(400).json({
+        status: 'error',
+        message: 'Email y contraseña son requeridos'
       });
     }
 
@@ -177,20 +177,22 @@ app.post('/insertCar', authenticateToken, async (req, res) => {
     conn = await pool.getConnection();
 
     console.log('POST /insertCar recibida para:', req.user.email); // log diagnóstico
+    const conn = await pool.getConnection();
 
-    const [userRows] = await conn.query(
-      'SELECT id_usuario FROM usuarios WHERE email = ?',
-      [req.user.email]
+    const [rows] = await conn.query(
+      'SELECT * FROM usuarios WHERE email = ? OR nombre = ?',
+      [email, email]
     );
 
-    if (userRows.length === 0) {
-      return res.status(404).json({
+    if (rows.length > 0) {
+      conn.release();
+      return res.status(409).json({
         status: 'error',
-        message: 'Usuario no encontrado'
+        message: 'El email ya está registrado'
       });
     }
 
-    const id_usuario = userRows[0].id_usuario;
+    const id_usuario = rows[0].id_usuario;
 
     const [carExists] = await conn.query(
       'SELECT id_coche FROM coches WHERE id_usuario = ? AND marca = ? AND modelo = ?',
@@ -244,7 +246,7 @@ app.get('/coches', authenticateToken, async (req, res) => {
         message: 'Usuario no encontrado'
       });
     }
-    
+
     const id_usuario = userRows[0].id_usuario;
 
 
@@ -253,12 +255,12 @@ app.get('/coches', authenticateToken, async (req, res) => {
       [id_usuario]
     );
 
-    res.json(coches); 
-    
+    res.json(coches);
+
   } catch (error) {
     console.error('Error en /coches:', error);
-    res.status(500).json({ 
-      error: 'Error al obtener los coches' 
+    res.status(500).json({
+      error: 'Error al obtener los coches'
     });
   } finally {
     if (conn) conn.release();
@@ -365,8 +367,8 @@ app.get('/profile', authenticateToken, async (req, res) => {
 
 // HEALTH CHECK
 app.get('/api/health', (req, res) => {
-  res.json({ 
-    status: 'OK', 
+  res.json({
+    status: 'OK',
     message: 'MyGasolinera Backend running',
     database: 'MariaDB'
   });
@@ -379,14 +381,14 @@ app.get('/api/test-db', async (req, res) => {
     const [rows] = await conn.query('SELECT VERSION() AS version');
     conn.release();
 
-    res.json({ 
+    res.json({
       message: '✅ Conexión a MariaDB exitosa',
-      version: rows[0].version 
+      version: rows[0].version
     });
   } catch (error) {
-    res.status(500).json({ 
+    res.status(500).json({
       error: '❌ Error conectando a MariaDB',
-      details: error.message 
+      details: error.message
     });
   }
 });
@@ -398,15 +400,15 @@ app.get('/api/usuarios', async (req, res) => {
     const [rows] = await conn.query('SELECT email, nombre FROM usuarios');
     conn.release();
 
-    res.json({ 
+    res.json({
       message: `✅ Tabla 'usuarios' encontrada`,
       total: rows.length,
-      usuarios: rows 
+      usuarios: rows
     });
   } catch (error) {
-    res.status(500).json({ 
+    res.status(500).json({
       error: '❌ Error accediendo a la tabla usuarios',
-      details: error.message 
+      details: error.message
     });
   }
 });
