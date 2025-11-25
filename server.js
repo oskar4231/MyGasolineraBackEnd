@@ -62,10 +62,21 @@ app.get('/facturas', authenticateToken, async (req, res) => {
 
     const id_usuario = userRows[0].id_usuario;
 
-    const [facturas] = await conn.query(
-      'SELECT id_factura, titulo, coste, fecha, hora, descripcion, imagenPath FROM facturas WHERE id_usuario = ? ORDER BY fecha DESC, hora DESC',
-      [id_usuario]
-    );
+    // Intentar obtener facturas con imagenPath, si falla usar schema original
+    let facturas;
+    try {
+      [facturas] = await conn.query(
+        'SELECT id_factura, titulo, coste, fecha, hora, descripcion, imagenPath FROM facturas WHERE id_usuario = ? ORDER BY fecha DESC, hora DESC',
+        [id_usuario]
+      );
+    } catch (error) {
+      // Si imagenPath no existe, usar schema original
+      console.log('Usando schema sin imagenPath');
+      [facturas] = await conn.query(
+        'SELECT id_factura, titulo, coste, fecha, hora, descripcion FROM facturas WHERE id_usuario = ? ORDER BY fecha DESC, hora DESC',
+        [id_usuario]
+      );
+    }
 
     res.json(facturas);
 
@@ -87,14 +98,18 @@ app.post('/facturas', authenticateToken, async (req, res) => {
     const { titulo, coste, fecha, hora, descripcion, imagenPath } = req.body;
     const userEmail = req.user.email;
 
-    if (!titulo || !coste || !fecha || !hora) {
+    // Log de los datos recibidos para debugging
+    console.log('POST /facturas recibida para:', userEmail);
+    console.log('Datos recibidos:', { titulo, coste, fecha, hora, descripcion, imagenPath });
+
+    if (!titulo || coste === undefined || coste === null || !fecha || !hora) {
+      console.log('Validación fallida - datos faltantes');
       return res.status(400).json({
         status: 'error',
-        message: 'Título, costo total, fecha y hora son requeridos'
+        message: 'Título, costo total, fecha y hora son requeridos',
+        received: { titulo, coste, fecha, hora }
       });
     }
-
-    console.log('POST /facturas recibida para:', userEmail);
 
     conn = await pool.getConnection();
 
@@ -113,11 +128,21 @@ app.post('/facturas', authenticateToken, async (req, res) => {
 
     const id_usuario = userRows[0].id_usuario;
 
-    // Insertar la nueva factura
-    const [result] = await conn.query(
-      'INSERT INTO facturas (id_usuario, titulo, coste, fecha, hora, descripcion, imagenPath) VALUES (?, ?, ?, ?, ?, ?, ?)',
-      [id_usuario, titulo, coste, fecha, hora, descripcion || '', imagenPath || '']
-    );
+    // Intentar insertar con imagenPath, si falla usar schema original
+    let result;
+    try {
+      [result] = await conn.query(
+        'INSERT INTO facturas (id_usuario, titulo, coste, fecha, hora, descripcion, imagenPath) VALUES (?, ?, ?, ?, ?, ?, ?)',
+        [id_usuario, titulo, coste, fecha, hora, descripcion || '', imagenPath || null]
+      );
+    } catch (error) {
+      // Si imagenPath no existe en la tabla, usar schema original
+      console.log('Insertando sin imagenPath (schema original)');
+      [result] = await conn.query(
+        'INSERT INTO facturas (id_usuario, titulo, coste, fecha, hora, descripcion) VALUES (?, ?, ?, ?, ?, ?)',
+        [id_usuario, titulo, coste, fecha, hora, descripcion || '']
+      );
+    }
 
     console.log('Factura creada:', { 
       id: result.insertId, 
