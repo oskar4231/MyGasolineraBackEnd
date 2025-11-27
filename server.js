@@ -18,6 +18,8 @@ const authRoutes = require('./routes/usuarios.routes');
 const facturasRoutes = require('./routes/facturas.routes');
 const cochesRoutes = require('./routes/coches.routes');
 const profileRoutes = require('./routes/perfil.routes');
+const gasolinerasRoutes = require('./routes/gasolineras.routes');
+const SincronizadorGasolineras = require('./routes/sincronizarGasolineras');
 
 // Montar rutas
 app.use('/', authRoutes);
