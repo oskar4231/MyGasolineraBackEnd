@@ -6,7 +6,7 @@ const pool = require('../config/bbdd');
 const crypto = require('crypto');
 const { sendPasswordResetEmail } = require('../config/emailService');
 
-// REGISTER
+// ==================== REGISTER ====================
 router.post('/register', async (req, res) => {
   try {
     const { email, password, nombre } = req.body;
@@ -35,8 +35,7 @@ router.post('/register', async (req, res) => {
     }
 
     // Hash de la contraseña
-    const saltRounds = 10;
-    const passwordHash = await bcrypt.hash(password, saltRounds);
+    const passwordHash = await bcrypt.hash(password, 10);
 
     // Insertar usuario
     await conn.query(
@@ -45,7 +44,6 @@ router.post('/register', async (req, res) => {
     );
 
     conn.release();
-    console.log('Usuario registrado:', email);
 
     const token = jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: '24h' });
 
@@ -65,7 +63,7 @@ router.post('/register', async (req, res) => {
   }
 });
 
-// LOGIN
+// ==================== LOGIN ====================
 router.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -88,7 +86,6 @@ router.post('/login', async (req, res) => {
     conn.release();
 
     if (rows.length === 0) {
-      console.log('Login fallido - usuario no encontrado:', email);
       return res.status(401).json({
         status: 'error',
         message: 'Email o contraseña incorrectos'
@@ -96,17 +93,14 @@ router.post('/login', async (req, res) => {
     }
 
     const user = rows[0];
-    const validPassword = await bcrypt.compare(password, user.contraseña);
 
+    const validPassword = await bcrypt.compare(password, user.contraseña);
     if (!validPassword) {
-      console.log('Login fallido - contraseña incorrecta:', email);
       return res.status(401).json({
         status: 'error',
         message: 'Email o contraseña incorrectos'
       });
     }
-
-    console.log('Login exitoso:', email);
 
     const token = jwt.sign({ email: user.email }, process.env.JWT_SECRET, { expiresIn: '24h' });
 
@@ -126,9 +120,49 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// ==================== RECUPERACIÓN DE CONTRASEÑA ====================
+// ==================== BORRAR / INACTIVAR USUARIO ====================
+router.delete('/usuarios/:email', async (req, res) => {
+  let conn;
+  try {
+    const { email } = req.body;
 
-// FORGOT PASSWORD - Solicitar recuperación
+    if (!email) {
+      return res.status(400).json({
+        success: false,
+        message: 'Email es requerido'
+      });
+    }
+
+    conn = await pool.getConnection();
+
+    const [result] = await conn.execute(
+      'UPDATE usuarios SET activo = 0 WHERE email = ?',
+      [email]
+    );
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({
+        success: false,
+        message: 'Usuario no encontrado'
+      });
+    }
+
+    res.json({
+      success: true,
+      message: 'Usuario marcado como inactivo',
+      affectedRows: result.affectedRows
+    });
+
+  } catch (error) {
+    console.error('Error en eliminar usuario:', error);
+    res.status(500).json({
+      status: 'error',
+      message: 'Error en el servidor: ' + error.message
+    });
+  }
+});
+
+// ==================== FORGOT PASSWORD ====================
 router.post('/forgot-password', async (req, res) => {
   try {
     const { email } = req.body;
@@ -142,7 +176,6 @@ router.post('/forgot-password', async (req, res) => {
 
     const conn = await pool.getConnection();
 
-    // Verificar si el usuario existe
     const [users] = await conn.query(
       'SELECT email FROM usuarios WHERE email = ?',
       [email]
@@ -150,21 +183,17 @@ router.post('/forgot-password', async (req, res) => {
 
     if (users.length === 0) {
       conn.release();
-      // Por seguridad, no revelamos si el email existe o no
       return res.json({
         status: 'success',
         message: 'Si el email existe, recibirás un correo con instrucciones'
       });
     }
 
-    // Usar el email EXACTO de la base de datos
     const userEmail = users[0].email;
 
-    // Generar token de 6 dígitos
     const token = Math.floor(100000 + Math.random() * 900000).toString();
-    const expiresAt = new Date(Date.now() + 60 * 60 * 1000); // 1 hora
+    const expiresAt = new Date(Date.now() + 60 * 60 * 1000);
 
-    // Guardar token en la base de datos usando el email de la BBDD
     await conn.query(
       'INSERT INTO token_reiniciar_contraseña (email, token, expires_at) VALUES (?, ?, ?)',
       [userEmail, token, expiresAt]
@@ -172,10 +201,7 @@ router.post('/forgot-password', async (req, res) => {
 
     conn.release();
 
-    // Enviar email al email de la BBDD
     await sendPasswordResetEmail(userEmail, token);
-
-    console.log('✅ Token de recuperación generado para:', email);
 
     res.json({
       status: 'success',
@@ -183,7 +209,7 @@ router.post('/forgot-password', async (req, res) => {
     });
 
   } catch (error) {
-    console.error('❌ Error en forgot-password:', error);
+    console.error('Error en forgot-password:', error);
     res.status(500).json({
       status: 'error',
       message: 'Error en el servidor: ' + error.message
@@ -191,7 +217,7 @@ router.post('/forgot-password', async (req, res) => {
   }
 });
 
-// VERIFY TOKEN - Verificar si el token es válido
+// ==================== VERIFY TOKEN ====================
 router.post('/verify-token', async (req, res) => {
   try {
     const { token } = req.body;
@@ -226,7 +252,7 @@ router.post('/verify-token', async (req, res) => {
     });
 
   } catch (error) {
-    console.error('❌ Error en verify-token:', error);
+    console.error('Error en verify-token:', error);
     res.status(500).json({
       status: 'error',
       message: 'Error en el servidor: ' + error.message
@@ -234,7 +260,7 @@ router.post('/verify-token', async (req, res) => {
   }
 });
 
-// RESET PASSWORD - Cambiar contraseña con token
+// ==================== RESET PASSWORD ====================
 router.post('/reset-password', async (req, res) => {
   try {
     const { token, newPassword } = req.body;
@@ -255,7 +281,6 @@ router.post('/reset-password', async (req, res) => {
 
     const conn = await pool.getConnection();
 
-    // Verificar token
     const [tokens] = await conn.query(
       'SELECT * FROM token_reiniciar_contraseña WHERE token = ? AND used = FALSE AND expires_at > NOW()',
       [token]
@@ -271,17 +296,13 @@ router.post('/reset-password', async (req, res) => {
 
     const email = tokens[0].email;
 
-    // Hash de la nueva contraseña
-    const saltRounds = 10;
-    const passwordHash = await bcrypt.hash(newPassword, saltRounds);
+    const passwordHash = await bcrypt.hash(newPassword, 10);
 
-    // Actualizar contraseña
     await conn.query(
       'UPDATE usuarios SET contraseña = ? WHERE email = ?',
       [passwordHash, email]
     );
 
-    // Marcar token como usado
     await conn.query(
       'UPDATE token_reiniciar_contraseña SET used = TRUE WHERE token = ?',
       [token]
@@ -289,15 +310,13 @@ router.post('/reset-password', async (req, res) => {
 
     conn.release();
 
-    console.log('✅ Contraseña actualizada para:', email);
-
     res.json({
       status: 'success',
       message: 'Contraseña actualizada correctamente'
     });
 
   } catch (error) {
-    console.error('❌ Error en reset-password:', error);
+    console.error('Error en reset-password:', error);
     res.status(500).json({
       status: 'error',
       message: 'Error en el servidor: ' + error.message
