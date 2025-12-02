@@ -124,4 +124,46 @@ router.post('/login', async (req, res) => {
   }
 });
 
+router.delete('/usuarios/:email', async (req, res) => {
+  let conn;
+  try{
+    const { email} = req.body;
+
+    if (!email) {
+      return res.status(400).json({
+        success: false,
+        message: 'Email es requerido'
+      });
+    }
+
+
+   conn = await pool.getConnection();
+
+    const [result] = await conn.execute(
+      'UPDATE usuarios SET activo = 0 WHERE email = ?',
+      [email]
+    );
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({
+        success: false,
+        message: 'Usuario no encontrado'
+      });
+    }
+
+    res.json({
+      success: true,
+      message: 'Usuario marcado como inactivo',
+      affectedRows: result.affectedRows
+    });
+
+  }catch (error) {
+    console.error('Error en login:', error);
+    res.status(500).json({
+      status: 'error',
+      message: 'Error en el servidor: ' + error.message
+    });
+  }
+});
+
 module.exports = router;
