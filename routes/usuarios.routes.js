@@ -3,6 +3,8 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const pool = require('../config/bbdd');
+const crypto = require('crypto');
+const { sendPasswordResetEmail } = require('../config/emailService');
 
 // REGISTER
 router.post('/register', async (req, res) => {
@@ -117,6 +119,185 @@ router.post('/login', async (req, res) => {
 
   } catch (error) {
     console.error('Error en login:', error);
+    res.status(500).json({
+      status: 'error',
+      message: 'Error en el servidor: ' + error.message
+    });
+  }
+});
+
+// ==================== RECUPERACIÓN DE CONTRASEÑA ====================
+
+// FORGOT PASSWORD - Solicitar recuperación
+router.post('/forgot-password', async (req, res) => {
+  try {
+    const { email } = req.body;
+
+    if (!email) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'Email es requerido'
+      });
+    }
+
+    const conn = await pool.getConnection();
+
+    // Verificar si el usuario existe
+    const [users] = await conn.query(
+      'SELECT email FROM usuarios WHERE email = ?',
+      [email]
+    );
+
+    if (users.length === 0) {
+      conn.release();
+      // Por seguridad, no revelamos si el email existe o no
+      return res.json({
+        status: 'success',
+        message: 'Si el email existe, recibirás un correo con instrucciones'
+      });
+    }
+
+    // Usar el email EXACTO de la base de datos
+    const userEmail = users[0].email;
+
+    // Generar token de 6 dígitos
+    const token = Math.floor(100000 + Math.random() * 900000).toString();
+    const expiresAt = new Date(Date.now() + 60 * 60 * 1000); // 1 hora
+
+    // Guardar token en la base de datos usando el email de la BBDD
+    await conn.query(
+      'INSERT INTO token_reiniciar_contraseña (email, token, expires_at) VALUES (?, ?, ?)',
+      [userEmail, token, expiresAt]
+    );
+
+    conn.release();
+
+    // Enviar email al email de la BBDD
+    await sendPasswordResetEmail(userEmail, token);
+
+    console.log('✅ Token de recuperación generado para:', email);
+
+    res.json({
+      status: 'success',
+      message: 'Si el email existe, recibirás un correo con instrucciones'
+    });
+
+  } catch (error) {
+    console.error('❌ Error en forgot-password:', error);
+    res.status(500).json({
+      status: 'error',
+      message: 'Error en el servidor: ' + error.message
+    });
+  }
+});
+
+// VERIFY TOKEN - Verificar si el token es válido
+router.post('/verify-token', async (req, res) => {
+  try {
+    const { token } = req.body;
+
+    if (!token) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'Token es requerido'
+      });
+    }
+
+    const conn = await pool.getConnection();
+
+    const [tokens] = await conn.query(
+      'SELECT * FROM token_reiniciar_contraseña WHERE token = ? AND used = FALSE AND expires_at > NOW()',
+      [token]
+    );
+
+    conn.release();
+
+    if (tokens.length === 0) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'Token inválido o expirado'
+      });
+    }
+
+    res.json({
+      status: 'success',
+      message: 'Token válido',
+      email: tokens[0].email
+    });
+
+  } catch (error) {
+    console.error('❌ Error en verify-token:', error);
+    res.status(500).json({
+      status: 'error',
+      message: 'Error en el servidor: ' + error.message
+    });
+  }
+});
+
+// RESET PASSWORD - Cambiar contraseña con token
+router.post('/reset-password', async (req, res) => {
+  try {
+    const { token, newPassword } = req.body;
+
+    if (!token || !newPassword) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'Token y nueva contraseña son requeridos'
+      });
+    }
+
+    if (newPassword.length < 6) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'La contraseña debe tener al menos 6 caracteres'
+      });
+    }
+
+    const conn = await pool.getConnection();
+
+    // Verificar token
+    const [tokens] = await conn.query(
+      'SELECT * FROM token_reiniciar_contraseña WHERE token = ? AND used = FALSE AND expires_at > NOW()',
+      [token]
+    );
+
+    if (tokens.length === 0) {
+      conn.release();
+      return res.status(400).json({
+        status: 'error',
+        message: 'Token inválido o expirado'
+      });
+    }
+
+    const email = tokens[0].email;
+
+    // Hash de la nueva contraseña
+    const saltRounds = 10;
+    const passwordHash = await bcrypt.hash(newPassword, saltRounds);
+
+    // Actualizar contraseña
+    await conn.query(
+      'UPDATE usuarios SET contraseña = ? WHERE email = ?',
+      [passwordHash, email]
+    );
+
+    // Marcar token como usado
+    await conn.query(
+      'UPDATE token_reiniciar_contraseña SET used = TRUE WHERE token = ?',
+      [token]
+    );
+
+    conn.release();
+
+    console.log('✅ Contraseña actualizada para:', email);
+
+    res.json({
+      status: 'success',
+      message: 'Contraseña actualizada correctamente'
+    });
+
+  } catch (error) {
+    console.error('❌ Error en reset-password:', error);
     res.status(500).json({
       status: 'error',
       message: 'Error en el servidor: ' + error.message
