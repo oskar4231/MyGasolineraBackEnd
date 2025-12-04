@@ -79,7 +79,7 @@ router.post('/login', async (req, res) => {
 
     // Buscar por email O por nombre
     const [rows] = await conn.query(
-      'SELECT * FROM usuarios WHERE email = ? OR nombre = ?',
+      'SELECT * FROM usuarios WHERE email = ? OR nombre = ? AND activo = 1',
       [email, email]
     );
 
@@ -88,11 +88,13 @@ router.post('/login', async (req, res) => {
     if (rows.length === 0) {
       return res.status(401).json({
         status: 'error',
-        message: 'Email o contraseña incorrectos'
+        message: 'Email o contraseña incorrectos o cuenta inactiva'
       });
     }
 
     const user = rows[0];
+
+
 
     const validPassword = await bcrypt.compare(password, user.contraseña);
     if (!validPassword) {
