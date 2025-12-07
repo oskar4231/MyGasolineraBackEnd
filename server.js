@@ -18,12 +18,14 @@ const authRoutes = require('./routes/usuarios.routes');
 const facturasRoutes = require('./routes/facturas.routes');
 const cochesRoutes = require('./routes/coches.routes');
 const profileRoutes = require('./routes/perfil.routes');
+const estadisticasRoutes = require('./routes/estadisticas.routes');
 
 // Montar rutas
 app.use('/', authRoutes);
 app.use('/', facturasRoutes);
 app.use('/', cochesRoutes);
 app.use('/', profileRoutes);
+app.use('/', estadisticasRoutes);
 
 // Iniciar servidor
 const PORT = process.env.PORT || 3000;
