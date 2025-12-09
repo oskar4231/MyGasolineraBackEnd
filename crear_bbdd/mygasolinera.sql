@@ -145,6 +145,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `contraseña` varchar(100) DEFAULT NULL,
   `fecha_registro` datetime DEFAULT CURRENT_TIMESTAMP,
   `ultimo_login` datetime DEFAULT NULL,
+  `activo` boolean DEFAULT 1, -- añadido nuevo campo
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
