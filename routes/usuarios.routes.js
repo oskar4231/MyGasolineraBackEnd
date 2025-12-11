@@ -343,7 +343,7 @@ router.get('/cargarImagen/:email', async (req, res) => {
         'SELECT email FROM usuarios WHERE nombre = ?',
         [email]
       );
-      
+
       if (userEmail.length === 0) {
         console.log('❌ Usuario no encontrado con nombre:', email);
         return res.status(404).json({
@@ -351,17 +351,17 @@ router.get('/cargarImagen/:email', async (req, res) => {
           message: 'Usuario no encontrado'
         });
       }
-      
+
       email = userEmail[0].email;
       console.log('🔍 Email resuelto a:', email);
     }
-    
+
     // Buscar la foto de perfil directamente por email
     const [imagen] = await conn.query(
       'SELECT foto_perfil FROM usuarios WHERE email = ?',
       [email]
     );
-    
+
     // Verificar si se encontró el usuario
     if (imagen.length === 0) {
       console.log('❌ Usuario no encontrado con email:', email);
@@ -370,14 +370,14 @@ router.get('/cargarImagen/:email', async (req, res) => {
         message: 'Usuario no encontrado'
       });
     }
-    
+
     // Log de éxito
     const fotoPerfil = imagen[0].foto_perfil;
     console.log('✅ Foto de perfil encontrada:', fotoPerfil ? 'Sí' : 'NULL');
-    
+
     // Retornar la imagen
     res.json(imagen[0]);
-    
+
   } catch (error) {
     console.error('❌ Error en /cargarImagen:', error);
     res.status(500).json({
@@ -389,6 +389,62 @@ router.get('/cargarImagen/:email', async (req, res) => {
     // Liberar la conexión
     if (conn) conn.release();
   }
-}); 
+});
+// ... (todo tu código anterior)
+
+router.get('/cargarImagen/:email', async (req, res) => {
+  // ... código existente de cargar imagen
+});
+
+// ==================== OBTENER NOMBRE DE USUARIO ====================
+router.get('/usuarios/perfil/:email', async (req, res) => {
+  let conn;
+  try {
+    const { email } = req.params;
+
+    console.log('🔍 Obteniendo perfil del usuario:', email);
+
+    if (!email) {
+      return res.status(400).json({
+        success: false,
+        message: 'Email es requerido'
+      });
+    }
+
+    conn = await pool.getConnection();
+
+    const [results] = await conn.query(
+      'SELECT nombre, email FROM usuarios WHERE email = ? AND activo = 1',
+      [email]
+    );
+
+    if (results.length === 0) {
+      console.log('⚠️ Usuario no encontrado:', email);
+      return res.status(404).json({
+        success: false,
+        message: 'Usuario no encontrado'
+      });
+    }
+
+    const usuario = results[0];
+    console.log('✅ Usuario encontrado:', usuario.nombre);
+
+    res.status(200).json({
+      success: true,
+      nombre: usuario.nombre || email.split('@')[0],
+      email: usuario.email,
+    });
+
+  } catch (error) {
+    console.error('❌ Error en /usuarios/perfil/:email:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Error interno del servidor',
+      error: error.message,
+    });
+  } finally {
+    if (conn) conn.release();
+  }
+});
 
 module.exports = router;

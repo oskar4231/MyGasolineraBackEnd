@@ -35,7 +35,7 @@ app.listen(PORT, '0.0.0.0', (err) => {
     console.error('❌ Error iniciando servidor:', err);
     return;
   }
-  // Mensaje de inicios
+  // Mensaje de inicio
   console.log('=================================');
   console.log('✅ SERVIDOR INICIADO CORRECTAMENTE');
   console.log(`📍 Puerto: ${PORT}`);
