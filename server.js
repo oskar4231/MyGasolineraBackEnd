@@ -11,6 +11,11 @@ app.use(cors({
 // Middleware
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+// Servir archivos estáticos (imágenes subidas)
+// i18n Middleware
+const i18n = require('./middleware/i18n');
+app.use(i18n);
+
 // Importar rutas
 const authRoutes = require('./routes/usuarios.routes');
 const facturasRoutes = require('./routes/facturas.routes');
