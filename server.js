@@ -1,35 +1,28 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-
 const app = express();
-
 // CORS
 app.use(cors({
   origin: true,
   credentials: true
 }));
-
 // Middleware
 app.use(express.json());
-
 // Importar rutas
 const authRoutes = require('./routes/usuarios.routes');
 const facturasRoutes = require('./routes/facturas.routes');
 const cochesRoutes = require('./routes/coches.routes');
-const profileRoutes = require('./routes/perfil.routes');
+const profileRoutes = require('./routes/perfil.routes'); // ← Volver a .routes
 const estadisticasRoutes = require('./routes/estadisticas.routes');
-
 // Montar rutas
 app.use('/', authRoutes);
 app.use('/', facturasRoutes);
 app.use('/', cochesRoutes);
-app.use('/', profileRoutes);
+app.use('/api/perfil', profileRoutes); // ← MANTENER /api/perfil
 app.use('/', estadisticasRoutes);
-
 // Iniciar servidor
 const PORT = process.env.PORT || 3000;
-
 app.listen(PORT, '0.0.0.0', (err) => {
   if (err) {
     console.error('❌ Error iniciando servidor:', err);

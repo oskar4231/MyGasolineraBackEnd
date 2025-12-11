@@ -143,6 +143,8 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `email` varchar(100) DEFAULT NULL,
   `telefono` varchar(20) DEFAULT NULL,
   `contraseña` varchar(100) DEFAULT NULL,
+  `foto_perfil` varchar(255) DEFAULT NULL,
+  `activo` tinyint(1) DEFAULT 1,
   `fecha_registro` datetime DEFAULT CURRENT_TIMESTAMP,
   `ultimo_login` datetime DEFAULT NULL,
   PRIMARY KEY (`id_usuario`),
