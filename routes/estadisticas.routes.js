@@ -382,48 +382,124 @@ router.get('/estadisticas/costo-por-km', authenticateToken, async (req, res) => 
   let conn;
   try {
     conn = await pool.getConnection();
+    
     const [userRows] = await conn.query(
       'SELECT id_usuario FROM usuarios WHERE email = ?',
       [req.user.email]
     );
     const id_usuario = userRows[0].id_usuario;
-    const [result] = await conn.query(
-      `SELECT 
-        f1.fecha,
+    
+    // Obtener costo por km AGRUPADO POR COCHE (CORREGIDO)
+    const query = `
+      WITH costos_individuales AS (
+      SELECT 
+        f1.id_coche,
+        f1.id_factura,
         f1.coste,
-        (f1.kilometraje_actual - f2.kilometraje_actual) as km_recorridos,
-        (f1.coste / (f1.kilometraje_actual - f2.kilometraje_actual)) as costo_por_km
+        f1.fecha,
+        f1.kilometraje_actual,
+        c.marca,
+        c.modelo,
+        c.kilometraje_inicial,  -- Añadir kilometraje inicial del coche
+        LAG(f1.kilometraje_actual) OVER (
+          PARTITION BY f1.id_coche 
+          ORDER BY f1.fecha
+        ) as kilometraje_anterior,
+        LAG(f1.fecha) OVER (
+          PARTITION BY f1.id_coche 
+          ORDER BY f1.fecha
+        ) as fecha_anterior
       FROM facturas f1
-      LEFT JOIN facturas f2 ON f2.id_usuario = f1.id_usuario 
-        AND f2.id_coche = f1.id_coche
-        AND f2.fecha < f1.fecha
-        AND f2.kilometraje_actual IS NOT NULL
+      JOIN coches c ON c.id_coche = f1.id_coche
       WHERE f1.id_usuario = ?
         AND f1.kilometraje_actual IS NOT NULL
-        AND f2.id_factura = (
-          SELECT id_factura 
-          FROM facturas 
-          WHERE id_usuario = f1.id_usuario 
-            AND id_coche = f1.id_coche 
-            AND fecha < f1.fecha 
-            AND kilometraje_actual IS NOT NULL
-          ORDER BY fecha DESC 
-          LIMIT 1
-        )
-      ORDER BY f1.fecha DESC`,
-      [id_usuario]
-    );
-    const costos = result.filter(r => r.costo_por_km > 0 && r.costo_por_km < 1);
-    const promedioCosto = costos.length > 0
-      ? costos.reduce((sum, r) => sum + r.costo_por_km, 0) / costos.length
-      : 0;
+        AND f1.coste > 0
+    ),
+    costos_calculados AS (
+      SELECT 
+        id_coche,
+        marca,
+        modelo,
+        kilometraje_inicial,
+        id_factura,
+        coste,
+        fecha,
+        kilometraje_actual,
+        kilometraje_anterior,
+        fecha_anterior,
+        -- Calcular kilómetros recorridos entre repostajes
+        CASE 
+          -- Para el primer repostaje: usar kilometraje_inicial del coche
+          WHEN kilometraje_anterior IS NULL 
+            AND kilometraje_actual > kilometraje_inicial
+          THEN kilometraje_actual - kilometraje_inicial
+          -- Para repostajes siguientes
+          WHEN kilometraje_anterior IS NOT NULL 
+            AND kilometraje_actual > kilometraje_anterior
+          THEN kilometraje_actual - kilometraje_anterior
+          ELSE NULL
+        END as km_recorridos,
+        -- Calcular costo por km para este repostaje
+        CASE 
+          -- Para el primer repostaje
+          WHEN kilometraje_anterior IS NULL 
+            AND kilometraje_actual > kilometraje_inicial
+          THEN ROUND(coste / (kilometraje_actual - kilometraje_inicial), 4)
+          -- Para repostajes siguientes
+          WHEN kilometraje_anterior IS NOT NULL 
+            AND kilometraje_actual > kilometraje_anterior
+          THEN ROUND(coste / (kilometraje_actual - kilometraje_anterior), 4)
+          ELSE NULL
+        END as costo_por_km
+      FROM costos_individuales
+    )
+    SELECT 
+      id_coche,
+      marca,
+      modelo,
+      COUNT(id_factura) as num_facturas,
+      COUNT(costo_por_km) as num_facturas_validas,
+      ROUND(AVG(costo_por_km), 4) as costo_promedio_por_km,
+      ROUND(MIN(costo_por_km), 4) as costo_minimo_por_km,
+      ROUND(MAX(costo_por_km), 4) as costo_maximo_por_km,
+      -- Calcular kilómetros totales: última factura - kilometraje_inicial
+      MAX(kilometraje_actual) - MIN(kilometraje_inicial) as km_totales,
+      SUM(coste) as gasto_total,
+      -- Calcular costo promedio ponderado por km recorridos
+      ROUND(
+        SUM(coste) / NULLIF(
+          SUM(CASE 
+            WHEN km_recorridos IS NOT NULL 
+            THEN km_recorridos 
+            ELSE 0 
+          END), 
+        0), 
+      4) as costo_ponderado_por_km,
+      -- Calcular costo por 100km: (gasto_total / km_totales) * 100
+      ROUND(
+        (SUM(coste) / NULLIF(
+          MAX(kilometraje_actual) - MIN(kilometraje_inicial), 
+        0)) * 100, 
+      2) as costo_por_100km
+    FROM costos_calculados
+    GROUP BY id_coche, marca, modelo, kilometraje_inicial
+    ORDER BY marca, modelo
+    `;
+    
+    const [result] = await conn.query(query, [id_usuario]);
+    
+    console.log('Costos por km obtenidos:', result);
+
     res.json({
-      costo_promedio_por_km: promedioCosto.toFixed(4),
-      historial: result
+      costos_por_coche: result,
+      total_coches: result.length
     });
   } catch (error) {
     console.error('Error en /estadisticas/costo-por-km:', error);
-    res.status(500).json({ error: 'Error al obtener costo por km' });
+    res.status(500).json({ 
+      error: 'Error al obtener costo por km',
+      details: error.message 
+    });
   } finally {
     if (conn) conn.release();
   }
