@@ -321,4 +321,247 @@ router.get('/estadisticas/proyeccion-fin-mes', authenticateToken, async (req, re
   }
 });
 
+router.get('/estadisticas/consumo-real', authenticateToken, async (req, res) => {
+  let conn;
+  try {
+    conn = await pool.getConnection();
+    const [userRows] = await conn.query(
+      'SELECT id_usuario FROM usuarios WHERE email = ?',
+      [req.user.email]
+    );
+    const id_usuario = userRows[0].id_usuario;
+    // Calcular consumo entre repostajes
+    const [result] = await conn.query(
+      `SELECT 
+        f1.id_factura,
+        f1.fecha,
+        f1.litros_repostados,
+        f1.kilometraje_actual as km_actual,
+        f2.kilometraje_actual as km_anterior,
+        (f1.kilometraje_actual - f2.kilometraje_actual) as km_recorridos,
+        (f1.litros_repostados / (f1.kilometraje_actual - f2.kilometraje_actual) * 100) as consumo_l_100km
+      FROM facturas f1
+      LEFT JOIN facturas f2 ON f2.id_usuario = f1.id_usuario 
+        AND f2.id_coche = f1.id_coche
+        AND f2.fecha < f1.fecha
+        AND f2.kilometraje_actual IS NOT NULL
+      WHERE f1.id_usuario = ?
+        AND f1.litros_repostados IS NOT NULL
+        AND f1.kilometraje_actual IS NOT NULL
+        AND f2.id_factura = (
+          SELECT id_factura 
+          FROM facturas 
+          WHERE id_usuario = f1.id_usuario 
+            AND id_coche = f1.id_coche 
+            AND fecha < f1.fecha 
+            AND kilometraje_actual IS NOT NULL
+          ORDER BY fecha DESC 
+          LIMIT 1
+        )
+      ORDER BY f1.fecha DESC`,
+      [id_usuario]
+    );
+    // Calcular promedio
+    const consumos = result.filter(r => r.consumo_l_100km > 0 && r.consumo_l_100km < 50);
+    const promedioConsumo = consumos.length > 0
+      ? consumos.reduce((sum, r) => sum + r.consumo_l_100km, 0) / consumos.length
+      : 0;
+    res.json({
+      consumo_promedio: promedioConsumo.toFixed(2),
+      historial: result
+    });
+  } catch (error) {
+    console.error('Error en /estadisticas/consumo-real:', error);
+    res.status(500).json({ error: 'Error al obtener consumo real' });
+  } finally {
+    if (conn) conn.release();
+  }
+});
+// 💰 COSTO POR KILÓMETRO
+router.get('/estadisticas/costo-por-km', authenticateToken, async (req, res) => {
+  let conn;
+  try {
+    conn = await pool.getConnection();
+    
+    const [userRows] = await conn.query(
+      'SELECT id_usuario FROM usuarios WHERE email = ?',
+      [req.user.email]
+    );
+    const id_usuario = userRows[0].id_usuario;
+    
+    // Obtener costo por km AGRUPADO POR COCHE (CORREGIDO)
+    const query = `
+      WITH costos_individuales AS (
+      SELECT 
+        f1.id_coche,
+        f1.id_factura,
+        f1.coste,
+        f1.fecha,
+        f1.kilometraje_actual,
+        c.marca,
+        c.modelo,
+        c.kilometraje_inicial,  -- Añadir kilometraje inicial del coche
+        LAG(f1.kilometraje_actual) OVER (
+          PARTITION BY f1.id_coche 
+          ORDER BY f1.fecha
+        ) as kilometraje_anterior,
+        LAG(f1.fecha) OVER (
+          PARTITION BY f1.id_coche 
+          ORDER BY f1.fecha
+        ) as fecha_anterior
+      FROM facturas f1
+      JOIN coches c ON c.id_coche = f1.id_coche
+      WHERE f1.id_usuario = ?
+        AND f1.kilometraje_actual IS NOT NULL
+        AND f1.coste > 0
+    ),
+    costos_calculados AS (
+      SELECT 
+        id_coche,
+        marca,
+        modelo,
+        kilometraje_inicial,
+        id_factura,
+        coste,
+        fecha,
+        kilometraje_actual,
+        kilometraje_anterior,
+        fecha_anterior,
+        -- Calcular kilómetros recorridos entre repostajes
+        CASE 
+          -- Para el primer repostaje: usar kilometraje_inicial del coche
+          WHEN kilometraje_anterior IS NULL 
+            AND kilometraje_actual > kilometraje_inicial
+          THEN kilometraje_actual - kilometraje_inicial
+          -- Para repostajes siguientes
+          WHEN kilometraje_anterior IS NOT NULL 
+            AND kilometraje_actual > kilometraje_anterior
+          THEN kilometraje_actual - kilometraje_anterior
+          ELSE NULL
+        END as km_recorridos,
+        -- Calcular costo por km para este repostaje
+        CASE 
+          -- Para el primer repostaje
+          WHEN kilometraje_anterior IS NULL 
+            AND kilometraje_actual > kilometraje_inicial
+          THEN ROUND(coste / (kilometraje_actual - kilometraje_inicial), 4)
+          -- Para repostajes siguientes
+          WHEN kilometraje_anterior IS NOT NULL 
+            AND kilometraje_actual > kilometraje_anterior
+          THEN ROUND(coste / (kilometraje_actual - kilometraje_anterior), 4)
+          ELSE NULL
+        END as costo_por_km
+      FROM costos_individuales
+    )
+    SELECT 
+      id_coche,
+      marca,
+      modelo,
+      COUNT(id_factura) as num_facturas,
+      COUNT(costo_por_km) as num_facturas_validas,
+      ROUND(AVG(costo_por_km), 4) as costo_promedio_por_km,
+      ROUND(MIN(costo_por_km), 4) as costo_minimo_por_km,
+      ROUND(MAX(costo_por_km), 4) as costo_maximo_por_km,
+      -- Calcular kilómetros totales: última factura - kilometraje_inicial
+      MAX(kilometraje_actual) - MIN(kilometraje_inicial) as km_totales,
+      SUM(coste) as gasto_total,
+      -- Calcular costo promedio ponderado por km recorridos
+      ROUND(
+        SUM(coste) / NULLIF(
+          SUM(CASE 
+            WHEN km_recorridos IS NOT NULL 
+            THEN km_recorridos 
+            ELSE 0 
+          END), 
+        0), 
+      4) as costo_ponderado_por_km,
+      -- Calcular costo por 100km: (gasto_total / km_totales) * 100
+      ROUND(
+        (SUM(coste) / NULLIF(
+          MAX(kilometraje_actual) - MIN(kilometraje_inicial), 
+        0)) * 100, 
+      2) as costo_por_100km
+    FROM costos_calculados
+    GROUP BY id_coche, marca, modelo, kilometraje_inicial
+    ORDER BY marca, modelo
+    `;
+    
+    const [result] = await conn.query(query, [id_usuario]);
+    
+    console.log('Costos por km obtenidos:', result);
+
+    res.json({
+      costos_por_coche: result,
+      total_coches: result.length
+    });
+  } catch (error) {
+    console.error('Error en /estadisticas/costo-por-km:', error);
+    res.status(500).json({ 
+      error: 'Error al obtener costo por km',
+      details: error.message 
+    });
+  } finally {
+    if (conn) conn.release();
+  }
+});
+// 🔧 MANTENIMIENTO - Cambio de Aceite
+router.get('/estadisticas/mantenimiento', authenticateToken, async (req, res) => {
+  let conn;
+  try {
+    conn = await pool.getConnection();
+    const [userRows] = await conn.query(
+      'SELECT id_usuario FROM usuarios WHERE email = ?',
+      [req.user.email]
+    );
+    const id_usuario = userRows[0].id_usuario;
+    // Obtener coches con información de mantenimiento
+    const [coches] = await conn.query(
+      `SELECT 
+        id_coche,
+        marca,
+        modelo,
+        fecha_ultimo_cambio_aceite,
+        km_ultimo_cambio_aceite,
+        intervalo_cambio_aceite_km,
+        intervalo_cambio_aceite_meses,
+        (
+          SELECT kilometraje_actual 
+          FROM facturas 
+          WHERE id_coche = coches.id_coche 
+          ORDER BY fecha DESC 
+          LIMIT 1
+        ) as kilometraje_actual
+      FROM coches
+      WHERE id_usuario = ?`,
+      [id_usuario]
+    );
+    const mantenimiento = coches.map(coche => {
+      const kmDesdeUltimoCambio = coche.kilometraje_actual - (coche.km_ultimo_cambio_aceite || 0);
+      const kmRestantes = coche.intervalo_cambio_aceite_km - kmDesdeUltimoCambio;
+      
+      const mesesDesdeUltimoCambio = coche.fecha_ultimo_cambio_aceite
+        ? Math.floor((new Date() - new Date(coche.fecha_ultimo_cambio_aceite)) / (1000 * 60 * 60 * 24 * 30))
+        : 0;
+      const mesesRestantes = coche.intervalo_cambio_aceite_meses - mesesDesdeUltimoCambio;
+      return {
+        id_coche: coche.id_coche,
+        marca: coche.marca,
+        modelo: coche.modelo,
+        km_desde_ultimo_cambio: kmDesdeUltimoCambio,
+        km_restantes: kmRestantes,
+        meses_desde_ultimo_cambio: mesesDesdeUltimoCambio,
+        meses_restantes: mesesRestantes,
+        necesita_cambio: kmRestantes <= 500 || mesesRestantes <= 1,
+        progreso_km: (kmDesdeUltimoCambio / coche.intervalo_cambio_aceite_km * 100).toFixed(1)
+      };
+    });
+    res.json(mantenimiento);
+  } catch (error) {
+    console.error('Error en /estadisticas/mantenimiento:', error);
+    res.status(500).json({ error: 'Error al obtener mantenimiento' });
+  } finally {
+    if (conn) conn.release();
+  }
+});
+
 module.exports = router;

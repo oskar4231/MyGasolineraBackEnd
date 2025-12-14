@@ -49,7 +49,12 @@ router.get('/facturas', authenticateToken, async (req, res) => {
 router.post('/facturas', authenticateToken, upload.single('imagen'), async (req, res) => {
   let conn;
   try {
-    const { titulo, coste, fecha, hora, descripcion } = req.body;
+    const { titulo, coste, fecha, hora, descripcion,
+      litros_repostados,      // NUEVO - Para calcular consumo
+      precio_por_litro,       // NUEVO - Para análisis de precios
+      kilometraje_actual,     // NUEVO - Para calcular distancia
+      tipo_combustible,       // NUEVO - Para filtrar por tipo
+      id_coche } = req.body;
     const userEmail = req.user.email;
     const imagenPath = req.file ? req.file.path : null;
 
@@ -100,9 +105,10 @@ router.post('/facturas', authenticateToken, upload.single('imagen'), async (req,
     let result;
     try {
       [result] = await conn.query(
-        'INSERT INTO facturas (id_usuario, titulo, coste, fecha, hora, descripcion, imagenPath) VALUES (?, ?, ?, ?, ?, ?, ?)',
-        [id_usuario, titulo, coste, fecha, hora, descripcion || '', imagenPath]
+        'INSERT INTO facturas (id_usuario, titulo, coste, fecha, hora, descripcion, imagenPath, litros_repostados, precio_por_litro, kilometraje_actual, tipo_combustible, id_coche) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+        [id_usuario, titulo, coste, fecha, hora, descripcion || '', imagenPath , litros_repostados || null, precio_por_litro || null, kilometraje_actual || null, tipo_combustible || null, id_coche || null]
       );
+
     } catch (error) {
         console.error('Error insertando factura:', error);
         throw error;
