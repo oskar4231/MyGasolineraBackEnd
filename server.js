@@ -27,6 +27,26 @@ app.use('/', authRoutes);
 app.use('/', facturasRoutes);
 app.use('/', cochesRoutes);
 app.use('/api/perfil', profileRoutes); // ← MANTENER /api/perfil
+
+// Endpoint para obtener la URL actual del backend
+app.get('/api/current-url', async (req, res) => {
+  try {
+    const gistService = require('./services/gistService');
+    const url = await gistService.getCurrentUrl();
+    res.json({
+      success: true,
+      backend_url: url,
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: 'No se pudo obtener la URL del backend',
+      message: error.message
+    });
+  }
+});
+
 app.use('/', estadisticasRoutes);
 // Iniciar servidor
 const PORT = process.env.PORT || 3000;

@@ -7,7 +7,8 @@
     "start": "node server.js",
     "dev": "node --watch server.js",
     "sinc-gasolineras": "node scripts/sincronizarGasolineras.js",
-    "start-with-sync": "npm run sync-gasolineras && node server.js"
+    "start-with-sync": "npm run sync-gasolineras && node server.js",
+    "start:tunnel": "node scripts/startWithTunnel.js"
   },
   "keywords": [
     "gasolinera",
