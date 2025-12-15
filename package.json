@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js",
-    "sincronizar": "node scripts/sincronizarGasolineras.js"
+    "sincronizar": "node scripts/sincronizarGasolineras.js",
+    "sinc-gasolineras": "node scripts/sincronizarGasolineras.js",
+    "start-with-sync": "npm run sync-gasolineras && node server.js"
   },
   "keywords": [
     "gasolinera",
@@ -22,6 +24,8 @@
     "dotenv": "^16.6.1",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.2",
-    "mysql2": "^3.15.3"
+    "multer": "^2.0.2",
+    "mysql2": "^3.15.3",
+    "nodemailer": "^7.0.11"
   }
 }

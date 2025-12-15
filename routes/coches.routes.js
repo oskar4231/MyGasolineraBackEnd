@@ -8,7 +8,13 @@ router.post('/insertCar', authenticateToken, async (req, res) => {
   let conn;
 
   try {
-    const { marca, modelo, combustible } = req.body;
+    const { marca, modelo, combustible, kilometraje_inicial,          // NUEVO
+      capacidad_tanque,             // NUEVO
+      consumo_teorico,              // NUEVO
+      fecha_ultimo_cambio_aceite,   // NUEVO
+      km_ultimo_cambio_aceite,      // NUEVO
+      intervalo_cambio_aceite_km,   // NUEVO
+      intervalo_cambio_aceite_meses } = req.body;
     const userEmail = req.user.email;
 
     if (!marca || !modelo || !combustible) {
@@ -52,8 +58,10 @@ router.post('/insertCar', authenticateToken, async (req, res) => {
 
     // Insertar el nuevo coche
     const [result] = await conn.query(
-      'INSERT INTO coches (id_usuario, marca, modelo, combustible) VALUES (?, ?, ?, ?)',
-      [id_usuario, marca, modelo, combustible]
+      'INSERT INTO coches (id_usuario, marca, modelo, combustible, kilometraje_inicial, capacidad_tanque, consumo_teorico,fecha_ultimo_cambio_aceite, km_ultimo_cambio_aceite,intervalo_cambio_aceite_km, intervalo_cambio_aceite_meses) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+      [id_usuario, marca, modelo, combustible,  kilometraje_inicial || null,capacidad_tanque || null, consumo_teorico || null, fecha_ultimo_cambio_aceite || null,km_ultimo_cambio_aceite || null,
+        intervalo_cambio_aceite_km || 15000,
+        intervalo_cambio_aceite_meses || 12]
     );
 
     console.log('Coche registrado:', { 

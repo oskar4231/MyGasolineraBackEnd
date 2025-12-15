@@ -1,0 +1,9 @@
+{
+  "general": {
+    "welcome": "Welcome to MyGasolinera API"
+  },
+  "errors": {
+    "unauthorized": "Unauthorized",
+    "not_found": "Resource not found"
+  }
+}
