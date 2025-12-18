@@ -8,6 +8,7 @@ const { sendPasswordResetEmail } = require('../config/emailService');
 
 // ==================== REGISTER ====================
 router.post('/register', async (req, res) => {
+  let conn;
   try {
     const { email, password, nombre } = req.body;
 
@@ -27,7 +28,6 @@ router.post('/register', async (req, res) => {
     );
 
     if (userExists.length > 0) {
-      conn.release();
       return res.status(409).json({
         status: 'error',
         message: 'El email ya está registrado'
@@ -42,8 +42,6 @@ router.post('/register', async (req, res) => {
       'INSERT INTO usuarios (email, contraseña, nombre) VALUES (?, ?, ?)',
       [email, passwordHash, nombre || '']
     );
-
-    conn.release();
 
     const token = jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: '24h' });
 
@@ -60,11 +58,14 @@ router.post('/register', async (req, res) => {
       status: 'error',
       message: 'Error en el servidor: ' + error.message
     });
+  } finally {
+    if (conn) conn.release();
   }
 });
 
 // ==================== LOGIN ====================
 router.post('/login', async (req, res) => {
+  let conn;
   try {
     const { email, password } = req.body;
 
@@ -83,8 +84,6 @@ router.post('/login', async (req, res) => {
       [email, email]
     );
 
-    conn.release();
-
     if (rows.length === 0) {
       return res.status(401).json({
         status: 'error',
@@ -93,8 +92,6 @@ router.post('/login', async (req, res) => {
     }
 
     const user = rows[0];
-
-
 
     const validPassword = await bcrypt.compare(password, user.contraseña);
     if (!validPassword) {
@@ -119,6 +116,8 @@ router.post('/login', async (req, res) => {
       status: 'error',
       message: 'Error en el servidor: ' + error.message
     });
+  } finally {
+    if (conn) conn.release();
   }
 });
 
@@ -126,7 +125,7 @@ router.post('/login', async (req, res) => {
 router.delete('/usuarios/:email', async (req, res) => {
   let conn;
   try {
-    const { email } = req.body;
+    const { email } = req.params;
 
     if (!email) {
       return res.status(400).json({
@@ -161,11 +160,14 @@ router.delete('/usuarios/:email', async (req, res) => {
       status: 'error',
       message: 'Error en el servidor: ' + error.message
     });
+  } finally {
+    if (conn) conn.release();
   }
 });
 
 // ==================== FORGOT PASSWORD ====================
 router.post('/forgot-password', async (req, res) => {
+  let conn;
   try {
     const { email } = req.body;
 
@@ -176,7 +178,7 @@ router.post('/forgot-password', async (req, res) => {
       });
     }
 
-    const conn = await pool.getConnection();
+    conn = await pool.getConnection();
 
     const [users] = await conn.query(
       'SELECT email FROM usuarios WHERE email = ?',
@@ -184,7 +186,6 @@ router.post('/forgot-password', async (req, res) => {
     );
 
     if (users.length === 0) {
-      conn.release();
       return res.json({
         status: 'success',
         message: 'Si el email existe, recibirás un correo con instrucciones'
@@ -201,8 +202,6 @@ router.post('/forgot-password', async (req, res) => {
       [userEmail, token, expiresAt]
     );
 
-    conn.release();
-
     await sendPasswordResetEmail(userEmail, token);
 
     res.json({
@@ -216,11 +215,14 @@ router.post('/forgot-password', async (req, res) => {
       status: 'error',
       message: 'Error en el servidor: ' + error.message
     });
+  } finally {
+    if (conn) conn.release();
   }
 });
 
 // ==================== VERIFY TOKEN ====================
 router.post('/verify-token', async (req, res) => {
+  let conn;
   try {
     const { token } = req.body;
 
@@ -231,14 +233,12 @@ router.post('/verify-token', async (req, res) => {
       });
     }
 
-    const conn = await pool.getConnection();
+    conn = await pool.getConnection();
 
     const [tokens] = await conn.query(
       'SELECT * FROM token_reiniciar_contraseña WHERE token = ? AND used = FALSE AND expires_at > NOW()',
       [token]
     );
-
-    conn.release();
 
     if (tokens.length === 0) {
       return res.status(400).json({
@@ -259,11 +259,14 @@ router.post('/verify-token', async (req, res) => {
       status: 'error',
       message: 'Error en el servidor: ' + error.message
     });
+  } finally {
+    if (conn) conn.release();
   }
 });
 
 // ==================== RESET PASSWORD ====================
 router.post('/reset-password', async (req, res) => {
+  let conn;
   try {
     const { token, newPassword } = req.body;
 
@@ -281,7 +284,7 @@ router.post('/reset-password', async (req, res) => {
       });
     }
 
-    const conn = await pool.getConnection();
+    conn = await pool.getConnection();
 
     const [tokens] = await conn.query(
       'SELECT * FROM token_reiniciar_contraseña WHERE token = ? AND used = FALSE AND expires_at > NOW()',
@@ -289,7 +292,6 @@ router.post('/reset-password', async (req, res) => {
     );
 
     if (tokens.length === 0) {
-      conn.release();
       return res.status(400).json({
         status: 'error',
         message: 'Token inválido o expirado'
@@ -310,8 +312,6 @@ router.post('/reset-password', async (req, res) => {
       [token]
     );
 
-    conn.release();
-
     res.json({
       status: 'success',
       message: 'Contraseña actualizada correctamente'
@@ -323,6 +323,8 @@ router.post('/reset-password', async (req, res) => {
       status: 'error',
       message: 'Error en el servidor: ' + error.message
     });
+  } finally {
+    if (conn) conn.release();
   }
 });
 
@@ -391,10 +393,6 @@ router.get('/cargarImagen/:email', async (req, res) => {
   }
 });
 // ... (todo tu código anterior)
-
-router.get('/cargarImagen/:email', async (req, res) => {
-  // ... código existente de cargar imagen
-});
 
 // ==================== OBTENER NOMBRE DE USUARIO ====================
 router.get('/usuarios/perfil/:email', async (req, res) => {

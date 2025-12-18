@@ -47,15 +47,14 @@ const upload = multer({
 
 // ==================== OBTENER PERFIL ====================
 router.get('/profile', authenticateToken, async (req, res) => {
+  let conn;
   try {
-    const conn = await pool.getConnection();
+    conn = await pool.getConnection();
 
     const [rows] = await conn.query(
       'SELECT email, nombre, apellido, telefono, foto_perfil FROM usuarios WHERE email = ?',
       [req.user.email]
     );
-
-    conn.release();
 
     if (rows.length === 0) {
       return res.status(404).json({ error: 'Usuario no encontrado' });
@@ -65,11 +64,14 @@ router.get('/profile', authenticateToken, async (req, res) => {
   } catch (error) {
     console.error('Error obteniendo perfil:', error);
     res.status(500).json({ error: 'Error del servidor' });
+  } finally {
+    if (conn) conn.release();
   }
 });
 
 // ==================== SUBIR FOTO DE PERFIL ====================
 router.post('/upload-photo', authenticateToken, upload.single('photo'), async (req, res) => {
+  let conn;
   try {
     if (!req.file) {
       return res.status(400).json({
@@ -78,7 +80,7 @@ router.post('/upload-photo', authenticateToken, upload.single('photo'), async (r
       });
     }
 
-    const conn = await pool.getConnection();
+    conn = await pool.getConnection();
 
     // Obtener la foto anterior para eliminarla
     const [oldPhoto] = await conn.query(
@@ -92,8 +94,6 @@ router.post('/upload-photo', authenticateToken, upload.single('photo'), async (r
       'UPDATE usuarios SET foto_perfil = ? WHERE email = ?',
       [photoPath, req.user.email]
     );
-
-    conn.release();
 
     // Eliminar la foto anterior si existe
     if (oldPhoto.length > 0 && oldPhoto[0].foto_perfil) {
@@ -124,6 +124,8 @@ router.post('/upload-photo', authenticateToken, upload.single('photo'), async (r
       status: 'error',
       message: 'Error al subir la foto de perfil: ' + error.message
     });
+  } finally {
+    if (conn) conn.release();
   }
 });
 
