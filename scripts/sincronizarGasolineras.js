@@ -2,7 +2,7 @@ const axios = require('axios');
 const mysql = require('mysql2/promise');
 require('dotenv').config();
 
-// Configuración de la base de datos (usa la misma que en server.js)
+// Configuración DB igual que server.js
 const dbConfig = {
     host: process.env.DB_HOST || '127.0.0.1',
     user: process.env.DB_USER || 'root',
@@ -16,218 +16,115 @@ const API_URL = 'https://sedeaplicaciones.minetur.gob.es/ServiciosRESTCarburante
 class SincronizadorGasolineras {
     constructor() {
         this.connection = null;
-        this.estadisticas = {
-            total: 0,
-            insertadas: 0,
-            actualizadas: 0,
-            errores: 0,
-            duracion: 0
-        };
+        this.estadisticas = { total: 0, nuevos: 0, actualizados: 0, errores: 0, duracion: 0 };
     }
 
     async conectarBD() {
-        try {
-            this.connection = await mysql.createConnection(dbConfig);
-            console.log('✅ Conectado a la base de datos');
-        } catch (error) {
-            console.error('❌ Error conectando a la BD:', error.message);
-            throw error;
-        }
+        this.connection = await mysql.createConnection(dbConfig);
+        console.log('✅ Conectado a la BD');
     }
 
     async desconectarBD() {
-        if (this.connection) {
-            await this.connection.end();
-            console.log('✅ Desconectado de la base de datos');
-        }
+        if (this.connection) await this.connection.end();
     }
 
-    parsearPrecio(precioStr) {
-        if (!precioStr || precioStr.trim() === '' || precioStr.toUpperCase() === 'N/A') {
-            return 0;
-        }
-        const precioLimpio = precioStr.toString().replace(',', '.');
-        return parseFloat(precioLimpio) || 0;
+    parsearPrecio(str) {
+        if (!str) return 0.0;
+        return parseFloat(str.toString().replace(',', '.')) || 0.0;
     }
 
-    extraerCodigoPostal(direccion, municipio) {
-        if (!direccion) return '';
-        
-        const cpMatch = direccion.match(/\b\d{5}\b/);
-        if (cpMatch) return cpMatch[0];
-        
-        if (municipio) {
-            const cpMunicipio = municipio.match(/\b\d{5}\b/);
-            if (cpMunicipio) return cpMunicipio[0];
-        }
-        
-        return '';
-    }
-
-    normalizarHorario(horarioStr) {
-        if (!horarioStr) return '';
-        const horario = horarioStr.toString().trim();
-        return horario.toUpperCase().includes('24H') || horario === '1' ? '24H' : horario;
-    }
-
-    async obtenerDatosAPI() {
-        try {
-            console.log('🌐 Conectando a la API del Ministerio...');
-            const response = await axios.get(API_URL, { timeout: 30000 });
-            
-            if (response.status !== 200) {
-                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-            }
-
-            console.log('✅ Datos obtenidos de la API');
-            return response.data;
-        } catch (error) {
-            console.error('❌ Error obteniendo datos de la API:', error.message);
-            throw error;
-        }
-    }
-
-    procesarDatos(datosAPI) {
-        const listaEESS = datosAPI.ListaEESSPrecio || [];
-        console.log(`📊 Procesando ${listaEESS.length} gasolineras...`);
-
-        return listaEESS.map(item => {
-            const id = item.IDEESS?.toString() || '';
-            const rotulo = item.Rótulo?.toString() || 'Sin Nombre';
-            const direccion = item.Dirección?.toString() || '';
-            const municipio = item.Municipio?.toString() || '';
-            const provincia = item.Provincia?.toString() || '';
-            
-            return {
-                id: id,
-                rotulo: rotulo,
-                direccion: direccion,
-                municipio: municipio,
-                provincia: provincia,
-                cod_postal: this.extraerCodigoPostal(direccion, municipio),
-                latitud: this.parsearPrecio(item.Latitud),
-                longitud: this.parsearPrecio(item['Longitud (WGS84)']),
-                horario: this.normalizarHorario(item.Horario),
-                gasolina_95: this.parsearPrecio(item['Precio Gasolina 95 E5']),
-                gasolina_95_e10: this.parsearPrecio(item['Precio Gasolina 95 E10']),
-                gasolina_98: this.parsearPrecio(item['Precio Gasolina 98 E5']),
-                gasoleo_a: this.parsearPrecio(item['Precio Gasoleo A']),
-                gasoleo_premium: this.parsearPrecio(item['Precio Gasoleo Premium']),
-                glp: this.parsearPrecio(item['Precio Gases licuados del petróleo']),
-                biodiesel: this.parsearPrecio(item['Precio Biodiesel']),
-                bioetanol: this.parsearPrecio(item['Precio Bioetanol']),
-                ester_metilico: this.parsearPrecio(item['Precio Éster metílico']),
-                hidrogeno: this.parsearPrecio(item['Precio Hidrogeno'])
-            };
-        }).filter(gasolinera => 
-            gasolinera.id && 
-            gasolinera.latitud !== 0 && 
-            gasolinera.longitud !== 0
-        );
-    }
-
-    async sincronizarConBD(gasolineras) {
-        const startTime = Date.now();
-        
-        try {
-            await this.connection.beginTransaction();
-            
-            for (const gasolinera of gasolineras) {
-                try {
-                    const [rows] = await this.connection.execute(
-                        'SELECT id_gasolinera FROM gasolineras WHERE id_gasolinera = ?',
-                        [gasolinera.id]
-                    );
-
-                    if (rows.length === 0) {
-                        await this.connection.execute(`
-                            INSERT INTO gasolineras (
-                                id_gasolinera, rotulo, direccion, municipio, provincia, 
-                                cod_postal, latitud, longitud, horario,
-                                gasolina_95, gasolina_95_e10, gasolina_98, gasoleo_a,
-                                gasoleo_premium, glp, biodiesel, bioetanol, 
-                                ester_metilico, hidrogeno
-                            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                        `, Object.values(gasolinera));
-                        this.estadisticas.insertadas++;
-                    } else {
-                        await this.connection.execute(`
-                            UPDATE gasolineras SET
-                                rotulo = ?, direccion = ?, municipio = ?, provincia = ?,
-                                cod_postal = ?, latitud = ?, longitud = ?, horario = ?,
-                                gasolina_95 = ?, gasolina_95_e10 = ?, gasolina_98 = ?,
-                                gasoleo_a = ?, gasoleo_premium = ?, glp = ?,
-                                biodiesel = ?, bioetanol = ?, ester_metilico = ?, hidrogeno = ?,
-                                fecha_actualizacion = CURRENT_TIMESTAMP
-                            WHERE id_gasolinera = ?
-                        `, [...Object.values(gasolinera).slice(1), gasolinera.id]);
-                        this.estadisticas.actualizadas++;
-                    }
-                } catch (error) {
-                    console.error(`❌ Error con gasolinera ${gasolinera.id}:`, error.message);
-                    this.estadisticas.errores++;
-                }
-            }
-
-            await this.connection.commit();
-            this.estadisticas.duracion = (Date.now() - startTime) / 1000;
-            this.estadisticas.total = gasolineras.length;
-
-        } catch (error) {
-            await this.connection.rollback();
-            throw error;
-        }
-    }
-
-    async registrarLog() {
-        try {
-            await this.connection.execute(`
-                INSERT INTO logs_sincronizacion 
-                (total_gasolineras, nuevas_gasolineras, gasolineras_actualizadas, duracion_segundos, estado)
-                VALUES (?, ?, ?, ?, ?)
-            `, [
-                this.estadisticas.total,
-                this.estadisticas.insertadas,
-                this.estadisticas.actualizadas,
-                this.estadisticas.duracion,
-                this.estadisticas.errores === 0 ? 'exito' : 'parcial'
-            ]);
-        } catch (error) {
-            console.error('❌ Error registrando log:', error.message);
-        }
-    }
-
-    mostrarEstadisticas() {
-        console.log('\n📈 ===== ESTADÍSTICAS DE SINCRONIZACIÓN =====');
-        console.log(`🕒 Duración: ${this.estadisticas.duracion.toFixed(2)}s`);
-        console.log(`📊 Total: ${this.estadisticas.total}`);
-        console.log(`🆕 Nuevas: ${this.estadisticas.insertadas}`);
-        console.log(`🔄 Actualizadas: ${this.estadisticas.actualizadas}`);
-        console.log(`❌ Errores: ${this.estadisticas.errores}`);
-        console.log('==========================================\n');
+    normalizarHorario(str) {
+        if (!str) return '';
+        const h = str.toString().trim();
+        return (h.includes('24H') || h === '1') ? '24H' : h;
     }
 
     async ejecutar() {
+        const start = Date.now();
+        console.log('🚀 Iniciando sincronización optimizada...');
+        
         try {
-            console.log('🚀 Iniciando sincronización de gasolineras...');
             await this.conectarBD();
+            const { data } = await axios.get(API_URL);
+            const lista = data.ListaEESSPrecio || [];
+            console.log(`📥 Descargadas ${lista.length} gasolineras. Procesando...`);
+
+            // Preparar datos para inserción masiva (Batch)
+            const valores = [];
             
-            const datosAPI = await this.obtenerDatosAPI();
-            const gasolineras = this.procesarDatos(datosAPI);
-            await this.sincronizarConBD(gasolineras);
-            await this.registrarLog();
-            
-            this.mostrarEstadisticas();
-            console.log('✅ Sincronización completada!');
-            
+            for (const item of lista) {
+                const id = item.IDEESS;
+                if (!id) continue;
+
+                valores.push([
+                    id,
+                    item.Rótulo || 'Sin Nombre',
+                    item.Dirección || '',
+                    item.Municipio || '',
+                    item.Provincia || '',
+                    item.IDProvincia || '', // Nuevo campo ID Provincia
+                    item.C_P || '',
+                    this.parsearPrecio(item.Latitud),
+                    this.parsearPrecio(item['Longitud (WGS84)']),
+                    this.normalizarHorario(item.Horario),
+                    this.parsearPrecio(item['Precio Gasolina 95 E5']),
+                    this.parsearPrecio(item['Precio Gasolina 95 E10']),
+                    this.parsearPrecio(item['Precio Gasolina 98 E5']),
+                    this.parsearPrecio(item['Precio Gasoleo A']),
+                    this.parsearPrecio(item['Precio Gasoleo Premium']),
+                    this.parsearPrecio(item['Precio Gases licuados del petróleo']),
+                    this.parsearPrecio(item['Precio Biodiesel']),
+                    this.parsearPrecio(item['Precio Bioetanol']),
+                    this.parsearPrecio(item['Precio Éster metílico']),
+                    this.parsearPrecio(item['Precio Hidrogeno'])
+                ]);
+            }
+
+            // Usar INSERT ... ON DUPLICATE KEY UPDATE para rendimiento masivo
+            const sql = `
+                INSERT INTO gasolineras (
+                    id_gasolinera, rotulo, direccion, municipio, provincia, id_provincia,
+                    cod_postal, latitud, longitud, horario,
+                    gasolina_95, gasolina_95_e10, gasolina_98, gasoleo_a,
+                    gasoleo_premium, glp, biodiesel, bioetanol, 
+                    ester_metilico, hidrogeno
+                ) VALUES ?
+                ON DUPLICATE KEY UPDATE
+                    rotulo = VALUES(rotulo), direccion = VALUES(direccion), 
+                    municipio = VALUES(municipio), provincia = VALUES(provincia), id_provincia = VALUES(id_provincia),
+                    cod_postal = VALUES(cod_postal), latitud = VALUES(latitud), longitud = VALUES(longitud),
+                    horario = VALUES(horario), gasolina_95 = VALUES(gasolina_95),
+                    gasolina_95_e10 = VALUES(gasolina_95_e10), gasolina_98 = VALUES(gasolina_98),
+                    gasoleo_a = VALUES(gasoleo_a), gasoleo_premium = VALUES(gasoleo_premium),
+                    glp = VALUES(glp), biodiesel = VALUES(biodiesel), bioetanol = VALUES(bioetanol),
+                    ester_metilico = VALUES(ester_metilico), hidrogeno = VALUES(hidrogeno),
+                    fecha_actualizacion = NOW()
+            `;
+
+            // Ejecutar en lotes de 1000 para no saturar memoria
+            const loteSize = 1000;
+            for (let i = 0; i < valores.length; i += loteSize) {
+                const lote = valores.slice(i, i + loteSize);
+                await this.connection.query(sql, [lote]);
+                process.stdout.write(`.` ); // Progreso visual
+            }
+
+            this.estadisticas.total = valores.length;
+            this.estadisticas.duracion = (Date.now() - start) / 1000;
+            console.log(`\n✅ Sincronización terminada en ${this.estadisticas.duracion}s.`);
+
+            // Log simple en DB
+            await this.connection.execute(
+                'INSERT INTO logs_sincronizacion (total_gasolineras, estado, duracion_segundos) VALUES (?, ?, ?)',
+                [this.estadisticas.total, 'exito', this.estadisticas.duracion]
+            );
+
         } catch (error) {
-            console.error('❌ Error en la sincronización:', error.message);
+            console.error('\n❌ Error fatal:', error);
         } finally {
             await this.desconectarBD();
         }
     }
 }
 
-// Ejecutar el script
-const sincronizador = new SincronizadorGasolineras();
-sincronizador.ejecutar();
+new SincronizadorGasolineras().ejecutar();

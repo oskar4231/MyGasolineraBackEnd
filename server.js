@@ -22,6 +22,7 @@ const facturasRoutes = require('./routes/facturas.routes');
 const cochesRoutes = require('./routes/coches.routes');
 const profileRoutes = require('./routes/perfil.routes'); // ← Volver a .routes
 const estadisticasRoutes = require('./routes/estadisticas.routes');
+const gasolinerasRoutes = require('./routes/gasolineras.routes');
 // Montar rutas
 app.use('/', authRoutes);
 app.use('/', facturasRoutes);
@@ -48,6 +49,7 @@ app.get('/api/current-url', async (req, res) => {
 });
 
 app.use('/', estadisticasRoutes);
+app.use('/', gasolinerasRoutes);
 // Iniciar servidor
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, '0.0.0.0', (err) => {
