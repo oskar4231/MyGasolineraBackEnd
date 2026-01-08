@@ -3,11 +3,64 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const path = require('path');
-// CORS
+
+// DEBUG: Logging de todas las peticiones
+app.use((req, res, next) => {
+  console.log('------------------------------------------------');
+  console.log(`📥 ${req.method} ${req.url}`);
+  console.log('Origin:', req.headers.origin);
+  console.log('Headers:', JSON.stringify(req.headers, null, 2));
+  next();
+});
+
+// CORS Manual - Añadir headers CORS manualmente ANTES del middleware cors()
+// Esto asegura que los headers estén presentes incluso a través de Cloudflare Tunnel
+app.use((req, res, next) => {
+  // 1. Permitir el origen de la petición (o '*' si no hay origin)
+  const origin = req.headers.origin;
+  if (origin) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  } else {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+  }
+
+  // 2. Permitir todos los métodos
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
+
+  // 3. Permitir headers dinámicos (echo de lo que pide el cliente)
+  // Esto es crucial porque Flutter web manda headers específicos que a veces no están en la lista estática
+  const requestHeaders = req.headers['access-control-request-headers'];
+  if (requestHeaders) {
+    res.setHeader('Access-Control-Allow-Headers', requestHeaders);
+  } else {
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With, Accept, Origin');
+  }
+
+  // 4. Credenciales y Max Age
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+  res.setHeader('Access-Control-Max-Age', '86400');
+  
+  // Si es una petición OPTIONS (preflight), responder inmediatamente con 200 OK
+  // y evitar que pase al siguiente middleware o a cors()
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(200);
+  }
+  
+  next();
+});
+
+// CORS - Configuración completa para manejar preflight requests
 app.use(cors({
-  origin: true,
-  credentials: true
+  origin: true, // Permite todos los orígenes
+  credentials: true, // Permite cookies y credenciales
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'], // Métodos permitidos
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'], // Headers permitidos
+  exposedHeaders: ['Content-Range', 'X-Content-Range'], // Headers expuestos al cliente
+  maxAge: 86400 // Cache de preflight por 24 horas
 }));
+
+// Manejar explícitamente las peticiones OPTIONS (preflight)
+app.options('*', cors());
 // Middleware
 app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
