@@ -36,21 +36,34 @@ class GistService {
 
         try {
             let response;
+            let shouldCreate = !this.gistId;
 
             if (this.gistId) {
                 // Actualizar Gist existente
                 console.log('📝 Actualizando Gist existente...');
-                response = await axios.patch(
-                    `${this.apiUrl}/gists/${this.gistId}`,
-                    gistData,
-                    {
-                        headers: {
-                            'Authorization': `token ${this.token}`,
-                            'Accept': 'application/vnd.github.v3+json'
+                try {
+                    response = await axios.patch(
+                        `${this.apiUrl}/gists/${this.gistId}`,
+                        gistData,
+                        {
+                            headers: {
+                                'Authorization': `token ${this.token}`,
+                                'Accept': 'application/vnd.github.v3+json'
+                            }
                         }
+                    );
+                } catch (error) {
+                    if (error.response && error.response.status === 404) {
+                        console.log('⚠️ Gist ID no encontrado o eliminado. Se creará uno nuevo.');
+                        shouldCreate = true;
+                        this.gistId = null;
+                    } else {
+                        throw error;
                     }
-                );
-            } else {
+                }
+            }
+
+            if (shouldCreate) {
                 // Crear nuevo Gist
                 console.log('📝 Creando nuevo Gist...');
                 response = await axios.post(

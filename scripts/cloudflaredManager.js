@@ -17,11 +17,21 @@ class CloudflaredManager {
         return new Promise((resolve, reject) => {
             console.log('🚇 Iniciando cloudflared tunnel...');
 
-            // Ruta del ejecutable de cloudflared (en carpeta cloudflaredWindowsClase)
-            const cloudflaredPath = path.join(__dirname, '..', 'cloudflaredWindowsClase', 'cloudflared.exe');
+            // Ruta del ejecutable de cloudflared
+            let cloudflaredExecutable;
+            let args = ['tunnel', '--url', `http://localhost:${port}`];
+
+            if (process.env.PLATFORM === 'linux') {
+                // En Linux usamos el comando instalado en el sistema
+                cloudflaredExecutable = 'cloudflared';
+                console.log('🐧 Detectado modo Linux: Usando cloudflared del sistema');
+            } else {
+                // En Windows usamos el ejecutable incluido
+                cloudflaredExecutable = path.join(__dirname, '..', 'cloudflaredWindowsClase', 'cloudflared.exe');
+            }
 
             // Spawn cloudflared process
-            this.process = spawn(cloudflaredPath, ['tunnel', '--url', `http://localhost:${port}`]);
+            this.process = spawn(cloudflaredExecutable, args);
 
             let output = '';
             const timeoutId = setTimeout(() => {
