@@ -1,4 +1,5 @@
 const { spawn } = require('child_process');
+const path = require('path');
 
 class CloudflaredManager {
     constructor() {
@@ -16,8 +17,11 @@ class CloudflaredManager {
         return new Promise((resolve, reject) => {
             console.log('🚇 Iniciando cloudflared tunnel...');
 
+            // Ruta del ejecutable de cloudflared (en carpeta cloudflaredWindowsClase)
+            const cloudflaredPath = path.join(__dirname, '..', 'cloudflaredWindowsClase', 'cloudflared.exe');
+
             // Spawn cloudflared process
-            this.process = spawn('cloudflared', ['tunnel', '--url', `http://localhost:${port}`]);
+            this.process = spawn(cloudflaredPath, ['tunnel', '--url', `http://localhost:${port}`]);
 
             let output = '';
             const timeoutId = setTimeout(() => {
