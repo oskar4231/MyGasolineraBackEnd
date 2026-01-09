@@ -38,20 +38,22 @@ El sistema ha sido modernizado para incluir **acceso remoto seguro** mediante Cl
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
+## 🛠️ Tecnologías y Frameworks
+
+Stack tecnológico del proyecto:
 
 | Tecnología | Versión | Propósito |
 |------------|---------|-----------|
-| **Node.js** | - | Entorno de ejecución |
-| **Express** | ^4.21.2 | Framework web |
-| **MariaDB** | 12.0.2+ | Base de datos |
-| **mysql2** | ^3.15.3 | Cliente MySQL/MariaDB |
-| **bcryptjs** | ^2.4.3 | Encriptación de contraseñas |
-| **jsonwebtoken** | ^9.0.2 | Autenticación JWT |
-| **nodemailer** | ^7.0.11 | Envío de correos electrónicos |
-| **multer** | ^2.0.2 | Subida de archivos (Facturas) |
-| **axios** | ^1.5.0 | Cliente HTTP (Sync y Gist) |
-| **cloudflared** | - | Tunneling seguro (CLI externa) |
+| **Node.js** | - | Entorno de ejecución JavaScript |
+| **Express** | ^4.21.2 | Framework web minimalista |
+| **MariaDB** | 12.0.2+ | Sistema de base de datos |
+| **mysql2** | ^3.15.3 | Cliente de conexión MySQL |
+| **bcryptjs** | ^2.4.3 | Hashing seguro de contraseñas |
+| **jsonwebtoken** | ^9.0.2 | Generación de tokens de acceso |
+| **nodemailer** | ^7.0.11 | Cliente para envío de emails |
+| **multer** | ^2.0.2 | Middleware para subida de archivos |
+| **axios** | ^1.5.0 | Cliente HTTP basado en promesas |
+| **cloudflared** | - | Túnel seguro a localhost |
 
 ---
 
