@@ -42,7 +42,7 @@ class SincronizadorGasolineras {
     async ejecutar() {
         const start = Date.now();
         console.log('🚀 Iniciando sincronización optimizada...');
-        
+
         try {
             await this.conectarBD();
             const { data } = await axios.get(API_URL);
@@ -51,7 +51,7 @@ class SincronizadorGasolineras {
 
             // Preparar datos para inserción masiva (Batch)
             const valores = [];
-            
+
             for (const item of lista) {
                 const id = item.IDEESS;
                 if (!id) continue;
@@ -101,12 +101,20 @@ class SincronizadorGasolineras {
                     fecha_actualizacion = NOW()
             `;
 
-            // Ejecutar en lotes de 1000 para no saturar memoria
-            const loteSize = 1000;
+            // Ejecutar en lotes más pequeños para evitar Timeouts o Packet Too Large
+            const loteSize = 100;
             for (let i = 0; i < valores.length; i += loteSize) {
                 const lote = valores.slice(i, i + loteSize);
-                await this.connection.query(sql, [lote]);
-                process.stdout.write(`.` ); // Progreso visual
+                try {
+                    await this.connection.query(sql, [lote]);
+                    // Progreso numérico real para ver dónde se queda
+                    process.stdout.write(`✅ Lote ${i / loteSize + 1} (${Math.min(i + loteSize, valores.length)}/${valores.length}) procesado\n`);
+                } catch (batchError) {
+                    console.error(`\n❌ FALLO CRÍTICO EN LOTE ${i} - ${i + loteSize}:`);
+                    console.error(batchError.message);
+                    this.estadisticas.errores += lote.length;
+                    // Opcional: Intentar insertar 1 a 1 si falla el lote para salvar los buenos
+                }
             }
 
             this.estadisticas.total = valores.length;
