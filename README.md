@@ -153,52 +153,30 @@ npm run sinc-gasolineras
 ## 📊 Estructura de la Base de Datos
 
 ```mermaid
-erDiagram
-    USUARIOS ||--o{ COCHES : posee
-    USUARIOS ||--o{ FACTURAS : tiene
-    USUARIOS ||--o{ FAVORITAS : guarda
-    GASOLINERAS ||--o{ FAVORITAS : "es favorita"
-    GASOLINERAS ||--o{ PRECIOS : tiene
-    GASOLINERAS ||--o{ GASOLINERA_SERVICIOS : ofrece
-    SERVICIOS ||--o{ GASOLINERA_SERVICIOS : "se ofrece en"
+graph LR
+    %% Clases de Estilo (Colores)
+    classDef usuarioStyle fill:#e0f7fa,stroke:#006064,stroke-width:2px,color:#000
+    classDef datoStyle fill:#e8f5e9,stroke:#1b5e20,stroke-width:2px,color:#000
+    classDef relacionStyle stroke:#999,stroke-width:1px,stroke-dasharray: 5 5
 
-    USUARIOS {
-        int id_usuario PK
-        string nombre
-        string apellido
-        string email UK
-        string telefono
-        string contraseña
-    }
+    %% Nodos (Tablas)
+    User(👤 USUARIOS):::usuarioStyle
+    Car(🚙 COCHES):::usuarioStyle
+    Bill(🧾 FACTURAS):::usuarioStyle
+    Fav(⭐ FAVORITOS):::usuarioStyle
 
-    COCHES {
-        int id_coche PK
-        int id_usuario FK
-        string marca
-        string modelo
-        string combustible
-    }
+    Gas(⛽ GASOLINERAS):::datoStyle
+    Price(💰 PRECIOS):::datoStyle
+    Serv(🛠️ SERVICIOS):::datoStyle
 
-    GASOLINERAS {
-        int id_gasolinera PK
-        string rotulo
-        string direccion
-        string municipio
-        string codPostal
-        decimal latitud
-        decimal longitud
-        boolean horario_24
-        datetime fecha_actualizacion
-    }
-
-    FACTURAS {
-        int id_factura PK
-        int id_usuario FK
-        string titulo
-        decimal coste
-        string imagen_url
-        date fecha
-    }
+    %% Relaciones
+    User -->|Posee| Car
+    User -->|Tiene| Bill
+    User -->|Guarda| Fav
+    
+    Fav -->|Referencia| Gas
+    Gas -->|Tiene| Price
+    Gas -->|Ofrece| Serv
 ```
 
 ---
