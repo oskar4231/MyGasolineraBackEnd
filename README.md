@@ -44,16 +44,16 @@ Stack tecnológico del proyecto:
 
 | Tecnología | Versión | Propósito |
 |------------|---------|-----------|
-| **Node.js** | - | Entorno de ejecución JavaScript |
-| **Express** | ^4.21.2 | Framework web minimalista |
-| **MariaDB** | 12.0.2+ | Sistema de base de datos |
-| **mysql2** | ^3.15.3 | Cliente de conexión MySQL |
-| **bcryptjs** | ^2.4.3 | Hashing seguro de contraseñas |
-| **jsonwebtoken** | ^9.0.2 | Generación de tokens de acceso |
-| **nodemailer** | ^7.0.11 | Cliente para envío de emails |
-| **multer** | ^2.0.2 | Middleware para subida de archivos |
-| **axios** | ^1.5.0 | Cliente HTTP basado en promesas |
-| **cloudflared** | - | Túnel seguro a localhost |
+| **Node.js** | - | Motor para ejecutar el backend |
+| **Express** | ^4.21.2 | Framework para crear la API |
+| **MariaDB** | 12.0.2+ | Base de datos principal |
+| **mysql2** | ^3.15.3 | Conector con la base de datos |
+| **bcryptjs** | ^2.4.3 | Encriptar contraseñas de usuarios |
+| **jsonwebtoken** | ^9.0.2 | Autenticación segura y rápida |
+| **nodemailer** | ^7.0.11 | Enviar correos de recuperación |
+| **multer** | ^2.0.2 | Subir imágenes de facturas |
+| **axios** | ^1.5.0 | Peticiones a APIs externas |
+| **cloudflared** | - | Acceso remoto sin abrir puertos |
 
 ---
 
