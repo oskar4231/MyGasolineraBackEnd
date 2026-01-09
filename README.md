@@ -222,5 +222,5 @@ Revisa la configuración SMTP en `.env`. Para desarrollo, se recomienda usar **M
 Este proyecto está bajo la licencia **MIT**.
 
 <div align="center">
-  <b>MyGasolinera Backend</b> - 2024
+  <b>MyGasolinera Backend</b> - 2025
 </div>
