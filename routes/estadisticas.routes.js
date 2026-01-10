@@ -190,7 +190,7 @@ router.get('/estadisticas/mes-comparacion', authenticateToken, async (req, res) 
 
     const data = result[0];
     data.diferencia = data.gasto_mes_actual - data.gasto_mes_anterior;
-    data.porcentaje_cambio = data.gasto_mes_anterior > 0 
+    data.porcentaje_cambio = data.gasto_mes_anterior > 0
       ? ((data.diferencia / data.gasto_mes_anterior) * 100).toFixed(2)
       : 0;
 
@@ -382,13 +382,13 @@ router.get('/estadisticas/costo-por-km', authenticateToken, async (req, res) => 
   let conn;
   try {
     conn = await pool.getConnection();
-    
+
     const [userRows] = await conn.query(
       'SELECT id_usuario FROM usuarios WHERE email = ?',
       [req.user.email]
     );
     const id_usuario = userRows[0].id_usuario;
-    
+
     // Obtener costo por km AGRUPADO POR COCHE (CORREGIDO)
     const query = `
       WITH costos_individuales AS (
@@ -485,9 +485,9 @@ router.get('/estadisticas/costo-por-km', authenticateToken, async (req, res) => 
     GROUP BY id_coche, marca, modelo, kilometraje_inicial
     ORDER BY marca, modelo
     `;
-    
+
     const [result] = await conn.query(query, [id_usuario]);
-    
+
     console.log('Costos por km obtenidos:', result);
 
     res.json({
@@ -496,9 +496,9 @@ router.get('/estadisticas/costo-por-km', authenticateToken, async (req, res) => 
     });
   } catch (error) {
     console.error('Error en /estadisticas/costo-por-km:', error);
-    res.status(500).json({ 
+    res.status(500).json({
       error: 'Error al obtener costo por km',
-      details: error.message 
+      details: error.message
     });
   } finally {
     if (conn) conn.release();
@@ -538,7 +538,7 @@ router.get('/estadisticas/mantenimiento', authenticateToken, async (req, res) =>
     const mantenimiento = coches.map(coche => {
       const kmDesdeUltimoCambio = coche.kilometraje_actual - (coche.km_ultimo_cambio_aceite || 0);
       const kmRestantes = coche.intervalo_cambio_aceite_km - kmDesdeUltimoCambio;
-      
+
       const mesesDesdeUltimoCambio = coche.fecha_ultimo_cambio_aceite
         ? Math.floor((new Date() - new Date(coche.fecha_ultimo_cambio_aceite)) / (1000 * 60 * 60 * 24 * 30))
         : 0;
@@ -559,6 +559,77 @@ router.get('/estadisticas/mantenimiento', authenticateToken, async (req, res) =>
   } catch (error) {
     console.error('Error en /estadisticas/mantenimiento:', error);
     res.status(500).json({ error: 'Error al obtener mantenimiento' });
+  } finally {
+    if (conn) conn.release();
+  }
+});
+
+// 🎯 CONSEJOS PERSONALIZADOS
+router.get('/estadisticas/consejos', authenticateToken, async (req, res) => {
+  let conn;
+  try {
+    conn = await pool.getConnection();
+
+    const [userRows] = await conn.query(
+      'SELECT id_usuario FROM usuarios WHERE email = ?',
+      [req.user.email]
+    );
+    const id_usuario = userRows[0].id_usuario;
+
+    // Obtener consumo promedio del usuario
+    const [consumoData] = await conn.query(`
+      SELECT AVG(consumo_l_100km) as consumo_promedio
+      FROM (
+        SELECT 
+          (f1.litros_repostados / ((f1.kilometraje_actual - f2.kilometraje_actual) / 100)) as consumo_l_100km
+        FROM facturas f1
+        JOIN facturas f2 ON f1.id_coche = f2.id_coche
+        WHERE f1.id_usuario = ?
+          AND f1.litros_repostados > 0
+          AND f1.kilometraje_actual > f2.kilometraje_actual
+          AND f2.fecha = (
+            SELECT MAX(fecha) 
+            FROM facturas 
+            WHERE id_coche = f1.id_coche 
+              AND fecha < f1.fecha 
+              AND kilometraje_actual < f1.kilometraje_actual
+            ORDER BY fecha DESC 
+            LIMIT 1
+          )
+        ORDER BY f1.fecha DESC
+      ) as consumos
+      WHERE consumo_l_100km > 0 AND consumo_l_100km < 50
+    `, [id_usuario]);
+
+    const consumoPromedio = parseFloat(consumoData[0]?.consumo_promedio || 0);
+    const consejos = [];
+
+    // Generar consejos basados en consumo
+    if (consumoPromedio > 8) {
+      consejos.push('⛽ Mantén una velocidad constante entre 80-100 km/h para mejorar la eficiencia.');
+    } else if (consumoPromedio > 6) {
+      consejos.push('⛽ Tu consumo es moderado. Evita aceleraciones bruscas para ahorrar combustible.');
+    } else if (consumoPromedio > 0) {
+      consejos.push('⛽ ¡Excelente! Tu consumo es muy eficiente. Mantén estos hábitos.');
+    }
+
+    // Consejos generales
+    consejos.push(
+      '🔧 Verifica la presión de los neumáticos mensualmente (ideal: 2.2-2.4 bar).',
+      '🛢️ Realiza cambios de aceite según el intervalo recomendado de tu vehículo.',
+      '🚗 Reduce el peso innecesario: retira objetos del maletero que no uses.',
+      '🪟 Cierra las ventanillas a velocidades altas para reducir la resistencia aerodinámica.',
+      '⏸️ Planifica tus rutas para evitar atascos y conducción en horas pico.'
+    );
+
+    res.json({
+      consumo_promedio: consumoPromedio.toFixed(2),
+      consejos: consejos
+    });
+
+  } catch (error) {
+    console.error('Error en /estadisticas/consejos:', error);
+    res.status(500).json({ error: 'Error al generar consejos' });
   } finally {
     if (conn) conn.release();
   }
