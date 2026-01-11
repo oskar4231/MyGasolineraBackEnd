@@ -39,13 +39,13 @@ app.use((req, res, next) => {
   // 4. Credenciales y Max Age
   res.setHeader('Access-Control-Allow-Credentials', 'true');
   res.setHeader('Access-Control-Max-Age', '86400');
-  
+
   // Si es una petición OPTIONS (preflight), responder inmediatamente con 200 OK
   // y evitar que pase al siguiente middleware o a cors()
   if (req.method === 'OPTIONS') {
     return res.sendStatus(200);
   }
-  
+
   next();
 });
 

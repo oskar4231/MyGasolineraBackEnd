@@ -9,7 +9,7 @@
     "sinc-gasolineras": "node scripts/sincronizarGasolineras.js",
     "start-with-sync": "npm run sync-gasolineras && node server.js",
     "start:tunnel": "node scripts/startWithTunnel.js",
-    "start:tunnel:linux": "export PLATFORM=linux && node scripts/startWithTunnel.js"
+    "start:tunnel:linux": "PLATFORM=linux node scripts/startWithTunnel.js"
   },
   "keywords": [
     "gasolinera",
