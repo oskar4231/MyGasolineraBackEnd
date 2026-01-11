@@ -108,27 +108,43 @@ exports.login = async (req, res) => {
 
 exports.deleteUser = async (req, res) => {
     try {
-        const { email } = req.params;
+        const { email } = req.params; // El parámetro se llama email pero puede ser usuario
 
         if (!email) {
             return res.status(400).json({
                 success: false,
-                message: 'Email es requerido'
+                message: 'Identificador (email o nombre) es requerido'
             });
         }
 
-        const [result] = await pool.query(
-            'UPDATE usuarios SET activo = 0 WHERE email = ?',
-            [email]
+        console.log('🗑️ Intentando desactivar usuario:', email);
+
+        // Intentar desactivar buscando por email O por nombre
+        const [result] = await pool.query( // Using pool.query directly as in other methods
+            'UPDATE usuarios SET activo = 0 WHERE email = ? OR nombre = ?',
+            [email, email]
         );
 
         if (result.affectedRows === 0) {
+            console.log('❌ No se encontró usuario para desactivar:', email);
+
+            // Opcional: Verificar si ya estaba inactivo
+            const [check] = await pool.query('SELECT id_usuario, activo FROM usuarios WHERE email = ? OR nombre = ?', [email, email]);
+            if (check.length > 0 && check[0].activo === 0) {
+                return res.json({
+                    success: true,
+                    message: 'El usuario ya estaba inactivo',
+                    affectedRows: 0
+                });
+            }
+
             return res.status(404).json({
                 success: false,
                 message: 'Usuario no encontrado'
             });
         }
 
+        console.log('✅ Usuario desactivado correctamente:', email);
         res.json({
             success: true,
             message: 'Usuario marcado como inactivo',
@@ -136,7 +152,7 @@ exports.deleteUser = async (req, res) => {
         });
 
     } catch (error) {
-        console.error('Error en eliminar usuario:', error);
+        console.error('❌ Error en eliminar usuario:', error);
         res.status(500).json({
             status: 'error',
             message: 'Error en el servidor: ' + error.message
@@ -361,8 +377,8 @@ exports.getUserProfile = async (req, res) => {
         }
 
         const [results] = await pool.query(
-            'SELECT nombre, email FROM usuarios WHERE email = ? AND activo = 1',
-            [email]
+            'SELECT nombre, email FROM usuarios WHERE (email = ? OR nombre = ?) AND activo = 1',
+            [email, email]
         );
 
         if (results.length === 0) {
