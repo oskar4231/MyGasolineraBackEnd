@@ -10,7 +10,7 @@ exports.register = async (req, res) => {
         if (!email || !password) {
             return res.status(400).json({
                 status: 'error',
-                message: 'Email y contraseña son requeridos'
+                message: req.t('auth.email_password_required')
             });
         }
 
@@ -23,7 +23,7 @@ exports.register = async (req, res) => {
         if (userExists.length > 0) {
             return res.status(409).json({
                 status: 'error',
-                message: 'El email ya está registrado'
+                message: req.t('auth.email_already_registered')
             });
         }
 
@@ -40,7 +40,7 @@ exports.register = async (req, res) => {
 
         res.status(201).json({
             status: 'success',
-            message: 'Usuario creado correctamente',
+            message: req.t('auth.user_created'),
             user: { email, nombre: nombre || '' },
             token
         });
@@ -49,7 +49,7 @@ exports.register = async (req, res) => {
         console.error('Error en register:', error);
         res.status(500).json({
             status: 'error',
-            message: 'Error en el servidor: ' + error.message
+            message: req.t('general.server_error') + ': ' + error.message
         });
     }
 };
@@ -61,7 +61,7 @@ exports.login = async (req, res) => {
         if (!email || !password) {
             return res.status(400).json({
                 status: 'error',
-                message: 'Email y contraseña son requeridos'
+                message: req.t('auth.email_password_required')
             });
         }
 
@@ -74,7 +74,7 @@ exports.login = async (req, res) => {
         if (rows.length === 0) {
             return res.status(401).json({
                 status: 'error',
-                message: 'Email o contraseña incorrectos o cuenta inactiva'
+                message: req.t('auth.account_inactive')
             });
         }
 
@@ -84,7 +84,7 @@ exports.login = async (req, res) => {
         if (!validPassword) {
             return res.status(401).json({
                 status: 'error',
-                message: 'Email o contraseña incorrectos'
+                message: req.t('auth.incorrect_credentials')
             });
         }
 
@@ -92,7 +92,7 @@ exports.login = async (req, res) => {
 
         res.json({
             status: 'success',
-            message: 'Login exitoso',
+            message: req.t('auth.login_successful'),
             user: { email: user.email, nombre: user.nombre },
             token
         });
@@ -101,7 +101,7 @@ exports.login = async (req, res) => {
         console.error('Error en login:', error);
         res.status(500).json({
             status: 'error',
-            message: 'Error en el servidor: ' + error.message
+            message: req.t('general.server_error') + ': ' + error.message
         });
     }
 };
@@ -113,7 +113,7 @@ exports.deleteUser = async (req, res) => {
         if (!email) {
             return res.status(400).json({
                 success: false,
-                message: 'Identificador (email o nombre) es requerido'
+                message: req.t('auth.identifier_required')
             });
         }
 
@@ -133,21 +133,21 @@ exports.deleteUser = async (req, res) => {
             if (check.length > 0 && check[0].activo === 0) {
                 return res.json({
                     success: true,
-                    message: 'El usuario ya estaba inactivo',
+                    message: req.t('auth.user_already_inactive'),
                     affectedRows: 0
                 });
             }
 
             return res.status(404).json({
                 success: false,
-                message: 'Usuario no encontrado'
+                message: req.t('auth.user_not_found')
             });
         }
 
         console.log('✅ Usuario desactivado correctamente:', email);
         res.json({
             success: true,
-            message: 'Usuario marcado como inactivo',
+            message: req.t('auth.user_deactivated'),
             affectedRows: result.affectedRows
         });
 
@@ -155,7 +155,7 @@ exports.deleteUser = async (req, res) => {
         console.error('❌ Error en eliminar usuario:', error);
         res.status(500).json({
             status: 'error',
-            message: 'Error en el servidor: ' + error.message
+            message: req.t('general.server_error') + ': ' + error.message
         });
     }
 };
@@ -167,7 +167,7 @@ exports.forgotPassword = async (req, res) => {
         if (!email) {
             return res.status(400).json({
                 status: 'error',
-                message: 'Email es requerido'
+                message: req.t('auth.email_required')
             });
         }
 
@@ -179,7 +179,7 @@ exports.forgotPassword = async (req, res) => {
         if (users.length === 0) {
             return res.json({
                 status: 'success',
-                message: 'Si el email existe, recibirás un correo con instrucciones'
+                message: req.t('auth.email_sent')
             });
         }
 
@@ -197,14 +197,14 @@ exports.forgotPassword = async (req, res) => {
 
         res.json({
             status: 'success',
-            message: 'Si el email existe, recibirás un correo con instrucciones'
+            message: req.t('auth.email_sent')
         });
 
     } catch (error) {
         console.error('Error en forgot-password:', error);
         res.status(500).json({
             status: 'error',
-            message: 'Error en el servidor: ' + error.message
+            message: req.t('general.server_error') + ': ' + error.message
         });
     }
 };
@@ -216,7 +216,7 @@ exports.verifyToken = async (req, res) => {
         if (!token) {
             return res.status(400).json({
                 status: 'error',
-                message: 'Token es requerido'
+                message: req.t('auth.token_required')
             });
         }
 
@@ -228,13 +228,13 @@ exports.verifyToken = async (req, res) => {
         if (tokens.length === 0) {
             return res.status(400).json({
                 status: 'error',
-                message: 'Token inválido o expirado'
+                message: req.t('auth.token_invalid')
             });
         }
 
         res.json({
             status: 'success',
-            message: 'Token válido',
+            message: req.t('auth.token_valid'),
             email: tokens[0].email
         });
 
@@ -242,7 +242,7 @@ exports.verifyToken = async (req, res) => {
         console.error('Error en verify-token:', error);
         res.status(500).json({
             status: 'error',
-            message: 'Error en el servidor: ' + error.message
+            message: req.t('general.server_error') + ': ' + error.message
         });
     }
 };
@@ -254,14 +254,14 @@ exports.resetPassword = async (req, res) => {
         if (!token || !newPassword) {
             return res.status(400).json({
                 status: 'error',
-                message: 'Token y nueva contraseña son requeridos'
+                message: req.t('auth.token_password_required')
             });
         }
 
         if (newPassword.length < 6) {
             return res.status(400).json({
                 status: 'error',
-                message: 'La contraseña debe tener al menos 6 caracteres'
+                message: req.t('auth.password_min_length')
             });
         }
 
@@ -273,7 +273,7 @@ exports.resetPassword = async (req, res) => {
         if (tokens.length === 0) {
             return res.status(400).json({
                 status: 'error',
-                message: 'Token inválido o expirado'
+                message: req.t('auth.token_invalid')
             });
         }
 
@@ -293,14 +293,14 @@ exports.resetPassword = async (req, res) => {
 
         res.json({
             status: 'success',
-            message: 'Contraseña actualizada correctamente'
+            message: req.t('auth.password_updated')
         });
 
     } catch (error) {
         console.error('Error en reset-password:', error);
         res.status(500).json({
             status: 'error',
-            message: 'Error en el servidor: ' + error.message
+            message: req.t('general.server_error') + ': ' + error.message
         });
     }
 };
@@ -323,7 +323,7 @@ exports.getProfileImage = async (req, res) => {
                 console.log('❌ Usuario no encontrado con nombre:', email);
                 return res.status(404).json({
                     status: 'error',
-                    message: 'Usuario no encontrado'
+                    message: req.t('auth.user_not_found')
                 });
             }
 
@@ -342,7 +342,7 @@ exports.getProfileImage = async (req, res) => {
             console.log('❌ Usuario no encontrado con email:', email);
             return res.status(404).json({
                 status: 'error',
-                message: 'Usuario no encontrado'
+                message: req.t('auth.user_not_found')
             });
         }
 
@@ -357,7 +357,7 @@ exports.getProfileImage = async (req, res) => {
         console.error('❌ Error en /cargarImagen:', error);
         res.status(500).json({
             status: 'error',
-            error: 'Error al obtener la imagen de perfil',
+            error: req.t('profile.profile_image_error'),
             details: error.message
         });
     }
@@ -372,7 +372,7 @@ exports.getUserProfile = async (req, res) => {
         if (!email) {
             return res.status(400).json({
                 success: false,
-                message: 'Email es requerido'
+                message: req.t('auth.email_required')
             });
         }
 
@@ -385,7 +385,7 @@ exports.getUserProfile = async (req, res) => {
             console.log('⚠️ Usuario no encontrado:', email);
             return res.status(404).json({
                 success: false,
-                message: 'Usuario no encontrado'
+                message: req.t('auth.user_not_found')
             });
         }
 
@@ -402,7 +402,7 @@ exports.getUserProfile = async (req, res) => {
         console.error('❌ Error en /usuarios/perfil/:email:', error);
         res.status(500).json({
             success: false,
-            message: 'Error interno del servidor',
+            message: req.t('errors.server_error'),
             error: error.message,
         });
     }
