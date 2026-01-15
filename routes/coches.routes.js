@@ -58,17 +58,27 @@ router.post('/insertCar', authenticateToken, async (req, res) => {
 
     // Insertar el nuevo coche
     const [result] = await conn.query(
-      'INSERT INTO coches (id_usuario, marca, modelo, combustible, kilometraje_inicial, capacidad_tanque, consumo_teorico,fecha_ultimo_cambio_aceite, km_ultimo_cambio_aceite,intervalo_cambio_aceite_km, intervalo_cambio_aceite_meses) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-      [id_usuario, marca, modelo, combustible,  kilometraje_inicial || null,capacidad_tanque || null, consumo_teorico || null, fecha_ultimo_cambio_aceite || null,km_ultimo_cambio_aceite || null,
+      'INSERT INTO coches (id_usuario, marca, modelo, combustible, kilometraje_inicial, capacidad_tanque, consumo_teorico, fecha_ultimo_cambio_aceite, km_ultimo_cambio_aceite, intervalo_cambio_aceite_km, intervalo_cambio_aceite_meses) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+      [
+        id_usuario,
+        marca,
+        modelo,
+        combustible,
+        kilometraje_inicial || null,
+        capacidad_tanque || null,
+        consumo_teorico || null,
+        fecha_ultimo_cambio_aceite || null,
+        km_ultimo_cambio_aceite || null,
         intervalo_cambio_aceite_km || 15000,
-        intervalo_cambio_aceite_meses || 12]
+        intervalo_cambio_aceite_meses || 12
+      ]
     );
 
-    console.log('Coche registrado:', { 
-      id: result.insertId, 
-      id_usuario, 
-      marca, 
-      modelo 
+    console.log('Coche registrado:', {
+      id: result.insertId,
+      id_usuario,
+      marca,
+      modelo
     });
 
     res.status(201).json({

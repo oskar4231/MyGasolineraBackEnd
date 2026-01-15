@@ -1,9 +1,41 @@
 {
   "general": {
-    "welcome": "Bienvenido a MyGasolinera API"
+    "welcome": "Bienvenido a MyGasolinera API",
+    "server_error": "Error en el servidor"
+  },
+  "auth": {
+    "email_password_required": "Email y contraseña son requeridos",
+    "email_already_registered": "El email ya está registrado",
+    "user_created": "Usuario creado correctamente",
+    "login_successful": "Login exitoso",
+    "incorrect_credentials": "Email o contraseña incorrectos",
+    "account_inactive": "Email o contraseña incorrectos o cuenta inactiva",
+    "identifier_required": "Identificador (email o nombre) es requerido",
+    "user_deactivated": "Usuario marcado como inactivo",
+    "user_already_inactive": "El usuario ya estaba inactivo",
+    "user_not_found": "Usuario no encontrado",
+    "email_required": "Email es requerido",
+    "email_sent": "Si el email existe, recibirás un correo con instrucciones",
+    "token_required": "Token es requerido",
+    "token_invalid": "Token inválido o expirado",
+    "token_valid": "Token válido",
+    "token_password_required": "Token y nueva contraseña son requeridos",
+    "password_min_length": "La contraseña debe tener al menos 6 caracteres",
+    "password_updated": "Contraseña actualizada correctamente"
+  },
+  "profile": {
+    "user_not_found": "Usuario no encontrado",
+    "no_image_provided": "No se proporcionó ninguna imagen",
+    "photo_updated": "Foto de perfil actualizada correctamente",
+    "photo_upload_error": "Error al subir la foto de perfil",
+    "photo_not_found": "Foto no encontrada",
+    "profile_image_error": "Error al obtener la imagen de perfil",
+    "email_required": "Email es requerido"
   },
   "errors": {
     "unauthorized": "No autorizado",
-    "not_found": "Recurso no encontrado"
+    "not_found": "Recurso no encontrado",
+    "server_error": "Error interno del servidor",
+    "invalid_file_type": "Solo se permiten archivos de imagen (jpeg, jpg, jfif, png, gif, webp)"
   }
 }
