@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../config/bbdd');
 const authenticateToken = require('../middleware/auth');
+const logger = require('../logger/logger');
 
 // INSERTAR COCHE
 router.post('/insertCar', authenticateToken, async (req, res) => {
@@ -18,13 +19,14 @@ router.post('/insertCar', authenticateToken, async (req, res) => {
     const userEmail = req.user.email;
 
     if (!marca || !modelo || !combustible) {
+      logger.warn('Intento de insertar coche sin datos completos', { usuario: userEmail });
       return res.status(400).json({
         status: 'error',
         message: 'Marca, modelo y combustible son requeridos'
       });
     }
 
-    console.log('POST /insertCar recibida para:', userEmail);
+    logger.info('Iniciando inserción de coche', { usuario: userEmail, marca, modelo });
 
     conn = await pool.getConnection();
 
@@ -74,11 +76,12 @@ router.post('/insertCar', authenticateToken, async (req, res) => {
       ]
     );
 
-    console.log('Coche registrado:', {
-      id: result.insertId,
-      id_usuario,
+    logger.info('Coche registrado exitosamente', {
+      id_coche: result.insertId,
+      usuario_id: id_usuario,
       marca,
-      modelo
+      modelo,
+      combustible
     });
 
     res.status(201).json({
@@ -88,7 +91,11 @@ router.post('/insertCar', authenticateToken, async (req, res) => {
     });
 
   } catch (error) {
-    console.error('Error en insertCar:', error);
+    logger.error('Error al insertar coche', {
+      error: error.message,
+      stack: error.stack,
+      usuario: req.user?.email
+    });
     res.status(500).json({
       status: 'error',
       message: 'Error en el servidor: ' + error.message
@@ -126,7 +133,11 @@ router.get('/coches', authenticateToken, async (req, res) => {
     res.json(coches);
 
   } catch (error) {
-    console.error('Error en /coches:', error);
+    logger.error('Error al obtener coches', {
+      error: error.message,
+      stack: error.stack,
+      usuario: req.user?.email
+    });
     res.status(500).json({
       error: 'Error al obtener los coches'
     });
@@ -150,7 +161,7 @@ router.delete('/coches/:id_coche', authenticateToken, async (req, res) => {
 
     conn = await pool.getConnection();
 
-    console.log('DELETE /coches recibida para:', req.user.email);
+    logger.info('Iniciando eliminación de coche', { id_coche, usuario: req.user.email });
 
     const [userRows] = await conn.query(
       'SELECT id_usuario FROM usuarios WHERE email = ?',
@@ -192,7 +203,7 @@ router.delete('/coches/:id_coche', authenticateToken, async (req, res) => {
       [id_coche]
     );
 
-    console.log('Coche eliminado:', { id_coche, id_usuario });
+    logger.info('Coche eliminado exitosamente', { id_coche, usuario_id });
 
     res.json({
       status: 'success',
@@ -200,7 +211,12 @@ router.delete('/coches/:id_coche', authenticateToken, async (req, res) => {
     });
 
   } catch (error) {
-    console.error('Error en DELETE /coches:', error);
+    logger.error('Error al eliminar coche', {
+      error: error.message,
+      stack: error.stack,
+      id_coche: req.params.id_coche,
+      usuario: req.user?.email
+    });
     res.status(500).json({
       status: 'error',
       message: 'Error en el servidor: ' + error.message

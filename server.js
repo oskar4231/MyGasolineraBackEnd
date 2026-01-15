@@ -3,15 +3,9 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const path = require('path');
-
-// DEBUG: Logging de todas las peticiones
-app.use((req, res, next) => {
-  console.log('------------------------------------------------');
-  console.log(`📥 ${req.method} ${req.url}`);
-  console.log('Origin:', req.headers.origin);
-  console.log('Headers:', JSON.stringify(req.headers, null, 2));
-  next();
-});
+const logger = require('./logger/logger');
+const loggerMiddleware = require('./middleware/loggerMiddleware');
+const errorHandler = require('./middleware/errorHandler');
 
 // CORS Manual - Añadir headers CORS manualmente ANTES del middleware cors()
 // Esto asegura que los headers estén presentes incluso a través de Cloudflare Tunnel
@@ -63,6 +57,7 @@ app.use(cors({
 app.options('*', cors());
 // Middleware
 app.use(express.json());
+app.use(loggerMiddleware);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // Servir archivos estáticos (imágenes subidas)
 // i18n Middleware
@@ -85,14 +80,17 @@ app.use('/api/perfil', profileRoutes); // ← MANTENER /api/perfil
 // Endpoint para obtener la URL actual del backend
 app.get('/api/current-url', async (req, res) => {
   try {
+    logger.info('Obteniendo URL actual del backend');
     const gistService = require('./services/gistService');
     const url = await gistService.getCurrentUrl();
+    logger.info('URL obtenida exitosamente', { url });
     res.json({
       success: true,
       backend_url: url,
       timestamp: new Date().toISOString()
     });
   } catch (error) {
+    logger.error('Error obteniendo URL del backend', { error: error.message, stack: error.stack });
     res.status(500).json({
       success: false,
       error: 'No se pudo obtener la URL del backend',
@@ -103,18 +101,38 @@ app.get('/api/current-url', async (req, res) => {
 
 app.use('/', estadisticasRoutes);
 app.use('/', gasolinerasRoutes);
+
+app.use((err, req, res, next) => {
+  logger.error('Error no controlado', {
+    mensaje: err.message,
+    stack: err.stack,
+    url: req.url,
+    metodo: req.method
+  });
+  res.status(err.status || 500).json({
+    success: false,
+    error: err.message
+  });
+});
+
+app.use(errorHandler);
+
 // Iniciar servidor
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, '0.0.0.0', (err) => {
   if (err) {
-    console.error('❌ Error iniciando servidor:', err);
+    logger.fatal('Error iniciando servidor', { error: err.message, stack: err.stack });
     return;
   }
-  // Mensaje de inicio
+
+  logger.info('Servidor iniciado correctamente', {
+    puerto: PORT,
+    entorno: process.env.NODE_ENV || 'development'
+  });
+
   console.log('=================================');
   console.log('✅ SERVIDOR INICIADO CORRECTAMENTE');
   console.log(`📍 Puerto: ${PORT}`);
   console.log(`🌐 Local: http://localhost:${PORT}`);
-  console.log(`🌐 Red: http://127.0.0.1:${PORT}`);
   console.log('=================================');
 });

@@ -1,19 +1,31 @@
 const pool = require('../config/bbdd');
 const fs = require('fs');
 const path = require('path');
+const logger = require('../logger/logger');
 
 exports.getFacturas = async (req, res) => {
     try {
+        logger.debug('Obteniendo facturas de usuario', { usuario_id: req.user.id });
+
         // Intentar obtener facturas con imagenPath
         const [facturas] = await pool.query(
             'SELECT id_factura, titulo, coste, fecha, hora, descripcion, imagenPath FROM facturas WHERE id_usuario = ? ORDER BY fecha DESC, hora DESC',
             [req.user.id]
         );
 
+        logger.info('Facturas obtenidas exitosamente', {
+            usuario_id: req.user.id,
+            cantidad: facturas.length
+        });
+
         res.json(facturas);
 
     } catch (error) {
-        console.error('Error en /facturas:', error);
+        logger.error('Error al obtener facturas', {
+            error: error.message,
+            stack: error.stack,
+            usuario_id: req.user.id
+        });
         res.status(500).json({
             status: 'error',
             message: 'Error al obtener las facturas: ' + error.message
@@ -32,17 +44,34 @@ exports.createFactura = async (req, res) => {
         const userEmail = req.user.email;
         const imagenPath = req.file ? req.file.path : null;
 
-        // Log de los datos recibidos para debugging
-        console.log('POST /facturas recibida para:', userEmail);
-        console.log('Datos recibidos:', { titulo, coste, fecha, hora, descripcion });
-        console.log('Imagen subida:', req.file ? req.file.filename : 'No se subió imagen');
+        logger.info('Iniciando creación de factura', {
+            usuario_id: req.user.id,
+            email: userEmail,
+            titulo,
+            coste,
+            tiene_imagen: !!req.file
+        });
+
+        logger.debug('Datos de factura recibidos', {
+            titulo, coste, fecha, hora,
+            litros_repostados, precio_por_litro,
+            kilometraje_actual, tipo_combustible,
+            id_coche
+        });
 
         if (!titulo || coste === undefined || coste === null || !fecha || !hora) {
-            console.log('Validación fallida - datos faltantes');
+            logger.warn('Validación fallida al crear factura - datos faltantes', {
+                usuario_id: req.user.id,
+                datos_recibidos: { titulo, coste, fecha, hora }
+            });
+
             // Si hay un archivo subido pero la validación falla, eliminarlo
             if (req.file) {
                 fs.unlink(req.file.path, (err) => {
-                    if (err) console.error('Error eliminando archivo:', err);
+                    if (err) logger.error('Error eliminando archivo tras validación fallida', {
+                        error: err.message,
+                        path: req.file.path
+                    });
                 });
             }
             return res.status(400).json({
@@ -55,21 +84,32 @@ exports.createFactura = async (req, res) => {
         // Intentar insertar con imagenPath
         let result;
         try {
+            logger.trace('Ejecutando INSERT de factura en BD', {
+                usuario_id: req.user.id,
+                titulo
+            });
+
             [result] = await pool.query(
                 'INSERT INTO facturas (id_usuario, titulo, coste, fecha, hora, descripcion, imagenPath, litros_repostados, precio_por_litro, kilometraje_actual, tipo_combustible, id_coche) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
                 [req.user.id, titulo, coste, fecha, hora, descripcion || '', imagenPath, litros_repostados || null, precio_por_litro || null, kilometraje_actual || null, tipo_combustible || null, id_coche || null]
             );
 
         } catch (error) {
-            console.error('Error insertando factura:', error);
+            logger.error('Error insertando factura en BD', {
+                error: error.message,
+                stack: error.stack,
+                usuario_id: req.user.id,
+                titulo
+            });
             throw error;
         }
 
-        console.log('Factura creada:', {
-            id: result.insertId,
-            id_usuario: req.user.id,
+        logger.info('Factura creada exitosamente', {
+            id_factura: result.insertId,
+            usuario_id: req.user.id,
             titulo,
-            imagenPath: imagenPath
+            coste,
+            tiene_imagen: !!imagenPath
         });
 
         res.status(201).json({
@@ -80,11 +120,20 @@ exports.createFactura = async (req, res) => {
         });
 
     } catch (error) {
-        console.error('Error en POST /facturas:', error);
+        logger.error('Error en creación de factura', {
+            error: error.message,
+            stack: error.stack,
+            usuario_id: req.user.id,
+            titulo: req.body.titulo
+        });
+
         // Eliminar archivo si hubo error en el servidor
         if (req.file) {
             fs.unlink(req.file.path, (err) => {
-                if (err) console.error('Error eliminando archivo:', err);
+                if (err) logger.error('Error eliminando archivo tras error en servidor', {
+                    error: err.message,
+                    path: req.file.path
+                });
             });
         }
         res.status(500).json({
@@ -98,22 +147,32 @@ exports.deleteFactura = async (req, res) => {
     try {
         const { id_factura } = req.params;
 
+        logger.info('Iniciando eliminación de factura', {
+            id_factura,
+            usuario_id: req.user.id,
+            email: req.user.email
+        });
+
         if (!id_factura) {
+            logger.warn('Intento de eliminar factura sin ID', { usuario_id: req.user.id });
             return res.status(400).json({
                 status: 'error',
                 message: 'id_factura es requerido'
             });
         }
 
-        console.log('DELETE /facturas recibida para:', req.user.email);
-
         // Verificar que la factura existe y pertenece al usuario
+        logger.trace('Verificando existencia y permisos de factura', { id_factura });
         const [factura] = await pool.query(
             'SELECT id_usuario, imagenPath FROM facturas WHERE id_factura = ?',
             [id_factura]
         );
 
         if (factura.length === 0) {
+            logger.warn('Intento de eliminar factura inexistente', {
+                id_factura,
+                usuario_id: req.user.id
+            });
             return res.status(404).json({
                 status: 'error',
                 message: 'Factura no encontrada'
@@ -121,6 +180,11 @@ exports.deleteFactura = async (req, res) => {
         }
 
         if (factura[0].id_usuario !== req.user.id) {
+            logger.warn('Intento de eliminar factura sin permisos', {
+                id_factura,
+                usuario_solicitante: req.user.id,
+                usuario_propietario: factura[0].id_usuario
+            });
             return res.status(403).json({
                 status: 'error',
                 message: 'No tienes permiso para eliminar esta factura'
@@ -131,6 +195,7 @@ exports.deleteFactura = async (req, res) => {
         let imagenPath = factura[0].imagenPath;
 
         // Eliminar la factura
+        logger.trace('Ejecutando DELETE de factura en BD', { id_factura });
         await pool.query(
             'DELETE FROM facturas WHERE id_factura = ?',
             [id_factura]
@@ -140,14 +205,25 @@ exports.deleteFactura = async (req, res) => {
         if (imagenPath && fs.existsSync(imagenPath)) {
             fs.unlink(imagenPath, (err) => {
                 if (err) {
-                    console.error('Error eliminando archivo de imagen:', err);
+                    logger.error('Error eliminando archivo de imagen', {
+                        error: err.message,
+                        path: imagenPath,
+                        id_factura
+                    });
                 } else {
-                    console.log('Archivo de imagen eliminado:', imagenPath);
+                    logger.debug('Archivo de imagen eliminado', {
+                        path: imagenPath,
+                        id_factura
+                    });
                 }
             });
         }
 
-        console.log('Factura eliminada:', { id_factura, id_usuario: req.user.id });
+        logger.info('Factura eliminada exitosamente', {
+            id_factura,
+            usuario_id: req.user.id,
+            tenia_imagen: !!imagenPath
+        });
 
         res.json({
             status: 'success',
@@ -155,7 +231,12 @@ exports.deleteFactura = async (req, res) => {
         });
 
     } catch (error) {
-        console.error('Error en DELETE /facturas:', error);
+        logger.error('Error al eliminar factura', {
+            error: error.message,
+            stack: error.stack,
+            id_factura: req.params.id_factura,
+            usuario_id: req.user.id
+        });
         res.status(500).json({
             status: 'error',
             message: 'Error en el servidor: ' + error.message

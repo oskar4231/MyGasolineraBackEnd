@@ -2,12 +2,14 @@ const pool = require('../config/bbdd');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { sendPasswordResetEmail } = require('../config/emailService');
+const logger = require('../logger/logger');
 
 exports.register = async (req, res) => {
     try {
         const { email, password, nombre } = req.body;
 
         if (!email || !password) {
+            logger.warn('Intento de registro sin email o password', { email });
             return res.status(400).json({
                 status: 'error',
                 message: req.t('auth.email_password_required')
@@ -21,6 +23,7 @@ exports.register = async (req, res) => {
         );
 
         if (userExists.length > 0) {
+            logger.warn('Intento de registro con email duplicado', { email });
             return res.status(409).json({
                 status: 'error',
                 message: req.t('auth.email_already_registered')
@@ -31,12 +34,20 @@ exports.register = async (req, res) => {
         const passwordHash = await bcrypt.hash(password, 10);
 
         // Insertar usuario
+        logger.trace('Ejecutando query INSERT usuario', { email });
         const [result] = await pool.query(
             'INSERT INTO usuarios (email, contraseña, nombre) VALUES (?, ?, ?)',
             [email, passwordHash, nombre || '']
         );
 
         const token = jwt.sign({ email, id: result.insertId }, process.env.JWT_SECRET, { expiresIn: '24h' });
+
+        logger.info('Usuario registrado exitosamente', {
+            email,
+            nombre,
+            id_usuario: result.insertId
+        });
+
 
         res.status(201).json({
             status: 'success',
@@ -46,6 +57,12 @@ exports.register = async (req, res) => {
         });
 
     } catch (error) {
+        logger.error('Error en registro de usuario', {
+            error: error.message,
+            stack: error.stack,
+            email: req.body.email
+        });
+
         console.error('Error en register:', error);
         res.status(500).json({
             status: 'error',
@@ -57,48 +74,60 @@ exports.register = async (req, res) => {
 exports.login = async (req, res) => {
     try {
         const { email, password } = req.body;
-
+        logger.debug('Intento de login', { email });
         if (!email || !password) {
+            logger.warn('Login sin credenciales completas', { email });
             return res.status(400).json({
                 status: 'error',
                 message: req.t('auth.email_password_required')
             });
         }
-
-        // Buscar por email O por nombre
+        // Buscar usuario
+        logger.trace('Buscando usuario en BD', { email });
         const [rows] = await pool.query(
             'SELECT * FROM usuarios WHERE email = ? OR nombre = ? AND activo = 1',
             [email, email]
         );
-
         if (rows.length === 0) {
+            logger.warn('Login fallido: usuario no encontrado o inactivo', { email });
             return res.status(401).json({
                 status: 'error',
                 message: req.t('auth.account_inactive')
             });
         }
-
         const user = rows[0];
-
+        // Verificar contraseña
         const validPassword = await bcrypt.compare(password, user.contraseña);
         if (!validPassword) {
+            logger.warn('Login fallido: contraseña incorrecta', {
+                email,
+                id_usuario: user.id_usuario
+            });
             return res.status(401).json({
                 status: 'error',
                 message: req.t('auth.incorrect_credentials')
             });
         }
-
         const token = jwt.sign({ email: user.email, id: user.id_usuario }, process.env.JWT_SECRET, { expiresIn: '24h' });
-
+        // Log de login exitoso
+        logger.info('Login exitoso', {
+            email: user.email,
+            id_usuario: user.id_usuario,
+            nombre: user.nombre
+        });
         res.json({
             status: 'success',
             message: req.t('auth.login_successful'),
             user: { email: user.email, nombre: user.nombre },
             token
         });
-
     } catch (error) {
-        console.error('Error en login:', error);
+        logger.error('Error en login', {
+            error: error.message,
+            stack: error.stack,
+            email: req.body.email
+        });
+
         res.status(500).json({
             status: 'error',
             message: req.t('general.server_error') + ': ' + error.message
@@ -110,27 +139,30 @@ exports.deleteUser = async (req, res) => {
     try {
         const { email } = req.params; // El parámetro se llama email pero puede ser usuario
 
+        logger.info('Iniciando desactivación de usuario', { email });
+
         if (!email) {
+            logger.warn('Intento de desactivar usuario sin identificador', {});
             return res.status(400).json({
                 success: false,
                 message: req.t('auth.identifier_required')
             });
         }
 
-        console.log('🗑️ Intentando desactivar usuario:', email);
-
         // Intentar desactivar buscando por email O por nombre
-        const [result] = await pool.query( // Using pool.query directly as in other methods
+        logger.trace('Ejecutando UPDATE para desactivar usuario', { email });
+        const [result] = await pool.query(
             'UPDATE usuarios SET activo = 0 WHERE email = ? OR nombre = ?',
             [email, email]
         );
 
         if (result.affectedRows === 0) {
-            console.log('❌ No se encontró usuario para desactivar:', email);
+            logger.debug('No se encontró usuario activo para desactivar', { email });
 
             // Opcional: Verificar si ya estaba inactivo
             const [check] = await pool.query('SELECT id_usuario, activo FROM usuarios WHERE email = ? OR nombre = ?', [email, email]);
             if (check.length > 0 && check[0].activo === 0) {
+                logger.info('Usuario ya estaba inactivo', { email, id_usuario: check[0].id_usuario });
                 return res.json({
                     success: true,
                     message: req.t('auth.user_already_inactive'),
@@ -138,13 +170,14 @@ exports.deleteUser = async (req, res) => {
                 });
             }
 
+            logger.warn('Usuario no encontrado para desactivar', { email });
             return res.status(404).json({
                 success: false,
                 message: req.t('auth.user_not_found')
             });
         }
 
-        console.log('✅ Usuario desactivado correctamente:', email);
+        logger.info('Usuario desactivado correctamente', { email, affectedRows: result.affectedRows });
         res.json({
             success: true,
             message: req.t('auth.user_deactivated'),
@@ -152,7 +185,11 @@ exports.deleteUser = async (req, res) => {
         });
 
     } catch (error) {
-        console.error('❌ Error en eliminar usuario:', error);
+        logger.error('Error al desactivar usuario', {
+            error: error.message,
+            stack: error.stack,
+            email: req.params.email
+        });
         res.status(500).json({
             status: 'error',
             message: req.t('general.server_error') + ': ' + error.message
@@ -164,19 +201,25 @@ exports.forgotPassword = async (req, res) => {
     try {
         const { email } = req.body;
 
+        logger.info('Solicitud de recuperación de contraseña', { email });
+
         if (!email) {
+            logger.warn('Solicitud de recuperación sin email', {});
             return res.status(400).json({
                 status: 'error',
                 message: req.t('auth.email_required')
             });
         }
 
+        logger.trace('Buscando usuario para recuperación de contraseña', { email });
         const [users] = await pool.query(
             'SELECT email FROM usuarios WHERE email = ?',
             [email]
         );
 
         if (users.length === 0) {
+            logger.warn('Solicitud de recuperación para email no registrado', { email });
+            // Por seguridad, respondemos como si fuera exitoso
             return res.json({
                 status: 'success',
                 message: req.t('auth.email_sent')
@@ -188,20 +231,27 @@ exports.forgotPassword = async (req, res) => {
         const token = Math.floor(100000 + Math.random() * 900000).toString();
         const expiresAt = new Date(Date.now() + 60 * 60 * 1000);
 
+        logger.trace('Generando token de recuperación', { email: userEmail });
         await pool.query(
             'INSERT INTO token_reiniciar_contraseña (email, token, expires_at) VALUES (?, ?, ?)',
             [userEmail, token, expiresAt]
         );
 
+        logger.debug('Enviando email de recuperación', { email: userEmail });
         await sendPasswordResetEmail(userEmail, token);
 
+        logger.info('Email de recuperación enviado exitosamente', { email: userEmail });
         res.json({
             status: 'success',
             message: req.t('auth.email_sent')
         });
 
     } catch (error) {
-        console.error('Error en forgot-password:', error);
+        logger.error('Error en recuperación de contraseña', {
+            error: error.message,
+            stack: error.stack,
+            email: req.body.email
+        });
         res.status(500).json({
             status: 'error',
             message: req.t('general.server_error') + ': ' + error.message
@@ -213,25 +263,31 @@ exports.verifyToken = async (req, res) => {
     try {
         const { token } = req.body;
 
+        logger.debug('Verificando token de recuperación', {});
+
         if (!token) {
+            logger.warn('Intento de verificación sin token', {});
             return res.status(400).json({
                 status: 'error',
                 message: req.t('auth.token_required')
             });
         }
 
+        logger.trace('Buscando token en BD', {});
         const [tokens] = await pool.query(
             'SELECT * FROM token_reiniciar_contraseña WHERE token = ? AND used = FALSE AND expires_at > NOW()',
             [token]
         );
 
         if (tokens.length === 0) {
+            logger.warn('Token inválido o expirado', {});
             return res.status(400).json({
                 status: 'error',
                 message: req.t('auth.token_invalid')
             });
         }
 
+        logger.info('Token verificado exitosamente', { email: tokens[0].email });
         res.json({
             status: 'success',
             message: req.t('auth.token_valid'),
@@ -239,7 +295,10 @@ exports.verifyToken = async (req, res) => {
         });
 
     } catch (error) {
-        console.error('Error en verify-token:', error);
+        logger.error('Error al verificar token', {
+            error: error.message,
+            stack: error.stack
+        });
         res.status(500).json({
             status: 'error',
             message: req.t('general.server_error') + ': ' + error.message
@@ -251,7 +310,10 @@ exports.resetPassword = async (req, res) => {
     try {
         const { token, newPassword } = req.body;
 
+        logger.info('Iniciando reinicio de contraseña', {});
+
         if (!token || !newPassword) {
+            logger.warn('Intento de reinicio sin token o contraseña', {});
             return res.status(400).json({
                 status: 'error',
                 message: req.t('auth.token_password_required')
@@ -259,18 +321,21 @@ exports.resetPassword = async (req, res) => {
         }
 
         if (newPassword.length < 6) {
+            logger.warn('Contraseña demasiado corta en reinicio', {});
             return res.status(400).json({
                 status: 'error',
                 message: req.t('auth.password_min_length')
             });
         }
 
+        logger.trace('Verificando token para reinicio', {});
         const [tokens] = await pool.query(
             'SELECT * FROM token_reiniciar_contraseña WHERE token = ? AND used = FALSE AND expires_at > NOW()',
             [token]
         );
 
         if (tokens.length === 0) {
+            logger.warn('Token inválido en reinicio de contraseña', {});
             return res.status(400).json({
                 status: 'error',
                 message: req.t('auth.token_invalid')
@@ -281,23 +346,29 @@ exports.resetPassword = async (req, res) => {
 
         const passwordHash = await bcrypt.hash(newPassword, 10);
 
+        logger.trace('Actualizando contraseña en BD', { email });
         await pool.query(
             'UPDATE usuarios SET contraseña = ? WHERE email = ?',
             [passwordHash, email]
         );
 
+        logger.trace('Marcando token como usado', {});
         await pool.query(
             'UPDATE token_reiniciar_contraseña SET used = TRUE WHERE token = ?',
             [token]
         );
 
+        logger.info('Contraseña actualizada exitosamente', { email });
         res.json({
             status: 'success',
             message: req.t('auth.password_updated')
         });
 
     } catch (error) {
-        console.error('Error en reset-password:', error);
+        logger.error('Error al reiniciar contraseña', {
+            error: error.message,
+            stack: error.stack
+        });
         res.status(500).json({
             status: 'error',
             message: req.t('general.server_error') + ': ' + error.message
@@ -309,18 +380,19 @@ exports.getProfileImage = async (req, res) => {
     try {
         // Obtener el email del parámetro de la URL
         let email = req.params.email;
-        console.log('🔍 Buscando foto de perfil para email:', email);
+
+        logger.debug('Buscando foto de perfil', { email });
 
         // Si no contiene '@', asumimos que es un nombre de usuario
         if (!email.includes('@')) {
-            console.log('🔍 Nombre de usuario proporcionado, buscando email...');
+            logger.trace('Resolviendo nombre de usuario a email', { nombre: email });
             const [userEmail] = await pool.query(
                 'SELECT email FROM usuarios WHERE nombre = ?',
                 [email]
             );
 
             if (userEmail.length === 0) {
-                console.log('❌ Usuario no encontrado con nombre:', email);
+                logger.warn('Usuario no encontrado por nombre', { nombre: email });
                 return res.status(404).json({
                     status: 'error',
                     message: req.t('auth.user_not_found')
@@ -328,10 +400,11 @@ exports.getProfileImage = async (req, res) => {
             }
 
             email = userEmail[0].email;
-            console.log('🔍 Email resuelto a:', email);
+            logger.trace('Email resuelto', { email });
         }
 
         // Buscar la foto de perfil directamente por email
+        logger.trace('Consultando foto de perfil en BD', { email });
         const [imagen] = await pool.query(
             'SELECT foto_perfil FROM usuarios WHERE email = ?',
             [email]
@@ -339,22 +412,25 @@ exports.getProfileImage = async (req, res) => {
 
         // Verificar si se encontró el usuario
         if (imagen.length === 0) {
-            console.log('❌ Usuario no encontrado con email:', email);
+            logger.warn('Usuario no encontrado por email', { email });
             return res.status(404).json({
                 status: 'error',
                 message: req.t('auth.user_not_found')
             });
         }
 
-        // Log de éxito
         const fotoPerfil = imagen[0].foto_perfil;
-        console.log('✅ Foto de perfil encontrada:', fotoPerfil ? 'Sí' : 'NULL');
+        logger.info('Foto de perfil obtenida', { email, tiene_foto: !!fotoPerfil });
 
         // Retornar la imagen
         res.json(imagen[0]);
 
     } catch (error) {
-        console.error('❌ Error en /cargarImagen:', error);
+        logger.error('Error al obtener foto de perfil', {
+            error: error.message,
+            stack: error.stack,
+            email: req.params.email
+        });
         res.status(500).json({
             status: 'error',
             error: req.t('profile.profile_image_error'),
@@ -367,22 +443,24 @@ exports.getUserProfile = async (req, res) => {
     try {
         const { email } = req.params;
 
-        console.log('🔍 Obteniendo perfil del usuario:', email);
+        logger.debug('Obteniendo perfil de usuario', { email });
 
         if (!email) {
+            logger.warn('Solicitud de perfil sin email', {});
             return res.status(400).json({
                 success: false,
                 message: req.t('auth.email_required')
             });
         }
 
+        logger.trace('Consultando perfil en BD', { email });
         const [results] = await pool.query(
             'SELECT nombre, email FROM usuarios WHERE (email = ? OR nombre = ?) AND activo = 1',
             [email, email]
         );
 
         if (results.length === 0) {
-            console.log('⚠️ Usuario no encontrado:', email);
+            logger.warn('Perfil de usuario no encontrado', { email });
             return res.status(404).json({
                 success: false,
                 message: req.t('auth.user_not_found')
@@ -390,7 +468,10 @@ exports.getUserProfile = async (req, res) => {
         }
 
         const usuario = results[0];
-        console.log('✅ Usuario encontrado:', usuario.nombre);
+        logger.info('Perfil de usuario obtenido exitosamente', {
+            email: usuario.email,
+            nombre: usuario.nombre
+        });
 
         res.status(200).json({
             success: true,
@@ -399,7 +480,11 @@ exports.getUserProfile = async (req, res) => {
         });
 
     } catch (error) {
-        console.error('❌ Error en /usuarios/perfil/:email:', error);
+        logger.error('Error al obtener perfil de usuario', {
+            error: error.message,
+            stack: error.stack,
+            email: req.params.email
+        });
         res.status(500).json({
             success: false,
             message: req.t('errors.server_error'),
