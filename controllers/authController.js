@@ -63,7 +63,7 @@ exports.register = async (req, res) => {
             email: req.body.email
         });
 
-        console.error('Error en register:', error);
+
         res.status(500).json({
             status: 'error',
             message: req.t('general.server_error') + ': ' + error.message

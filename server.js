@@ -130,9 +130,9 @@ app.listen(PORT, '0.0.0.0', (err) => {
     entorno: process.env.NODE_ENV || 'development'
   });
 
-  console.log('=================================');
-  console.log('✅ SERVIDOR INICIADO CORRECTAMENTE');
-  console.log(`📍 Puerto: ${PORT}`);
-  console.log(`🌐 Local: http://localhost:${PORT}`);
-  console.log('=================================');
+  logger.info('=================================');
+  logger.info('✅ SERVIDOR INICIADO CORRECTAMENTE');
+  logger.info(`📍 Puerto: ${PORT}`);
+  logger.info(`🌐 Local: http://localhost:${PORT}`);
+  logger.info('=================================');
 });
