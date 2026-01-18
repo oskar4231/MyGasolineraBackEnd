@@ -35,7 +35,7 @@ router.get('/api/gasolineras', async (req, res) => {
         // 1. Filtro por Provincia (MÁS RÁPIDO PARA CARGA INICIAL)
         if (id_provincia) {
             query += ` AND id_provincia = ?`;
-            params.push(id_provincia);
+            params.push(String(id_provincia).trim());
             // Ordenar por precio gasoleo (baratas primero) o rotulo
             query += ` ORDER BY gasoleo_a ASC`;
         }

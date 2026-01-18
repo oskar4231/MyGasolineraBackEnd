@@ -1,9 +1,41 @@
 {
   "general": {
-    "welcome": "Welcome to MyGasolinera API"
+    "welcome": "Welcome to MyGasolinera API",
+    "server_error": "Server error"
+  },
+  "auth": {
+    "email_password_required": "Email and password are required",
+    "email_already_registered": "Email is already registered",
+    "user_created": "User created successfully",
+    "login_successful": "Login successful",
+    "incorrect_credentials": "Incorrect email or password",
+    "account_inactive": "Incorrect email or password or inactive account",
+    "identifier_required": "Identifier (email or username) is required",
+    "user_deactivated": "User marked as inactive",
+    "user_already_inactive": "User was already inactive",
+    "user_not_found": "User not found",
+    "email_required": "Email is required",
+    "email_sent": "If the email exists, you will receive an email with instructions",
+    "token_required": "Token is required",
+    "token_invalid": "Invalid or expired token",
+    "token_valid": "Valid token",
+    "token_password_required": "Token and new password are required",
+    "password_min_length": "Password must be at least 6 characters long",
+    "password_updated": "Password updated successfully"
+  },
+  "profile": {
+    "user_not_found": "User not found",
+    "no_image_provided": "No image provided",
+    "photo_updated": "Profile photo updated successfully",
+    "photo_upload_error": "Error uploading profile photo",
+    "photo_not_found": "Photo not found",
+    "profile_image_error": "Error getting profile image",
+    "email_required": "Email is required"
   },
   "errors": {
     "unauthorized": "Unauthorized",
-    "not_found": "Resource not found"
+    "not_found": "Resource not found",
+    "server_error": "Internal server error",
+    "invalid_file_type": "Only image files are allowed (jpeg, jpg, jfif, png, gif, webp)"
   }
 }

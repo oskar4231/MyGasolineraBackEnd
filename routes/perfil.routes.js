@@ -35,6 +35,7 @@ const fileFilter = (req, file, cb) => {
   if (mimetype && extname) {
     return cb(null, true);
   } else {
+    // Usar un mensaje estático ya que req.t() no está disponible en este contexto
     cb(new Error('Solo se permiten archivos de imagen (jpeg, jpg, jfif, png, gif, webp)'));
   }
 };
@@ -57,13 +58,13 @@ router.get('/profile', authenticateToken, async (req, res) => {
     );
 
     if (rows.length === 0) {
-      return res.status(404).json({ error: 'Usuario no encontrado' });
+      return res.status(404).json({ error: req.t('profile.user_not_found') });
     }
 
     res.json({ user: rows[0] });
   } catch (error) {
     console.error('Error obteniendo perfil:', error);
-    res.status(500).json({ error: 'Error del servidor' });
+    res.status(500).json({ error: req.t('errors.server_error') });
   } finally {
     if (conn) conn.release();
   }
@@ -76,7 +77,7 @@ router.post('/upload-photo', authenticateToken, upload.single('photo'), async (r
     if (!req.file) {
       return res.status(400).json({
         status: 'error',
-        message: 'No se proporcionó ninguna imagen'
+        message: req.t('profile.no_image_provided')
       });
     }
 
@@ -105,7 +106,7 @@ router.post('/upload-photo', authenticateToken, upload.single('photo'), async (r
 
     res.json({
       status: 'success',
-      message: 'Foto de perfil actualizada correctamente',
+      message: req.t('profile.photo_updated'),
       photoUrl: photoPath
     });
 
@@ -122,7 +123,7 @@ router.post('/upload-photo', authenticateToken, upload.single('photo'), async (r
 
     res.status(500).json({
       status: 'error',
-      message: 'Error al subir la foto de perfil: ' + error.message
+      message: req.t('profile.photo_upload_error') + ': ' + error.message
     });
   } finally {
     if (conn) conn.release();
@@ -136,15 +137,14 @@ router.get('/profile-photo/:filename', (req, res) => {
     const filepath = path.join(uploadDir, filename);
 
     if (!fs.existsSync(filepath)) {
-      return res.status(404).json({ error: 'Foto no encontrada' });
+      return res.status(404).json({ error: req.t('profile.photo_not_found') });
     }
 
     res.sendFile(filepath);
   } catch (error) {
     console.error('Error obteniendo foto de perfil:', error);
-    res.status(500).json({ error: 'Error del servidor' });
+    res.status(500).json({ error: req.t('errors.server_error') });
   }
 });
 
 module.exports = router;
-
