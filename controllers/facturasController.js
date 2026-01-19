@@ -5,20 +5,56 @@ const logger = require('../logger/logger');
 
 exports.getFacturas = async (req, res) => {
     try {
-        logger.debug('Obteniendo facturas de usuario', { usuario_id: req.user.id });
+        const { page, limit } = req.query;
+        const id_usuario = req.user.id;
 
-        // Intentar obtener facturas con imagenPath
+        logger.debug('Obteniendo facturas', { usuario_id: id_usuario, page, limit });
+
+        // Caso 1: Sin paginación (comportamiento original)
+        if (!page || !limit) {
+            const [facturas] = await pool.query(
+                'SELECT id_factura, titulo, coste, fecha, hora, descripcion, imagenPath FROM facturas WHERE id_usuario = ? ORDER BY fecha DESC, hora DESC',
+                [id_usuario]
+            );
+            return res.json({
+                data: facturas,
+                totalItems: facturas.length,
+                totalPages: 1,
+                currentPage: 1
+            });
+        }
+
+        // Caso 2: Con Paginación
+        const limitInt = parseInt(limit);
+        const offset = (parseInt(page) - 1) * limitInt;
+
+        // Obtener total
+        const [countResult] = await pool.query(
+            'SELECT COUNT(*) as total FROM facturas WHERE id_usuario = ?',
+            [id_usuario]
+        );
+        const totalItems = countResult[0].total;
+        const totalPages = Math.ceil(totalItems / limitInt);
+
+        // Obtener datos paginados
         const [facturas] = await pool.query(
-            'SELECT id_factura, titulo, coste, fecha, hora, descripcion, imagenPath FROM facturas WHERE id_usuario = ? ORDER BY fecha DESC, hora DESC',
-            [req.user.id]
+            'SELECT id_factura, titulo, coste, fecha, hora, descripcion, imagenPath FROM facturas WHERE id_usuario = ? ORDER BY fecha DESC, hora DESC LIMIT ? OFFSET ?',
+            [id_usuario, limitInt, offset]
         );
 
-        logger.info('Facturas obtenidas exitosamente', {
-            usuario_id: req.user.id,
-            cantidad: facturas.length
+        logger.info('Facturas paginadas obtenidas', {
+            usuario_id: id_usuario,
+            cantidad: facturas.length,
+            page,
+            totalItems
         });
 
-        res.json(facturas);
+        res.json({
+            data: facturas,
+            totalItems,
+            totalPages,
+            currentPage: parseInt(page)
+        });
 
     } catch (error) {
         logger.error('Error al obtener facturas', {
