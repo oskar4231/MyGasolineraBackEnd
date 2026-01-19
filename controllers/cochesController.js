@@ -101,3 +101,36 @@ exports.deleteCoche = async (req, res) => {
         if (conn) conn.release();
     }
 };
+
+exports.getCombustiblesByCoche = async (req, res) => {
+    let conn;
+    try {
+        const { id_coche } = req.params;
+        if (!id_coche) return res.status(400).json({ status: 'error', message: 'id_coche es requerido' });
+
+        conn = await pool.getConnection();
+        logger.info('Iniciando busqueda de combustibles por coche', { id_coche, usuario: req.user.email });
+
+        const [userRows] = await conn.query('SELECT id_usuario FROM usuarios WHERE email = ?', [req.user.email]);
+
+        if (userRows.length === 0) return res.status(404).json({ status: 'error', message: 'Usuario no encontrado' });
+
+        const id_usuario = userRows[0].id_usuario;
+        const [coche] = await conn.query('SELECT id_usuario FROM coches WHERE id_coche = ?', [id_coche]);
+
+        if (coche.length === 0) return res.status(404).json({ status: 'error', message: 'Coche no encontrado' });
+
+        const [combustibles] = await conn.query('SELECT combustible FROM coches WHERE id_coche = ?', [id_coche]);
+
+        if (combustibles.length == 0 || combustibles.length == '') {
+            logger.error('No se encontraron combustibles para el coche', { id_coche, usuario: req.user.email });
+            return res.status(404).json({ status: 'error', message: 'No se encontraron combustibles para el coche' });
+        }
+        res.json(combustibles);
+    } catch (error) {
+        logger.error('Error al obtener combustibles', { error: error.message, stack: error.stack, usuario: req.user?.email });
+        res.status(500).json({ error: 'Error al obtener los combustibles' });
+    } finally {
+        if (conn) conn.release();
+    }
+}
