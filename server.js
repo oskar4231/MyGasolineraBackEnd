@@ -100,7 +100,10 @@ app.get('/api/current-url', async (req, res) => {
 });
 
 app.use('/', estadisticasRoutes);
+app.use('/', estadisticasRoutes);
 app.use('/', gasolinerasRoutes);
+const uploadRoutes = require('./routes/upload.routes');
+app.use('/api', uploadRoutes);
 
 app.use((err, req, res, next) => {
   logger.error('Error no controlado', {
