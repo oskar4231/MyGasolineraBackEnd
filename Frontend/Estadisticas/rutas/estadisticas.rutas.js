@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const authenticateToken = require('../middleware/auth');
+const authenticateToken = require('../../../Middleware/Autentificacion/auth');
 const estadisticasController = require('../controladores/estadisticasController');
 
 // 1️⃣ Gasto Total del Usuario

@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const uploadController = require('../controllers/uploadController');
+const uploadController = require('../controladores/uploadController');
 
 // Ruta POST /api/upload
 // 1. uploadMiddleware: Recibe Y GUARDA el archivo en disco (Multer DiskStorage)

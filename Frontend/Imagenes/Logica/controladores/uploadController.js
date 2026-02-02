@@ -1,13 +1,13 @@
 const multer = require('multer');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
-const logger = require('../logger/logger');
+const logger = require('../../../../Backend/Logger/LoggerLogica/logger');
 
 // Configuración de Multer: DiskStorage (Directo al disco, más eficiente que memoria)
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         // Asegurar que la carpeta existe (server.js ya la crea, pero por seguridad)
-        const uploadPath = path.join(__dirname, '../uploads');
+        const uploadPath = path.join(__dirname, '../../imagenes');
         cb(null, uploadPath);
     },
     filename: (req, file, cb) => {

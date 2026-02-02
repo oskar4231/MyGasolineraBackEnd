@@ -2,7 +2,7 @@ const pool = require('../../../Importante/BaseDeDatos/bbdd');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { sendPasswordResetEmail } = require('../../../Backend/Emails/config/emailService');
-const logger = require('../logger/logger');
+const logger = require('../../../Backend/Logger/LoggerLogica/logger');
 
 exports.register = async (req, res) => {
     try {

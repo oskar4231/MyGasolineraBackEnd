@@ -1,7 +1,7 @@
 const pool = require('../../../Importante/BaseDeDatos/bbdd');
 const path = require('path');
 const fs = require('fs');
-const logger = require('../logger/logger');
+const logger = require('../../../Backend/Logger/LoggerLogica/logger');
 
 exports.getProfile = async (req, res) => {
     let conn;

@@ -1,7 +1,7 @@
 const pool = require('../../../Importante/BaseDeDatos/bbdd');
 const fs = require('fs');
 const path = require('path');
-const logger = require('../logger/logger');
+const logger = require('../../../Backend/Logger/LoggerLogica/logger');
 
 exports.getFacturas = async (req, res) => {
     try {

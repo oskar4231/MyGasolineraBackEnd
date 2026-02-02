@@ -1,5 +1,5 @@
 const pool = require('../../../Importante/BaseDeDatos/bbdd');
-const logger = require('../logger/logger');
+const logger = require('../../../Backend/Logger/LoggerLogica/logger');
 
 exports.insertCar = async (req, res) => {
     let conn;

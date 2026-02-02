@@ -1,5 +1,5 @@
 const pool = require('../../../Importante/BaseDeDatos/bbdd');
-const logger = require('../logger/logger'); // Asumiendo que existe el logger
+const logger = require('../../../Backend/Logger/LoggerLogica/logger'); // Asumiendo que existe el logger
 
 // Helper para obtener ID de usuario
 const getUserId = async (conn, email) => {

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const authenticateToken = require('../middleware/auth');
-const upload = require('../../Imagenes/SubidasImagenes/Logica/config/multerProfileConfig');
+const authenticateToken = require('../../../Middleware/Autentificacion/auth');
+const upload = require('../../Imagenes/Logica/config/multerProfileConfig');
 const perfilController = require('../controladores/perfilController');
 
 // ==================== OBTENER PERFIL ====================

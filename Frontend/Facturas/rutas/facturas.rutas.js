@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const authenticateToken = require('../middleware/auth');
-const upload = require('../../Imagenes/SubidasImagenes/Logica/config/multerConfig');
+const authenticateToken = require('../../../Middleware/Autentificacion/auth');
+const upload = require('../../Imagenes/Logica/config/multerConfig');
 const facturasController = require('../controladores/facturasController');
 
 // OBTENER FACTURAS

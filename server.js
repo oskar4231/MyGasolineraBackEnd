@@ -104,7 +104,7 @@ app.get('/api/current-url', async (req, res) => {
 app.use('/', estadisticasRoutes);
 app.use('/', estadisticasRoutes);
 app.use('/', gasolinerasRoutes);
-const uploadRoutes = require('./Frontend/Imagenes/SubidasImagenes/Logica/rutas/upload.rutas');
+const uploadRoutes = require('./Frontend/Imagenes/Logica/rutas/upload.rutas');
 app.use('/api', uploadRoutes);
 
 app.use((err, req, res, next) => {
