@@ -6,11 +6,11 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js",
-    "sincronizar": "node scripts/sincronizarGasolineras.js",
-    "sinc-gasolineras": "node scripts/sincronizarGasolineras.js",
+    "sincronizar": "node Frontend/Gasolineras/scripts/sincronizarGasolineras.js",
+    "sinc-gasolineras": "node Frontend/Gasolineras/scripts/sincronizarGasolineras.js",
     "start-with-sync": "npm run sync-gasolineras && node server.js",
-    "start:tunnel": "node scripts/createAdminUser.js && node scripts/startWithTunnel.js",
-    "start:tunnel:linux": "PLATFORM=linux node scripts/startWithTunnel.js"
+    "start:tunnel": "node Backend/scripts/startWithTunnel.js",
+    "start:tunnel:linux": "PLATFORM=linux node Backend/scripts/startWithTunnel.js"
   },
   "keywords": [
     "gasolinera",

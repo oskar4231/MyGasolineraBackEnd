@@ -3,9 +3,9 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const path = require('path');
-const logger = require('./logger/logger');
-const loggerMiddleware = require('./middleware/loggerMiddleware');
-const errorHandler = require('./middleware/errorHandler');
+const logger = require('./Backend/Logger/LoggerLogica/logger');
+const loggerMiddleware = require('./Backend/Logger/LoggerLogica/Middleware/loggerMiddleware');
+const errorHandler = require('./Backend/ManejoDeErrores/errorHandler');
 
 // CORS Manual - Añadir headers CORS manualmente ANTES del middleware cors()
 // Esto asegura que los headers estén presentes incluso a través de Cloudflare Tunnel
@@ -58,30 +58,31 @@ app.options('*', cors());
 // Middleware
 app.use(express.json());
 app.use(loggerMiddleware);
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use('/uploads', express.static(path.join(__dirname, 'Frontend', 'Imagenes', 'imagenes')));
 // Servir archivos estáticos (imágenes subidas)
 // i18n Middleware
-const i18n = require('./middleware/i18n');
+const i18n = require('./Frontend/Idiomas/i18n');
 app.use(i18n);
 
 // Importar rutas
-const authRoutes = require('./routes/usuarios.routes');
-const facturasRoutes = require('./routes/facturas.routes');
-const cochesRoutes = require('./routes/coches.routes');
-const profileRoutes = require('./routes/perfil.routes'); // ← Volver a .routes
-const estadisticasRoutes = require('./routes/estadisticas.routes');
-const gasolinerasRoutes = require('./routes/gasolineras.routes');
+const authRoutes = require('./Frontend/Perfil/rutas/usuarios.rutas');
+const facturasRoutes = require('./Frontend/Facturas/rutas/facturas.rutas');
+const cochesRoutes = require('./Frontend/Coches/rutas/coches.rutas');
+const profileRoutes = require('./Frontend/Perfil/rutas/perfil.rutas');
+const estadisticasRoutes = require('./Frontend/Estadisticas/rutas/estadisticas.rutas');
+const gasolinerasRoutes = require('./Frontend/Gasolineras/rutas/gasolineras.rutas');
 // Montar rutas
 app.use('/', authRoutes);
 app.use('/', facturasRoutes);
 app.use('/', cochesRoutes);
 app.use('/api/perfil', profileRoutes); // ← MANTENER /api/perfil
 
-// Endpoint para obtener la URL actual del backend
+// Endpoint para obtener la URL actual del backend - DESHABILITADO (gistService eliminado)
+/*
 app.get('/api/current-url', async (req, res) => {
   try {
     logger.info('Obteniendo URL actual del backend');
-    const gistService = require('./services/gistService');
+    // gistService eliminado - ya no existe
     const url = await gistService.getCurrentUrl();
     logger.info('URL obtenida exitosamente', { url });
     res.json({
@@ -98,11 +99,12 @@ app.get('/api/current-url', async (req, res) => {
     });
   }
 });
+*/
 
 app.use('/', estadisticasRoutes);
 app.use('/', estadisticasRoutes);
 app.use('/', gasolinerasRoutes);
-const uploadRoutes = require('./routes/upload.routes');
+const uploadRoutes = require('./Frontend/Imagenes/SubidasImagenes/Logica/rutas/upload.rutas');
 app.use('/api', uploadRoutes);
 
 app.use((err, req, res, next) => {

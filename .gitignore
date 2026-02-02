@@ -37,3 +37,6 @@ Thumbs.db
 # Build files
 dist/
 build/
+
+# Credenciales
+cuentaGoogle.txt
