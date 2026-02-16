@@ -1,4 +1,4 @@
-1
+0
 //Dejalo en 0 si quieres que el backend sea local
 //Dejalo en 1 si quieres que el backend sea con ngrok(a distancia)
 // 0 - Localhost
