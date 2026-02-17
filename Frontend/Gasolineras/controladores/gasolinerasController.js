@@ -3,7 +3,7 @@ const logger = require('../../../Backend/Logger/LoggerLogica/logger');
 
 exports.getGasolineras = async (req, res) => {
     try {
-        const { lat, lng, id_provincia } = req.query;
+        const { lat, lng, id_provincia, swLat, swLng, neLat, neLng } = req.query;
 
         // Base query
         let query = `
@@ -38,7 +38,25 @@ exports.getGasolineras = async (req, res) => {
             // Ordenar por precio gasoleo (baratas primero) o rotulo
             query += ` ORDER BY gasoleo_a ASC`;
         }
-        // 2. Filtro Geográfico (Cercanía)
+        // 2. Filtro por Bounding Box (ÓPTIMO PARA MAPAS - USA ÍNDICE ESPACIAL)
+        else if (swLat && swLng && neLat && neLng) {
+            // Crear polígono del Bounding Box en formato WKT (Well-Known Text)
+            // OJO: POLYGON usa (longitud latitud), no (latitud longitud)
+            // Aseguramos orden X Y: Lng Lat
+            const bbox = `POLYGON((${swLng} ${swLat}, ${neLng} ${swLat}, ${neLng} ${neLat}, ${swLng} ${neLat}, ${swLng} ${swLat}))`;
+
+            // ✅ DEBUG: Verificar polígono antes de consulta
+            console.log('🗺️ Query Bounding Box (POLYGON):', bbox);
+
+            // MBRContains usa el índice espacial para filtrar eficientemente
+            // Solo devuelve puntos que caen dentro del rectángulo envolvente
+            query += ` AND MBRContains(ST_GeomFromText(?), ubicacion)`;
+            params.push(bbox);
+
+            // Ordenar por precio y limitar resultados para rendimiento
+            query += ` ORDER BY gasoleo_a ASC LIMIT 500`;
+        }
+        // 3. Filtro Geográfico por Cercanía (BÚSQUEDA RADIAL TRADICIONAL)
         else if (lat && lng) {
             query = `
                 SELECT *, 
