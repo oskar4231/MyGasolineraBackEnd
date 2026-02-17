@@ -3,6 +3,29 @@ const fs = require('fs');
 const path = require('path');
 const logger = require('../../../Backend/Logger/LoggerLogica/logger');
 
+// Helper: Transformar ruta absoluta de Windows a ruta relativa URL
+function transformToRelativePath(imagenPath) {
+    if (!imagenPath) return null;
+
+    // Si ya está en formato relativo (uploads/...), devolverla tal cual
+    if (imagenPath.startsWith('uploads/')) {
+        return imagenPath;
+    }
+
+    // Convertir backslashes a forward slashes
+    const normalizedPath = imagenPath.replace(/\\/g, '/');
+
+    // Extraer la parte después de 'imagenes/'
+    const parts = normalizedPath.split('imagenes/');
+    if (parts.length > 1 && parts[1]) {
+        return `uploads/${parts[1]}`;
+    }
+
+    // Si no se puede transformar, devolver null para evitar URLs rotas
+    logger.warn('No se pudo transformar imagenPath a formato relativo', { imagenPath });
+    return null;
+}
+
 exports.getFacturas = async (req, res) => {
     try {
         const { page, limit } = req.query;
@@ -16,9 +39,16 @@ exports.getFacturas = async (req, res) => {
                 'SELECT id_factura, titulo, coste, fecha, hora, descripcion, imagenPath FROM facturas WHERE id_usuario = ? ORDER BY fecha DESC, hora DESC',
                 [id_usuario]
             );
+
+            // Transformar imagenPath a formato URL relativo
+            const facturasTransformadas = facturas.map(factura => ({
+                ...factura,
+                imagenPath: factura.imagenPath ? transformToRelativePath(factura.imagenPath) : null
+            }));
+
             return res.json({
-                data: facturas,
-                totalItems: facturas.length,
+                data: facturasTransformadas,
+                totalItems: facturasTransformadas.length,
                 totalPages: 1,
                 currentPage: 1
             });
@@ -42,15 +72,21 @@ exports.getFacturas = async (req, res) => {
             [id_usuario, limitInt, offset]
         );
 
+        // Transformar imagenPath a formato URL relativo
+        const facturasTransformadas = facturas.map(factura => ({
+            ...factura,
+            imagenPath: factura.imagenPath ? transformToRelativePath(factura.imagenPath) : null
+        }));
+
         logger.info('Facturas paginadas obtenidas', {
             usuario_id: id_usuario,
-            cantidad: facturas.length,
+            cantidad: facturasTransformadas.length,
             page,
             totalItems
         });
 
         res.json({
-            data: facturas,
+            data: facturasTransformadas,
             totalItems,
             totalPages,
             currentPage: parseInt(page)
@@ -78,7 +114,15 @@ exports.createFactura = async (req, res) => {
             tipo_combustible,       // NUEVO - Para filtrar por tipo
             id_coche } = req.body;
         const userEmail = req.user.email;
-        const imagenPath = req.file ? req.file.path : null;
+
+        // Convertir ruta absoluta a relativa para URL: uploads/facturas/nombre.png
+        let imagenPath = null;
+        if (req.file) {
+            const relativePath = req.file.path
+                .replace(/\\/g, '/')
+                .split('imagenes/')[1];
+            imagenPath = relativePath ? `uploads/${relativePath}` : null;
+        }
 
         logger.info('Iniciando creación de factura', {
             usuario_id: req.user.id,
