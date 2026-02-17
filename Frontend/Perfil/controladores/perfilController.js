@@ -56,7 +56,7 @@ exports.uploadPhoto = async (req, res) => {
         logger.error('Error subiendo foto de perfil:', { error: error.message });
         // Eliminar el archivo subido si hubo un error en la BD
         if (req.file) {
-            const uploadDir = path.join(__dirname, '..', 'uploads', 'profile-photos');
+            const uploadDir = path.join(__dirname, '..', '..', 'Imagenes', 'imagenes', 'fotos_perfil');
             const filePath = path.join(uploadDir, req.file.filename);
             if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
         }
@@ -69,7 +69,7 @@ exports.uploadPhoto = async (req, res) => {
 exports.getProfilePhoto = (req, res) => {
     try {
         const filename = req.params.filename;
-        const uploadDir = path.join(__dirname, '..', 'uploads', 'profile-photos');
+        const uploadDir = path.join(__dirname, '..', '..', 'Imagenes', 'imagenes', 'fotos_perfil');
         const filepath = path.join(uploadDir, filename);
 
         if (!fs.existsSync(filepath)) {
