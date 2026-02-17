@@ -42,7 +42,11 @@ exports.getGasolineras = async (req, res) => {
         else if (swLat && swLng && neLat && neLng) {
             // Crear polígono del Bounding Box en formato WKT (Well-Known Text)
             // OJO: POLYGON usa (longitud latitud), no (latitud longitud)
+            // Aseguramos orden X Y: Lng Lat
             const bbox = `POLYGON((${swLng} ${swLat}, ${neLng} ${swLat}, ${neLng} ${neLat}, ${swLng} ${neLat}, ${swLng} ${swLat}))`;
+
+            // ✅ DEBUG: Verificar polígono antes de consulta
+            console.log('🗺️ Query Bounding Box (POLYGON):', bbox);
 
             // MBRContains usa el índice espacial para filtrar eficientemente
             // Solo devuelve puntos que caen dentro del rectángulo envolvente
