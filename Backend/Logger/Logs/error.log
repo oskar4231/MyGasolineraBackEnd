@@ -1,0 +1,348 @@
+[2026-02-16 19:59:28] [ERROR] Error en registro de usuario {
+  "service": "my-gasolinera-api",
+  "error": "Access denied for user ''@'localhost' (using password: NO)",
+  "stack": "Error: Access denied for user ''@'localhost' (using password: NO)\n    at PromisePool.query (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\mysql2\\lib\\promise\\pool.js:36:22)\n    at exports.register (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\Frontend\\Perfil\\controladores\\authController.js:20:41)\n    at Layer.handle [as handle_request] (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:175:3)",
+  "email": "david@david.com"
+}
+[2026-02-16 19:59:28] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/register",
+  "status": 500,
+  "duracion_ms": 19,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": {
+    "status": "error",
+    "message": "general.server_error: Access denied for user ''@'localhost' (using password: NO)"
+  }
+}
+[2026-02-16 19:59:28] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/register",
+  "status": 500,
+  "duracion_ms": 20,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": "{\"status\":\"error\",\"message\":\"general.server_error: Access denied for user ''@'localhost' (using password: NO)\"}"
+}
+[2026-02-16 19:59:35] [ERROR] Error en registro de usuario {
+  "service": "my-gasolinera-api",
+  "error": "Access denied for user ''@'localhost' (using password: NO)",
+  "stack": "Error: Access denied for user ''@'localhost' (using password: NO)\n    at PromisePool.query (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\mysql2\\lib\\promise\\pool.js:36:22)\n    at exports.register (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\Frontend\\Perfil\\controladores\\authController.js:20:41)\n    at Layer.handle [as handle_request] (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:175:3)",
+  "email": "david@david.com"
+}
+[2026-02-16 19:59:35] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/register",
+  "status": 500,
+  "duracion_ms": 3,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": {
+    "status": "error",
+    "message": "general.server_error: Access denied for user ''@'localhost' (using password: NO)"
+  }
+}
+[2026-02-16 19:59:35] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/register",
+  "status": 500,
+  "duracion_ms": 4,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": "{\"status\":\"error\",\"message\":\"general.server_error: Access denied for user ''@'localhost' (using password: NO)\"}"
+}
+[2026-02-16 20:01:03] [ERROR] Error en registro de usuario {
+  "service": "my-gasolinera-api",
+  "error": "Access denied for user ''@'localhost' (using password: NO)",
+  "stack": "Error: Access denied for user ''@'localhost' (using password: NO)\n    at PromisePool.query (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\mysql2\\lib\\promise\\pool.js:36:22)\n    at exports.register (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\Frontend\\Perfil\\controladores\\authController.js:20:41)\n    at Layer.handle [as handle_request] (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:175:3)",
+  "email": "david@david.com"
+}
+[2026-02-16 20:01:03] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/register",
+  "status": 500,
+  "duracion_ms": 5,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": {
+    "status": "error",
+    "message": "general.server_error: Access denied for user ''@'localhost' (using password: NO)"
+  }
+}
+[2026-02-16 20:01:03] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/register",
+  "status": 500,
+  "duracion_ms": 5,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": "{\"status\":\"error\",\"message\":\"general.server_error: Access denied for user ''@'localhost' (using password: NO)\"}"
+}
+[2026-02-16 20:04:08] [ERROR] Error en registro de usuario {
+  "service": "my-gasolinera-api",
+  "error": "Access denied for user ''@'localhost' (using password: NO)",
+  "stack": "Error: Access denied for user ''@'localhost' (using password: NO)\n    at PromisePool.query (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\mysql2\\lib\\promise\\pool.js:36:22)\n    at exports.register (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\Frontend\\Perfil\\controladores\\authController.js:20:41)\n    at Layer.handle [as handle_request] (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:175:3)",
+  "email": "david@david.com"
+}
+[2026-02-16 20:04:08] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/register",
+  "status": 500,
+  "duracion_ms": 3,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": {
+    "status": "error",
+    "message": "general.server_error: Access denied for user ''@'localhost' (using password: NO)"
+  }
+}
+[2026-02-16 20:04:08] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/register",
+  "status": 500,
+  "duracion_ms": 4,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": "{\"status\":\"error\",\"message\":\"general.server_error: Access denied for user ''@'localhost' (using password: NO)\"}"
+}
+[2026-02-16 20:04:13] [ERROR] Error en registro de usuario {
+  "service": "my-gasolinera-api",
+  "error": "Access denied for user ''@'localhost' (using password: NO)",
+  "stack": "Error: Access denied for user ''@'localhost' (using password: NO)\n    at PromisePool.query (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\mysql2\\lib\\promise\\pool.js:36:22)\n    at exports.register (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\Frontend\\Perfil\\controladores\\authController.js:20:41)\n    at Layer.handle [as handle_request] (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:175:3)",
+  "email": "david@david.com"
+}
+[2026-02-16 20:04:13] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/register",
+  "status": 500,
+  "duracion_ms": 3,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": {
+    "status": "error",
+    "message": "general.server_error: Access denied for user ''@'localhost' (using password: NO)"
+  }
+}
+[2026-02-16 20:04:13] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/register",
+  "status": 500,
+  "duracion_ms": 3,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": "{\"status\":\"error\",\"message\":\"general.server_error: Access denied for user ''@'localhost' (using password: NO)\"}"
+}
+[2026-02-16 20:04:56] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "Access denied for user ''@'localhost' (using password: NO)",
+  "stack": "Error: Access denied for user ''@'localhost' (using password: NO)\n    at PromisePool.query (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\mysql2\\lib\\promise\\pool.js:36:22)\n    at exports.login (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\Frontend\\Perfil\\controladores\\authController.js:87:35)\n    at Layer.handle [as handle_request] (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:175:3)",
+  "email": "David"
+}
+[2026-02-16 20:04:56] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 3,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": {
+    "status": "error",
+    "message": "general.server_error: Access denied for user ''@'localhost' (using password: NO)"
+  }
+}
+[2026-02-16 20:04:56] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 3,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": "{\"status\":\"error\",\"message\":\"general.server_error: Access denied for user ''@'localhost' (using password: NO)\"}"
+}
+[2026-02-16 20:10:02] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "secretOrPrivateKey must have a value",
+  "stack": "Error: secretOrPrivateKey must have a value\n    at module.exports [as sign] (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\jsonwebtoken\\sign.js:111:20)\n    at exports.login (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\Frontend\\Perfil\\controladores\\authController.js:111:27)",
+  "email": "David"
+}
+[2026-02-16 20:10:02] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 76,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": {
+    "status": "error",
+    "message": "general.server_error: secretOrPrivateKey must have a value"
+  }
+}
+[2026-02-16 20:10:02] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 76,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": "{\"status\":\"error\",\"message\":\"general.server_error: secretOrPrivateKey must have a value\"}"
+}
+[2026-02-16 20:10:28] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "secretOrPrivateKey must have a value",
+  "stack": "Error: secretOrPrivateKey must have a value\n    at module.exports [as sign] (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\jsonwebtoken\\sign.js:111:20)\n    at exports.login (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\Frontend\\Perfil\\controladores\\authController.js:111:27)",
+  "email": "David"
+}
+[2026-02-16 20:10:28] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 67,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": {
+    "status": "error",
+    "message": "general.server_error: secretOrPrivateKey must have a value"
+  }
+}
+[2026-02-16 20:10:28] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 67,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": "{\"status\":\"error\",\"message\":\"general.server_error: secretOrPrivateKey must have a value\"}"
+}
+[2026-02-16 20:10:34] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "secretOrPrivateKey must have a value",
+  "stack": "Error: secretOrPrivateKey must have a value\n    at module.exports [as sign] (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\jsonwebtoken\\sign.js:111:20)\n    at exports.login (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\Frontend\\Perfil\\controladores\\authController.js:111:27)",
+  "email": "David"
+}
+[2026-02-16 20:10:34] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 65,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": {
+    "status": "error",
+    "message": "general.server_error: secretOrPrivateKey must have a value"
+  }
+}
+[2026-02-16 20:10:34] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 65,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": "{\"status\":\"error\",\"message\":\"general.server_error: secretOrPrivateKey must have a value\"}"
+}
+[2026-02-16 20:10:57] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "secretOrPrivateKey must have a value",
+  "stack": "Error: secretOrPrivateKey must have a value\n    at module.exports [as sign] (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\jsonwebtoken\\sign.js:111:20)\n    at exports.login (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\Frontend\\Perfil\\controladores\\authController.js:111:27)",
+  "email": "David"
+}
+[2026-02-16 20:10:57] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 68,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": {
+    "status": "error",
+    "message": "general.server_error: secretOrPrivateKey must have a value"
+  }
+}
+[2026-02-16 20:10:57] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 68,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": "{\"status\":\"error\",\"message\":\"general.server_error: secretOrPrivateKey must have a value\"}"
+}
+[2026-02-16 20:10:58] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "secretOrPrivateKey must have a value",
+  "stack": "Error: secretOrPrivateKey must have a value\n    at module.exports [as sign] (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\jsonwebtoken\\sign.js:111:20)\n    at exports.login (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\Frontend\\Perfil\\controladores\\authController.js:111:27)",
+  "email": "David"
+}
+[2026-02-16 20:10:58] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 90,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": {
+    "status": "error",
+    "message": "general.server_error: secretOrPrivateKey must have a value"
+  }
+}
+[2026-02-16 20:10:58] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 91,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": "{\"status\":\"error\",\"message\":\"general.server_error: secretOrPrivateKey must have a value\"}"
+}
+[2026-02-16 20:11:11] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "secretOrPrivateKey must have a value",
+  "stack": "Error: secretOrPrivateKey must have a value\n    at module.exports [as sign] (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\node_modules\\jsonwebtoken\\sign.js:111:20)\n    at exports.login (C:\\Users\\davec\\OneDrive\\Documentos\\MyGasolinera Backend\\MyGasolineraBackEnd\\Frontend\\Perfil\\controladores\\authController.js:111:27)",
+  "email": "David"
+}
+[2026-02-16 20:11:11] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 66,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": {
+    "status": "error",
+    "message": "general.server_error: secretOrPrivateKey must have a value"
+  }
+}
+[2026-02-16 20:11:11] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 66,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": "{\"status\":\"error\",\"message\":\"general.server_error: secretOrPrivateKey must have a value\"}"
+}

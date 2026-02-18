@@ -45,17 +45,19 @@ app.use((req, res, next) => {
 });
 
 // CORS - Configuración completa para manejar preflight requests
-app.use(cors({
+// SE COMENTA PORQUE YA HAY UNA CONFIGURACIÓN MANUAL ARRIBA QUE FUNCIONA MEJOR PARA EL CASO ESPECÍFICO
+/* app.use(cors({
   origin: true, // Permite todos los orígenes
   credentials: true, // Permite cookies y credenciales
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'], // Métodos permitidos
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'], // Headers permitidos
   exposedHeaders: ['Content-Range', 'X-Content-Range'], // Headers expuestos al cliente
   maxAge: 86400 // Cache de preflight por 24 horas
-}));
+})); */
 
 // Manejar explícitamente las peticiones OPTIONS (preflight)
-app.options('*', cors());
+// app.options('*', cors());
+
 // Middleware
 app.use(express.json());
 app.use(loggerMiddleware);
@@ -72,11 +74,16 @@ const cochesRoutes = require('./Frontend/Coches/rutas/coches.rutas');
 const profileRoutes = require('./Frontend/Perfil/rutas/perfil.rutas');
 const estadisticasRoutes = require('./Frontend/Estadisticas/rutas/estadisticas.rutas');
 const gasolinerasRoutes = require('./Frontend/Gasolineras/rutas/gasolineras.rutas');
+const uploadRoutes = require('./Frontend/Imagenes/Logica/rutas/upload.rutas');
+
 // Montar rutas
 app.use('/', authRoutes);
 app.use('/', facturasRoutes);
 app.use('/', cochesRoutes);
 app.use('/api/perfil', profileRoutes); // ← MANTENER /api/perfil
+app.use('/', estadisticasRoutes);
+app.use('/', gasolinerasRoutes);
+app.use('/api', uploadRoutes);
 
 // Endpoint para obtener la URL actual del backend - DESHABILITADO (gistService eliminado)
 /*
@@ -101,12 +108,6 @@ app.get('/api/current-url', async (req, res) => {
   }
 });
 */
-
-app.use('/', estadisticasRoutes);
-app.use('/', estadisticasRoutes);
-app.use('/', gasolinerasRoutes);
-const uploadRoutes = require('./Frontend/Imagenes/Logica/rutas/upload.rutas');
-app.use('/api', uploadRoutes);
 
 app.use((err, req, res, next) => {
   logger.error('Error no controlado', {
