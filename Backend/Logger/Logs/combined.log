@@ -1,0 +1,2914 @@
+[2026-02-18 15:06:21] [INFO] Servidor iniciado correctamente {
+  "service": "my-gasolinera-api",
+  "puerto": "3000",
+  "entorno": "development"
+}
+[2026-02-18 15:06:21] [INFO] ================================= {
+  "service": "my-gasolinera-api"
+}
+[2026-02-18 15:06:21] [INFO] ✅ SERVIDOR INICIADO CORRECTAMENTE {
+  "service": "my-gasolinera-api"
+}
+[2026-02-18 15:06:21] [INFO] 📍 Puerto: 3000 {
+  "service": "my-gasolinera-api"
+}
+[2026-02-18 15:06:21] [INFO] 🌐 Local: http://localhost:3000 {
+  "service": "my-gasolinera-api"
+}
+[2026-02-18 15:06:21] [INFO] ================================= {
+  "service": "my-gasolinera-api"
+}
+[2026-02-18 15:29:29] [INFO] Servidor iniciado correctamente {
+  "service": "my-gasolinera-api",
+  "puerto": "3000",
+  "entorno": "development"
+}
+[2026-02-18 15:29:29] [INFO] ================================= {
+  "service": "my-gasolinera-api"
+}
+[2026-02-18 15:29:29] [INFO] ✅ SERVIDOR INICIADO CORRECTAMENTE {
+  "service": "my-gasolinera-api"
+}
+[2026-02-18 15:29:29] [INFO] 📍 Puerto: 3000 {
+  "service": "my-gasolinera-api"
+}
+[2026-02-18 15:29:29] [INFO] 🌐 Local: http://localhost:3000 {
+  "service": "my-gasolinera-api"
+}
+[2026-02-18 15:29:29] [INFO] ================================= {
+  "service": "my-gasolinera-api"
+}
+[2026-02-18 15:40:18] [INFO] Servidor iniciado correctamente {
+  "service": "my-gasolinera-api",
+  "puerto": "3000",
+  "entorno": "development"
+}
+[2026-02-18 15:40:18] [INFO] ================================= {
+  "service": "my-gasolinera-api"
+}
+[2026-02-18 15:40:18] [INFO] ✅ SERVIDOR INICIADO CORRECTAMENTE {
+  "service": "my-gasolinera-api"
+}
+[2026-02-18 15:40:18] [INFO] 📍 Puerto: 3000 {
+  "service": "my-gasolinera-api"
+}
+[2026-02-18 15:40:18] [INFO] 🌐 Local: http://localhost:3000 {
+  "service": "my-gasolinera-api"
+}
+[2026-02-18 15:40:18] [INFO] ================================= {
+  "service": "my-gasolinera-api"
+}
+[2026-02-18 15:41:14] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {
+    "email": "David",
+    "password": "***REDACTED***"
+  }
+}
+[2026-02-18 15:41:15] [INFO] Login exitoso {
+  "service": "my-gasolinera-api",
+  "email": "david@david.com",
+  "id_usuario": 19,
+  "nombre": "david"
+}
+[2026-02-18 15:41:15] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 200,
+  "duracion_ms": 413,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 15:41:15] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 200,
+  "duracion_ms": 414,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 15:41:37] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=46",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 15:41:37] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=46",
+  "status": 200,
+  "duracion_ms": 205,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 15:41:37] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=46",
+  "status": 200,
+  "duracion_ms": 217,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 15:41:39] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=12",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 15:41:39] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=12",
+  "status": 200,
+  "duracion_ms": 19,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 15:41:39] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=12",
+  "status": 200,
+  "duracion_ms": 21,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 15:41:40] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=44",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 15:41:40] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=44",
+  "status": 200,
+  "duracion_ms": 8,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 15:41:40] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=44",
+  "status": 200,
+  "duracion_ms": 9,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 15:41:40] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44246756395878&swLng=-0.4271341773986914&neLat=39.46553052600547&neLng=-0.38726582260132814",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 15:41:40] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=16",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 15:41:40] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=16",
+  "status": 200,
+  "duracion_ms": 30,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 15:41:40] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=16",
+  "status": 200,
+  "duracion_ms": 34,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 15:41:40] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44246756395878&swLng=-0.4271341773986914&neLat=39.46553052600547&neLng=-0.38726582260132814",
+  "status": 200,
+  "duracion_ms": 204,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 15:41:40] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44246756395878&swLng=-0.4271341773986914&neLat=39.46553052600547&neLng=-0.38726582260132814",
+  "status": 200,
+  "duracion_ms": 210,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 15:41:40] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=03",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 15:41:40] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=03",
+  "status": 200,
+  "duracion_ms": 49,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 15:41:40] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=03",
+  "status": 200,
+  "duracion_ms": 59,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 15:43:52] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44256698967239&swLng=-0.4253317329406836&neLat=39.4656299187874&neLng=-0.3854633781433203",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 15:43:52] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44256698967239&swLng=-0.4253317329406836&neLat=39.4656299187874&neLng=-0.3854633781433203",
+  "status": 200,
+  "duracion_ms": 30,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 15:43:52] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44256698967239&swLng=-0.4253317329406836&neLat=39.4656299187874&neLng=-0.3854633781433203",
+  "status": 200,
+  "duracion_ms": 32,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 15:43:52] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/usuarios/perfil/David",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 15:43:52] [INFO] Perfil de usuario obtenido exitosamente {
+  "service": "my-gasolinera-api",
+  "email": "david@david.com",
+  "nombre": "david"
+}
+[2026-02-18 15:43:52] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/usuarios/perfil/David",
+  "status": 200,
+  "duracion_ms": 6,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 15:43:52] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/usuarios/perfil/David",
+  "status": 200,
+  "duracion_ms": 6,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 15:43:52] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/cargarImagen/David",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 15:43:52] [INFO] Foto de perfil obtenida {
+  "service": "my-gasolinera-api",
+  "email": "david@david.com",
+  "tiene_foto": false
+}
+[2026-02-18 15:43:52] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/cargarImagen/David",
+  "status": 200,
+  "duracion_ms": 119,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 15:43:52] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/cargarImagen/David",
+  "status": 200,
+  "duracion_ms": 119,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 15:44:32] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/accesibilidad/David",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Mobile/15E148 Safari/604.1",
+  "body": {}
+}
+[2026-02-18 15:44:55] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/accesibilidad/David",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 18_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.5 Mobile/15E148 Safari/604.1",
+  "body": {}
+}
+[2026-02-18 15:45:27] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/accesibilidad",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {
+    "email": "David",
+    "tamanoFuente": "Mediano",
+    "altoContraste": false,
+    "modoOscuro": false,
+    "idioma": "Español"
+  }
+}
+[2026-02-18 15:45:35] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/accesibilidad/David",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 15:45:41] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/accesibilidad",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {
+    "email": "David",
+    "tamanoFuente": "Mediano",
+    "altoContraste": false,
+    "modoOscuro": false,
+    "idioma": "Español"
+  }
+}
+[2026-02-18 15:47:43] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/AppEmpresa/empleados/listar.php",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 15:47:51] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/AppEmpresa/empleados/listar.php",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 15:47:51] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/AppEmpresa/empleados/editar.php?id=11",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 15:47:57] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/AppEmpresa/empleados",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 15:48:04] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/AppEmpresa/empleados/listar.php",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 16:35:53] [INFO] Servidor iniciado correctamente {
+  "service": "my-gasolinera-api",
+  "puerto": "3000",
+  "entorno": "development"
+}
+[2026-02-18 16:35:53] [INFO] ================================= {
+  "service": "my-gasolinera-api"
+}
+[2026-02-18 16:35:53] [INFO] ✅ SERVIDOR INICIADO CORRECTAMENTE {
+  "service": "my-gasolinera-api"
+}
+[2026-02-18 16:35:53] [INFO] 📍 Puerto: 3000 {
+  "service": "my-gasolinera-api"
+}
+[2026-02-18 16:35:53] [INFO] 🌐 Local: http://localhost:3000 {
+  "service": "my-gasolinera-api"
+}
+[2026-02-18 16:35:53] [INFO] ================================= {
+  "service": "my-gasolinera-api"
+}
+[2026-02-18 16:39:58] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {
+    "email": "David",
+    "password": "***REDACTED***"
+  }
+}
+[2026-02-18 16:40:00] [INFO] Login exitoso {
+  "service": "my-gasolinera-api",
+  "email": "david@david.com",
+  "id_usuario": 19,
+  "nombre": "david"
+}
+[2026-02-18 16:40:00] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 200,
+  "duracion_ms": 1328,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 16:40:00] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 200,
+  "duracion_ms": 1331,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 16:40:12] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=46",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 16:40:12] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=46",
+  "status": 200,
+  "duracion_ms": 225,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 16:40:12] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=46",
+  "status": 200,
+  "duracion_ms": 232,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 16:40:13] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=12",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 16:40:13] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=12",
+  "status": 200,
+  "duracion_ms": 31,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 16:40:13] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=12",
+  "status": 200,
+  "duracion_ms": 32,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 16:40:13] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=44",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 16:40:13] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=44",
+  "status": 200,
+  "duracion_ms": 14,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 16:40:13] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=44",
+  "status": 200,
+  "duracion_ms": 15,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 16:40:14] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=16",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 16:40:14] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=16",
+  "status": 200,
+  "duracion_ms": 13,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 16:40:14] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=16",
+  "status": 200,
+  "duracion_ms": 14,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 16:40:14] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/usuarios/perfil/David",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 16:40:14] [INFO] Perfil de usuario obtenido exitosamente {
+  "service": "my-gasolinera-api",
+  "email": "david@david.com",
+  "nombre": "david"
+}
+[2026-02-18 16:40:14] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/usuarios/perfil/David",
+  "status": 200,
+  "duracion_ms": 6,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 16:40:14] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/usuarios/perfil/David",
+  "status": 200,
+  "duracion_ms": 7,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 16:40:14] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/cargarImagen/David",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 16:40:14] [INFO] Foto de perfil obtenida {
+  "service": "my-gasolinera-api",
+  "email": "david@david.com",
+  "tiene_foto": false
+}
+[2026-02-18 16:40:14] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/cargarImagen/David",
+  "status": 200,
+  "duracion_ms": 6,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 16:40:14] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/cargarImagen/David",
+  "status": 200,
+  "duracion_ms": 7,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 16:40:15] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44246756395878&swLng=-0.4271341773986914&neLat=39.46553052600547&neLng=-0.38726582260132814",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 16:40:15] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44246756395878&swLng=-0.4271341773986914&neLat=39.46553052600547&neLng=-0.38726582260132814",
+  "status": 200,
+  "duracion_ms": 169,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 16:40:15] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44246756395878&swLng=-0.4271341773986914&neLat=39.46553052600547&neLng=-0.38726582260132814",
+  "status": 200,
+  "duracion_ms": 171,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 16:40:16] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=03",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 16:40:16] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=03",
+  "status": 200,
+  "duracion_ms": 14,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 16:40:16] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=03",
+  "status": 200,
+  "duracion_ms": 18,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 16:40:17] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/accesibilidad/David",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 16:40:35] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/accesibilidad",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {
+    "email": "David",
+    "tamanoFuente": "Mediano",
+    "altoContraste": false,
+    "modoOscuro": false,
+    "idioma": "Español"
+  }
+}
+[2026-02-18 16:40:40] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/accesibilidad/David",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 16:40:42] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/facturas?page=1&limit=10",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 16:40:42] [INFO] Facturas paginadas obtenidas {
+  "service": "my-gasolinera-api",
+  "usuario_id": 19,
+  "cantidad": 0,
+  "page": "1",
+  "totalItems": 0
+}
+[2026-02-18 16:40:42] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/facturas?page=1&limit=10",
+  "status": 200,
+  "duracion_ms": 181,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 16:40:42] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/facturas?page=1&limit=10",
+  "status": 200,
+  "duracion_ms": 181,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 16:47:23] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/coches",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 16:47:24] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/coches",
+  "status": 200,
+  "duracion_ms": 487,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 16:47:24] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/coches",
+  "status": 200,
+  "duracion_ms": 488,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 16:57:38] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=46",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 16:57:39] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=46",
+  "status": 200,
+  "duracion_ms": 1247,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 16:57:39] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=46",
+  "status": 200,
+  "duracion_ms": 1278,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 16:57:47] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=12",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 16:57:47] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=12",
+  "status": 200,
+  "duracion_ms": 183,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 16:57:47] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=12",
+  "status": 200,
+  "duracion_ms": 187,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 16:57:49] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=44",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 16:57:49] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=44",
+  "status": 200,
+  "duracion_ms": 40,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 16:57:49] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=44",
+  "status": 200,
+  "duracion_ms": 93,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 17:15:22] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=46",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 17:15:23] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=46",
+  "status": 200,
+  "duracion_ms": 713,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 17:15:23] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=46",
+  "status": 200,
+  "duracion_ms": 725,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 17:15:26] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=12",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 17:15:26] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=12",
+  "status": 200,
+  "duracion_ms": 39,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 17:15:26] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=12",
+  "status": 200,
+  "duracion_ms": 41,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 17:15:27] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=44",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 17:15:27] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=44",
+  "status": 200,
+  "duracion_ms": 18,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 17:15:27] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=44",
+  "status": 200,
+  "duracion_ms": 19,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 17:33:18] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=46",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 17:33:19] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=46",
+  "status": 200,
+  "duracion_ms": 273,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 17:33:19] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=46",
+  "status": 200,
+  "duracion_ms": 287,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 17:33:22] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=12",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 17:33:22] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=12",
+  "status": 200,
+  "duracion_ms": 63,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 17:33:22] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=12",
+  "status": 200,
+  "duracion_ms": 72,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 17:33:23] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=44",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-18 17:33:23] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=44",
+  "status": 200,
+  "duracion_ms": 13,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-18 17:33:23] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=44",
+  "status": 200,
+  "duracion_ms": 16,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:48:42] [INFO] Servidor iniciado correctamente {
+  "service": "my-gasolinera-api",
+  "puerto": "3000",
+  "entorno": "development"
+}
+[2026-02-19 14:48:42] [INFO] ================================= {
+  "service": "my-gasolinera-api"
+}
+[2026-02-19 14:48:42] [INFO] ✅ SERVIDOR INICIADO CORRECTAMENTE {
+  "service": "my-gasolinera-api"
+}
+[2026-02-19 14:48:42] [INFO] 📍 Puerto: 3000 {
+  "service": "my-gasolinera-api"
+}
+[2026-02-19 14:48:42] [INFO] 🌐 Local: http://localhost:3000 {
+  "service": "my-gasolinera-api"
+}
+[2026-02-19 14:48:42] [INFO] ================================= {
+  "service": "my-gasolinera-api"
+}
+[2026-02-19 14:49:06] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {
+    "email": "David",
+    "password": "***REDACTED***"
+  }
+}
+[2026-02-19 14:49:07] [INFO] Login exitoso {
+  "service": "my-gasolinera-api",
+  "email": "david@david.com",
+  "id_usuario": 19,
+  "nombre": "david"
+}
+[2026-02-19 14:49:07] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 200,
+  "duracion_ms": 547,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:07] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 200,
+  "duracion_ms": 548,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:13] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=46",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:49:13] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=46",
+  "status": 200,
+  "duracion_ms": 74,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:13] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=46",
+  "status": 200,
+  "duracion_ms": 81,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:13] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=12",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:49:13] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=12",
+  "status": 200,
+  "duracion_ms": 16,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:13] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=12",
+  "status": 200,
+  "duracion_ms": 26,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:14] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=44",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:49:14] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=44",
+  "status": 200,
+  "duracion_ms": 66,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:14] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=44",
+  "status": 200,
+  "duracion_ms": 82,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:14] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=16",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:49:14] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=16",
+  "status": 200,
+  "duracion_ms": 32,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:14] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=16",
+  "status": 200,
+  "duracion_ms": 39,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:15] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=03",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:49:15] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=03",
+  "status": 200,
+  "duracion_ms": 49,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:15] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=03",
+  "status": 200,
+  "duracion_ms": 64,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:15] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44246756395878&swLng=-0.4271341773986914&neLat=39.46553052600547&neLng=-0.38726582260132814",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:49:15] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44246756395878&swLng=-0.4271341773986914&neLat=39.46553052600547&neLng=-0.38726582260132814",
+  "status": 200,
+  "duracion_ms": 333,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:15] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44246756395878&swLng=-0.4271341773986914&neLat=39.46553052600547&neLng=-0.38726582260132814",
+  "status": 200,
+  "duracion_ms": 381,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:17] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.405769787224514&swLng=-0.4984165641784766&neLat=39.49802439863432&neLng=-0.33894314498902345",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:49:17] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.405769787224514&swLng=-0.4984165641784766&neLat=39.49802439863432&neLng=-0.33894314498902345",
+  "status": 200,
+  "duracion_ms": 32,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:17] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.405769787224514&swLng=-0.4984165641784766&neLat=39.49802439863432&neLng=-0.33894314498902345",
+  "status": 200,
+  "duracion_ms": 35,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:21] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.405153848136116&swLng=-0.49993730613166143&neLat=39.49740927514047&neLng=-0.3404638869422083",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:49:21] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.405153848136116&swLng=-0.49993730613166143&neLat=39.49740927514047&neLng=-0.3404638869422083",
+  "status": 200,
+  "duracion_ms": 33,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:21] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.405153848136116&swLng=-0.49993730613166143&neLat=39.49740927514047&neLng=-0.3404638869422083",
+  "status": 200,
+  "duracion_ms": 35,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:22] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.409530788130326&swLng=-0.48774934836798955&neLat=39.501780419187185&neLng=-0.32827592917853643",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:49:22] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.409530788130326&swLng=-0.48774934836798955&neLat=39.501780419187185&neLng=-0.32827592917853643",
+  "status": 200,
+  "duracion_ms": 28,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:22] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.409530788130326&swLng=-0.48774934836798955&neLat=39.501780419187185&neLng=-0.32827592917853643",
+  "status": 200,
+  "duracion_ms": 30,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:23] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.41642722695887&swLng=-0.48088289328986455&neLat=39.50866772465565&neLng=-0.32140947410041143",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:49:23] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.41642722695887&swLng=-0.48088289328986455&neLat=39.50866772465565&neLng=-0.32140947410041143",
+  "status": 200,
+  "duracion_ms": 30,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:23] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.41642722695887&swLng=-0.48088289328986455&neLat=39.50866772465565&neLng=-0.32140947410041143",
+  "status": 200,
+  "duracion_ms": 32,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:24] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.37464027342352&swLng=-0.5802748305457239&neLat=39.55910965678398&neLng=-0.2613279921668177",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:49:24] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.37464027342352&swLng=-0.5802748305457239&neLat=39.55910965678398&neLng=-0.2613279921668177",
+  "status": 200,
+  "duracion_ms": 30,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:24] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.37464027342352&swLng=-0.5802748305457239&neLat=39.55910965678398&neLng=-0.2613279921668177",
+  "status": 200,
+  "duracion_ms": 32,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:25] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.37331329358753&swLng=-0.5819914443152552&neLat=39.55778618994563&neLng=-0.26304460593634893",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:49:25] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.37331329358753&swLng=-0.5819914443152552&neLat=39.55778618994563&neLng=-0.26304460593634893",
+  "status": 200,
+  "duracion_ms": 26,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:25] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.37331329358753&swLng=-0.5819914443152552&neLat=39.55778618994563&neLng=-0.26304460593634893",
+  "status": 200,
+  "duracion_ms": 28,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:26] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.414172697010365&swLng=-0.48706270286017705&neLat=39.50641618066066&neLng=-0.32758928367072393",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:49:26] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.414172697010365&swLng=-0.48706270286017705&neLat=39.50641618066066&neLng=-0.32758928367072393",
+  "status": 200,
+  "duracion_ms": 34,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:26] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.414172697010365&swLng=-0.48706270286017705&neLat=39.50641618066066&neLng=-0.32758928367072393",
+  "status": 200,
+  "duracion_ms": 36,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:26] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.414172697010365&swLng=-0.48706270286017705&neLat=39.50641618066066&neLng=-0.32758928367072393",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:49:26] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.414172697010365&swLng=-0.48706270286017705&neLat=39.50641618066066&neLng=-0.32758928367072393",
+  "status": 200,
+  "duracion_ms": 31,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:26] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.414172697010365&swLng=-0.48706270286017705&neLat=39.50641618066066&neLng=-0.32758928367072393",
+  "status": 200,
+  "duracion_ms": 35,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:28] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.414172697010365&swLng=-0.48706270286017705&neLat=39.50641618066066&neLng=-0.32758928367072393",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:49:28] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.414172697010365&swLng=-0.48706270286017705&neLat=39.50641618066066&neLng=-0.32758928367072393",
+  "status": 200,
+  "duracion_ms": 28,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:28] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.414172697010365&swLng=-0.48706270286017705&neLat=39.50641618066066&neLng=-0.32758928367072393",
+  "status": 200,
+  "duracion_ms": 34,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:28] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.41629460956841&swLng=-0.48071123191291143&neLat=39.50853528291076&neLng=-0.3212378127234583",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:49:29] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.41629460956841&swLng=-0.48071123191291143&neLat=39.50853528291076&neLng=-0.3212378127234583",
+  "status": 200,
+  "duracion_ms": 28,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:29] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.41629460956841&swLng=-0.48071123191291143&neLat=39.50853528291076&neLng=-0.3212378127234583",
+  "status": 200,
+  "duracion_ms": 31,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:29] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.41629460956841&swLng=-0.4805395705359583&neLat=39.50853528291076&neLng=-0.3210661513465052",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:49:29] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.41629460956841&swLng=-0.4805395705359583&neLat=39.50853528291076&neLng=-0.3210661513465052",
+  "status": 200,
+  "duracion_ms": 27,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:29] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.41629460956841&swLng=-0.4805395705359583&neLat=39.50853528291076&neLng=-0.3210661513465052",
+  "status": 200,
+  "duracion_ms": 29,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:33] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44095710339422&swLng=-0.42577959128791143&neLat=39.46402056572524&neLng=-0.38591123649054815",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:49:33] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44095710339422&swLng=-0.42577959128791143&neLat=39.46402056572524&neLng=-0.38591123649054815",
+  "status": 200,
+  "duracion_ms": 204,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:33] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44095710339422&swLng=-0.42577959128791143&neLat=39.46402056572524&neLng=-0.38591123649054815",
+  "status": 200,
+  "duracion_ms": 211,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:34] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44778415403882&swLng=-0.4152653319495325&neLat=39.45931570958888&neLng=-0.3953311545508509",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:49:34] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44778415403882&swLng=-0.4152653319495325&neLat=39.45931570958888&neLng=-0.3953311545508509",
+  "status": 200,
+  "duracion_ms": 233,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:34] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44778415403882&swLng=-0.4152653319495325&neLat=39.45931570958888&neLng=-0.3953311545508509",
+  "status": 200,
+  "duracion_ms": 245,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:35] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.42766730838463&swLng=-0.44680839072772205&neLat=39.47379539520209&neLng=-0.3670716811329955",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:49:35] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.42766730838463&swLng=-0.44680839072772205&neLat=39.47379539520209&neLng=-0.3670716811329955",
+  "status": 200,
+  "duracion_ms": 26,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:35] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.42766730838463&swLng=-0.44680839072772205&neLat=39.47379539520209&neLng=-0.3670716811329955",
+  "status": 200,
+  "duracion_ms": 29,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:36] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.41332685564479&swLng=-0.4760730257438528&neLat=39.505571459510925&neLng=-0.31659960655439967",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:49:36] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.41332685564479&swLng=-0.4760730257438528&neLat=39.505571459510925&neLng=-0.31659960655439967",
+  "status": 200,
+  "duracion_ms": 21,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:36] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.41332685564479&swLng=-0.4760730257438528&neLat=39.505571459510925&neLng=-0.31659960655439967",
+  "status": 200,
+  "duracion_ms": 23,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:36] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.41332685564479&swLng=-0.4760730257438528&neLat=39.505571459510925&neLng=-0.31659960655439967",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:49:36] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.41332685564479&swLng=-0.4760730257438528&neLat=39.505571459510925&neLng=-0.31659960655439967",
+  "status": 200,
+  "duracion_ms": 30,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:36] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.41332685564479&swLng=-0.4760730257438528&neLat=39.505571459510925&neLng=-0.31659960655439967",
+  "status": 200,
+  "duracion_ms": 32,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:39] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.448502258697225&swLng=-0.42112498726134096&neLat=39.46003369531291&neLng=-0.4011908098626593",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:49:39] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.448502258697225&swLng=-0.42112498726134096&neLat=39.46003369531291&neLng=-0.4011908098626593",
+  "status": 200,
+  "duracion_ms": 35,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:39] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.448502258697225&swLng=-0.42112498726134096&neLat=39.46003369531291&neLng=-0.4011908098626593",
+  "status": 200,
+  "duracion_ms": 40,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:40] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.45136872807202&swLng=-0.41252046074156556&neLat=39.4571344477544&neLng=-0.40255337204222474",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:49:40] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.45136872807202&swLng=-0.41252046074156556&neLat=39.4571344477544&neLng=-0.40255337204222474",
+  "status": 200,
+  "duracion_ms": 29,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:40] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.45136872807202&swLng=-0.41252046074156556&neLat=39.4571344477544&neLng=-0.40255337204222474",
+  "status": 200,
+  "duracion_ms": 32,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:46] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.43056343441319&swLng=-0.4598131700921515&neLat=39.47668960312181&neLng=-0.38007646049742494",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:49:46] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.43056343441319&swLng=-0.4598131700921515&neLat=39.47668960312181&neLng=-0.38007646049742494",
+  "status": 200,
+  "duracion_ms": 28,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:46] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.43056343441319&swLng=-0.4598131700921515&neLat=39.47668960312181&neLng=-0.38007646049742494",
+  "status": 200,
+  "duracion_ms": 33,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:47] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.40954469191028&swLng=-0.5049601122308234&neLat=39.501794304554885&neLng=-0.34548669304137025",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:49:47] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.40954469191028&swLng=-0.5049601122308234&neLat=39.501794304554885&neLng=-0.34548669304137025",
+  "status": 200,
+  "duracion_ms": 33,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:47] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.40954469191028&swLng=-0.5049601122308234&neLat=39.501794304554885&neLng=-0.34548669304137025",
+  "status": 200,
+  "duracion_ms": 35,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:48] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.41644112936363&swLng=-0.4847040697503546&neLat=39.508681608647294&neLng=-0.3252306505609015",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:49:48] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.41644112936363&swLng=-0.4847040697503546&neLat=39.508681608647294&neLng=-0.3252306505609015",
+  "status": 200,
+  "duracion_ms": 33,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:48] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.41644112936363&swLng=-0.4847040697503546&neLat=39.508681608647294&neLng=-0.3252306505609015",
+  "status": 200,
+  "duracion_ms": 35,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:49] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.41670636333483&swLng=-0.4809275194573859&neLat=39.50894649132678&neLng=-0.32145410026793275",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:49:49] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.41670636333483&swLng=-0.4809275194573859&neLat=39.50894649132678&neLng=-0.32145410026793275",
+  "status": 200,
+  "duracion_ms": 27,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:49:49] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.41670636333483&swLng=-0.4809275194573859&neLat=39.50894649132678&neLng=-0.32145410026793275",
+  "status": 200,
+  "duracion_ms": 30,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:50:07] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/usuarios/perfil/David",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:50:07] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/cargarImagen/David",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:50:07] [INFO] Perfil de usuario obtenido exitosamente {
+  "service": "my-gasolinera-api",
+  "email": "david@david.com",
+  "nombre": "david"
+}
+[2026-02-19 14:50:07] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/usuarios/perfil/David",
+  "status": 200,
+  "duracion_ms": 3,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:50:07] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/usuarios/perfil/David",
+  "status": 200,
+  "duracion_ms": 4,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:50:07] [INFO] Foto de perfil obtenida {
+  "service": "my-gasolinera-api",
+  "email": "david@david.com",
+  "tiene_foto": false
+}
+[2026-02-19 14:50:07] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/cargarImagen/David",
+  "status": 200,
+  "duracion_ms": 7,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:50:07] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/cargarImagen/David",
+  "status": 200,
+  "duracion_ms": 7,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:51:51] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {
+    "email": "David",
+    "password": "***REDACTED***"
+  }
+}
+[2026-02-19 14:51:51] [INFO] Login exitoso {
+  "service": "my-gasolinera-api",
+  "email": "david@david.com",
+  "id_usuario": 19,
+  "nombre": "david"
+}
+[2026-02-19 14:51:51] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 200,
+  "duracion_ms": 183,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:51:51] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 200,
+  "duracion_ms": 183,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:51:57] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=46",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:51:57] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=46",
+  "status": 200,
+  "duracion_ms": 214,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:51:57] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=46",
+  "status": 200,
+  "duracion_ms": 267,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:51:58] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=12",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:51:58] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=12",
+  "status": 200,
+  "duracion_ms": 132,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:51:58] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=12",
+  "status": 200,
+  "duracion_ms": 143,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:51:59] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44246756395878&swLng=-0.4271341773986914&neLat=39.46553052600547&neLng=-0.38726582260132814",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:51:59] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=44",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:51:59] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44246756395878&swLng=-0.4271341773986914&neLat=39.46553052600547&neLng=-0.38726582260132814",
+  "status": 200,
+  "duracion_ms": 359,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:51:59] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44246756395878&swLng=-0.4271341773986914&neLat=39.46553052600547&neLng=-0.38726582260132814",
+  "status": 200,
+  "duracion_ms": 388,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:51:59] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=44",
+  "status": 200,
+  "duracion_ms": 256,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:51:59] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=44",
+  "status": 200,
+  "duracion_ms": 269,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:51:59] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=16",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:51:59] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=16",
+  "status": 200,
+  "duracion_ms": 45,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:51:59] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=16",
+  "status": 200,
+  "duracion_ms": 57,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:51:59] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=03",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:51:59] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=03",
+  "status": 200,
+  "duracion_ms": 35,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:51:59] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=03",
+  "status": 200,
+  "duracion_ms": 44,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:52:03] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.4294747164577&swLng=-0.4530979606628516&neLat=39.47560160623975&neLng=-0.373361251068125",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:52:03] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.4294747164577&swLng=-0.4530979606628516&neLat=39.47560160623975&neLng=-0.373361251068125",
+  "status": 200,
+  "duracion_ms": 65,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:52:03] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.4294747164577&swLng=-0.4530979606628516&neLat=39.47560160623975&neLng=-0.373361251068125",
+  "status": 200,
+  "duracion_ms": 69,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:52:04] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.351068529290345&swLng=-0.6107689353942969&neLat=39.53560030094453&neLng=-0.29182209701539064",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:52:04] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.351068529290345&swLng=-0.6107689353942969&neLat=39.53560030094453&neLng=-0.29182209701539064",
+  "status": 200,
+  "duracion_ms": 50,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:52:04] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.351068529290345&swLng=-0.6107689353942969&neLat=39.53560030094453&neLng=-0.29182209701539064",
+  "status": 200,
+  "duracion_ms": 54,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:52:04] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.351068529290345&swLng=-0.6107689353942969&neLat=39.53560030094453&neLng=-0.29182209701539064",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:52:04] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.351068529290345&swLng=-0.6107689353942969&neLat=39.53560030094453&neLng=-0.29182209701539064",
+  "status": 200,
+  "duracion_ms": 31,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:52:04] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.351068529290345&swLng=-0.6107689353942969&neLat=39.53560030094453&neLng=-0.29182209701539064",
+  "status": 200,
+  "duracion_ms": 34,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:52:07] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.41462278076292&swLng=-0.49558415145875&neLat=39.50686566832289&neLng=-0.3361107322692969",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:52:07] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.41462278076292&swLng=-0.49558415145875&neLat=39.50686566832289&neLng=-0.3361107322692969",
+  "status": 200,
+  "duracion_ms": 35,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:52:07] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.41462278076292&swLng=-0.49558415145875&neLat=39.50686566832289&neLng=-0.3361107322692969",
+  "status": 200,
+  "duracion_ms": 37,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:52:08] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.41462278076292&swLng=-0.49558415145875&neLat=39.50686566832289&neLng=-0.3361107322692969",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:52:08] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.41462278076292&swLng=-0.49558415145875&neLat=39.50686566832289&neLng=-0.3361107322692969",
+  "status": 200,
+  "duracion_ms": 34,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:52:08] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.41462278076292&swLng=-0.49558415145875&neLat=39.50686566832289&neLng=-0.3361107322692969",
+  "status": 200,
+  "duracion_ms": 36,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:52:09] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.45091824289418&swLng=-0.4251171562194922&neLat=39.47397840566966&neLng=-0.3852488014221289",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:52:09] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.45091824289418&swLng=-0.4251171562194922&neLat=39.47397840566966&neLng=-0.3852488014221289",
+  "status": 200,
+  "duracion_ms": 33,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:52:09] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.45091824289418&swLng=-0.4251171562194922&neLat=39.47397840566966&neLng=-0.3852488014221289",
+  "status": 200,
+  "duracion_ms": 35,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:52:09] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.45595502249685&swLng=-0.41237129898072267&neLat=39.46748522465947&neLng=-0.392437121582041",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:52:09] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.45595502249685&swLng=-0.41237129898072267&neLat=39.46748522465947&neLng=-0.392437121582041",
+  "status": 200,
+  "duracion_ms": 104,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:52:09] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.45595502249685&swLng=-0.41237129898072267&neLat=39.46748522465947&neLng=-0.392437121582041",
+  "status": 200,
+  "duracion_ms": 106,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:52:10] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.456551459108226&swLng=-0.41393770904541993&neLat=39.468081562470466&neLng=-0.3940035316467383",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:52:10] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.456551459108226&swLng=-0.41393770904541993&neLat=39.468081562470466&neLng=-0.3940035316467383",
+  "status": 200,
+  "duracion_ms": 97,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:52:10] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.456551459108226&swLng=-0.41393770904541993&neLat=39.468081562470466&neLng=-0.3940035316467383",
+  "status": 200,
+  "duracion_ms": 101,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:52:10] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.45101765654291&swLng=-0.41389479370118165&neLat=39.46254867653758&neLng=-0.3939606163025",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:52:10] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.45101765654291&swLng=-0.41389479370118165&neLat=39.46254867653758&neLng=-0.3939606163025",
+  "status": 200,
+  "duracion_ms": 26,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:52:10] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.45101765654291&swLng=-0.41389479370118165&neLat=39.46254867653758&neLng=-0.3939606163025",
+  "status": 200,
+  "duracion_ms": 28,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:52:11] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.450514992881835&swLng=-0.41389479370118165&neLat=39.462046096133605&neLng=-0.3939606163025",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:52:11] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.450514992881835&swLng=-0.41389479370118165&neLat=39.462046096133605&neLng=-0.3939606163025",
+  "status": 200,
+  "duracion_ms": 33,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:52:11] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.450514992881835&swLng=-0.41389479370118165&neLat=39.462046096133605&neLng=-0.3939606163025",
+  "status": 200,
+  "duracion_ms": 37,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:52:12] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.450854657562765&swLng=-0.4154612037658789&neLat=39.46238570455533&neLng=-0.3955270263671973",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:52:12] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.450854657562765&swLng=-0.4154612037658789&neLat=39.46238570455533&neLng=-0.3955270263671973",
+  "status": 200,
+  "duracion_ms": 36,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:52:12] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.450854657562765&swLng=-0.4154612037658789&neLat=39.46238570455533&neLng=-0.3955270263671973",
+  "status": 200,
+  "duracion_ms": 39,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:52:14] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.42571499588733&swLng=-0.4414718341849344&neLat=39.471844375658016&neLng=-0.36173512459020785",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:52:14] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.42571499588733&swLng=-0.4414718341849344&neLat=39.471844375658016&neLng=-0.36173512459020785",
+  "status": 200,
+  "duracion_ms": 23,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:52:14] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.42571499588733&swLng=-0.4414718341849344&neLat=39.471844375658016&neLng=-0.36173512459020785",
+  "status": 200,
+  "duracion_ms": 25,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:52:14] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.39487877155096&swLng=-0.4829280567191141&neLat=39.487147802708776&neLng=-0.32345463752966097",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:52:15] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.39487877155096&swLng=-0.4829280567191141&neLat=39.487147802708776&neLng=-0.32345463752966097",
+  "status": 200,
+  "duracion_ms": 25,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:52:15] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.39487877155096&swLng=-0.4829280567191141&neLat=39.487147802708776&neLng=-0.32345463752966097",
+  "status": 200,
+  "duracion_ms": 32,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:52:15] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.42259883576276&swLng=-0.48121144294958285&neLat=39.514831158903725&neLng=-0.3217380237601297",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:52:15] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.42259883576276&swLng=-0.48121144294958285&neLat=39.514831158903725&neLng=-0.3217380237601297",
+  "status": 200,
+  "duracion_ms": 27,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:52:15] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.42259883576276&swLng=-0.48121144294958285&neLat=39.514831158903725&neLng=-0.3217380237601297",
+  "status": 200,
+  "duracion_ms": 30,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:52:16] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.42259883576276&swLng=-0.48121144294958285&neLat=39.514831158903725&neLng=-0.3217380237601297",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 14:52:16] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.42259883576276&swLng=-0.48121144294958285&neLat=39.514831158903725&neLng=-0.3217380237601297",
+  "status": 200,
+  "duracion_ms": 30,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 14:52:16] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.42259883576276&swLng=-0.48121144294958285&neLat=39.514831158903725&neLng=-0.3217380237601297",
+  "status": 200,
+  "duracion_ms": 33,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:05] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {
+    "email": "David",
+    "password": "***REDACTED***"
+  }
+}
+[2026-02-19 15:07:06] [INFO] Login exitoso {
+  "service": "my-gasolinera-api",
+  "email": "david@david.com",
+  "id_usuario": 19,
+  "nombre": "david"
+}
+[2026-02-19 15:07:06] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 200,
+  "duracion_ms": 587,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:06] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 200,
+  "duracion_ms": 587,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:11] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=46",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 15:07:12] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=46",
+  "status": 200,
+  "duracion_ms": 598,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:12] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=46",
+  "status": 200,
+  "duracion_ms": 1040,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:13] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44291497855221&swLng=-0.4271341773986914&neLat=39.46508325673006&neLng=-0.38726582260132814",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 15:07:13] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=12",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 15:07:14] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44291497855221&swLng=-0.4271341773986914&neLat=39.46508325673006&neLng=-0.38726582260132814",
+  "status": 200,
+  "duracion_ms": 1428,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:15] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44291497855221&swLng=-0.4271341773986914&neLat=39.46508325673006&neLng=-0.38726582260132814",
+  "status": 200,
+  "duracion_ms": 1439,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:15] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=12",
+  "status": 200,
+  "duracion_ms": 1129,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:15] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=12",
+  "status": 200,
+  "duracion_ms": 1134,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:15] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=44",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 15:07:15] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=44",
+  "status": 200,
+  "duracion_ms": 10,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:15] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=44",
+  "status": 200,
+  "duracion_ms": 14,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:15] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=16",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 15:07:15] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=16",
+  "status": 200,
+  "duracion_ms": 43,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:15] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=16",
+  "status": 200,
+  "duracion_ms": 46,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:15] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=03",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 15:07:15] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=03",
+  "status": 200,
+  "duracion_ms": 73,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:15] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?id_provincia=03",
+  "status": 200,
+  "duracion_ms": 80,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:15] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.405023697092304&swLng=-0.4994465324401953&neLat=39.49370269469912&neLng=-0.3399731132507422",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 15:07:16] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.405023697092304&swLng=-0.4994465324401953&neLat=39.49370269469912&neLng=-0.3399731132507422",
+  "status": 200,
+  "duracion_ms": 227,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:16] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.405023697092304&swLng=-0.4994465324401953&neLat=39.49370269469912&neLng=-0.3399731132507422",
+  "status": 200,
+  "duracion_ms": 252,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:16] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.35473541737273&swLng=-0.5957485649108984&neLat=39.532108419792806&neLng=-0.2768017265319922",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 15:07:16] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.35473541737273&swLng=-0.5957485649108984&neLat=39.532108419792806&neLng=-0.2768017265319922",
+  "status": 200,
+  "duracion_ms": 90,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:16] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.35473541737273&swLng=-0.5957485649108984&neLat=39.532108419792806&neLng=-0.2768017265319922",
+  "status": 200,
+  "duracion_ms": 95,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:17] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.404891058010946&swLng=-0.4994465324401953&neLat=39.49357022443429&neLng=-0.3399731132507422",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 15:07:17] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.404891058010946&swLng=-0.4994465324401953&neLat=39.49357022443429&neLng=-0.3399731132507422",
+  "status": 200,
+  "duracion_ms": 48,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:17] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.404891058010946&swLng=-0.4994465324401953&neLat=39.49357022443429&neLng=-0.3399731132507422",
+  "status": 200,
+  "duracion_ms": 52,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:19] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44232623243158&swLng=-0.4274121576956924&neLat=39.46449469804824&neLng=-0.3875438028983291",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 15:07:19] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44232623243158&swLng=-0.4274121576956924&neLat=39.46449469804824&neLng=-0.3875438028983291",
+  "status": 200,
+  "duracion_ms": 81,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:19] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44232623243158&swLng=-0.4274121576956924&neLat=39.46449469804824&neLng=-0.3875438028983291",
+  "status": 200,
+  "duracion_ms": 85,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:19] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44156396236517&swLng=-0.42697585296374907&neLat=39.46373267066188&neLng=-0.3871074981663858",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 15:07:19] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44156396236517&swLng=-0.42697585296374907&neLat=39.46373267066188&neLng=-0.3871074981663858",
+  "status": 200,
+  "duracion_ms": 49,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:20] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44156396236517&swLng=-0.42697585296374907&neLat=39.46373267066188&neLng=-0.3871074981663858",
+  "status": 200,
+  "duracion_ms": 56,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:20] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/usuarios/perfil/David",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 15:07:20] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/cargarImagen/David",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 15:07:20] [INFO] Perfil de usuario obtenido exitosamente {
+  "service": "my-gasolinera-api",
+  "email": "david@david.com",
+  "nombre": "david"
+}
+[2026-02-19 15:07:20] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/usuarios/perfil/David",
+  "status": 200,
+  "duracion_ms": 9,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:20] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/usuarios/perfil/David",
+  "status": 200,
+  "duracion_ms": 10,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:20] [INFO] Foto de perfil obtenida {
+  "service": "my-gasolinera-api",
+  "email": "david@david.com",
+  "tiene_foto": false
+}
+[2026-02-19 15:07:20] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/cargarImagen/David",
+  "status": 200,
+  "duracion_ms": 9,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:20] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/cargarImagen/David",
+  "status": 200,
+  "duracion_ms": 9,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:28] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44291497855221&swLng=-0.4271341773986914&neLat=39.46508325673006&neLng=-0.38726582260132814",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 15:07:28] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44291497855221&swLng=-0.4271341773986914&neLat=39.46508325673006&neLng=-0.38726582260132814",
+  "status": 200,
+  "duracion_ms": 50,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:28] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44291497855221&swLng=-0.4271341773986914&neLat=39.46508325673006&neLng=-0.38726582260132814",
+  "status": 200,
+  "duracion_ms": 55,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:38] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44246756395878&swLng=-0.4277564498901465&neLat=39.46553052600547&neLng=-0.38664355010987306",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 15:07:38] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44246756395878&swLng=-0.4277564498901465&neLat=39.46553052600547&neLng=-0.38664355010987306",
+  "status": 200,
+  "duracion_ms": 72,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:38] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44246756395878&swLng=-0.4277564498901465&neLat=39.46553052600547&neLng=-0.38664355010987306",
+  "status": 200,
+  "duracion_ms": 83,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:40] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44246756395878&swLng=-0.4179288360595801&neLat=39.46553052600547&neLng=-0.39647116394043946",
+  "ip": "127.0.0.1",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36",
+  "body": {}
+}
+[2026-02-19 15:07:40] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44246756395878&swLng=-0.4179288360595801&neLat=39.46553052600547&neLng=-0.39647116394043946",
+  "status": 200,
+  "duracion_ms": 31,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-02-19 15:07:40] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.44246756395878&swLng=-0.4179288360595801&neLat=39.46553052600547&neLng=-0.39647116394043946",
+  "status": 200,
+  "duracion_ms": 34,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}

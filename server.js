@@ -44,17 +44,17 @@ app.use((req, res, next) => {
 });
 
 // CORS - Configuración completa para manejar preflight requests
-app.use(cors({
-  origin: true, // Permite todos los orígenes
-  credentials: true, // Permite cookies y credenciales
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'], // Métodos permitidos
-  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'], // Headers permitidos
-  exposedHeaders: ['Content-Range', 'X-Content-Range'], // Headers expuestos al cliente
-  maxAge: 86400 // Cache de preflight por 24 horas
-}));
+// app.use(cors({
+//   origin: true, // Permite todos los orígenes
+//   credentials: true, // Permite cookies y credenciales
+//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'], // Métodos permitidos
+//   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin'], // Headers permitidos
+//   exposedHeaders: ['Content-Range', 'X-Content-Range'], // Headers expuestos al cliente
+//   maxAge: 86400 // Cache de preflight por 24 horas
+// }));
 
 // Manejar explícitamente las peticiones OPTIONS (preflight)
-app.options('*', cors());
+// app.options('*', cors());
 // Middleware
 app.use(express.json());
 app.use(loggerMiddleware);

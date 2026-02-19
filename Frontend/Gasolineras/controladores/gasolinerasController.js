@@ -3,7 +3,7 @@ const logger = require('../../../Backend/Logger/LoggerLogica/logger');
 
 exports.getGasolineras = async (req, res) => {
     try {
-        const { lat, lng, id_provincia } = req.query;
+        const { lat, lng, id_provincia, swLat, swLng, neLat, neLng } = req.query;
 
         // Base query
         let query = `
@@ -38,7 +38,19 @@ exports.getGasolineras = async (req, res) => {
             // Ordenar por precio gasoleo (baratas primero) o rotulo
             query += ` ORDER BY gasoleo_a ASC`;
         }
-        // 2. Filtro Geográfico (Cercanía)
+        // 2. Filtro Espacial (Bounding Box - MBRContains)
+        else if (swLat && swLng && neLat && neLng) {
+            // Nota: MariaDB espera coordenadas en orden (Longitud Latitud) -> (X Y)
+            // Polígono cerrado: SW -> SE -> NE -> NW -> SW
+            const polygon = `POLYGON((${swLng} ${swLat}, ${neLng} ${swLat}, ${neLng} ${neLat}, ${swLng} ${neLat}, ${swLng} ${swLat}))`;
+
+            query += ` AND MBRContains(ST_GeomFromText(?), ubicacion)`;
+            params.push(polygon);
+
+            // Limitamos para evitar sobrecarga si el área es muy grande
+            query += ` LIMIT 500`;
+        }
+        // 3. Filtro Geográfico Tradicional (Cercanía - Haversine)
         else if (lat && lng) {
             query = `
                 SELECT *, 
