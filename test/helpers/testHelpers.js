@@ -54,6 +54,37 @@ function createTestGasolinera(overrides = {}) {
 }
 
 /**
+ * Crea un coche de prueba
+ */
+function createTestCoche(overrides = {}) {
+  return {
+    id_coche: 1,
+    id_usuario: 1,
+    marca: 'Toyota',
+    modelo: 'Corolla',
+    combustible: 'Gasolina',
+    ...overrides
+  };
+}
+
+/**
+ * Crea una factura de prueba
+ */
+function createTestFactura(overrides = {}) {
+  return {
+    id_factura: 1,
+    id_usuario: 1,
+    titulo: 'Repostaje Test',
+    coste: 50.00,
+    fecha: '2025-01-15',
+    hora: '10:00:00',
+    descripcion: 'Descripción de prueba',
+    imagenPath: null,
+    ...overrides
+  };
+}
+
+/**
  * Simula una request de Express
  */
 function mockRequest(overrides = {}) {
@@ -95,6 +126,8 @@ module.exports = {
   generateTestToken,
   createTestUser,
   createTestGasolinera,
+  createTestCoche,
+  createTestFactura,
   mockRequest,
   mockResponse,
   mockNext

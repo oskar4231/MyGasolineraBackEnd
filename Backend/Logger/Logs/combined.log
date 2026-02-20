@@ -22368,3 +22368,263 @@
 [2026-02-18 21:58:51] [INFO] ================================= {
   "service": "my-gasolinera-api"
 }
+[2026-02-20 11:21:59] [INFO] Usuario registrado exitosamente {
+  "service": "my-gasolinera-api",
+  "email": "nuevo@example.com",
+  "nombre": "Nuevo Usuario",
+  "id_usuario": 1
+}
+[2026-02-20 11:21:59] [WARN] Intento de registro con email duplicado {
+  "service": "my-gasolinera-api",
+  "email": "existente@example.com"
+}
+[2026-02-20 11:21:59] [WARN] Intento de registro sin email o password {
+  "service": "my-gasolinera-api",
+  "email": "test@example.com"
+}
+[2026-02-20 11:21:59] [INFO] Login exitoso {
+  "service": "my-gasolinera-api",
+  "email": "test@example.com",
+  "id_usuario": 1,
+  "nombre": "Test User"
+}
+[2026-02-20 11:21:59] [WARN] Login fallido: contraseña incorrecta {
+  "service": "my-gasolinera-api",
+  "email": "test@example.com",
+  "id_usuario": 1
+}
+[2026-02-20 11:21:59] [WARN] Login fallido: usuario no encontrado o inactivo {
+  "service": "my-gasolinera-api",
+  "email": "noexiste@example.com"
+}
+[2026-02-20 11:21:59] [INFO] Solicitud de recuperación de contraseña {
+  "service": "my-gasolinera-api",
+  "email": "test@example.com"
+}
+[2026-02-20 11:21:59] [INFO] Email de recuperación enviado exitosamente {
+  "service": "my-gasolinera-api",
+  "email": "test@example.com"
+}
+[2026-02-20 11:21:59] [INFO] Solicitud de recuperación de contraseña {
+  "service": "my-gasolinera-api",
+  "email": "noexiste@example.com"
+}
+[2026-02-20 11:21:59] [WARN] Solicitud de recuperación para email no registrado {
+  "service": "my-gasolinera-api",
+  "email": "noexiste@example.com"
+}
+[2026-02-20 11:21:59] [INFO] Token verificado exitosamente {
+  "service": "my-gasolinera-api",
+  "email": "test@example.com"
+}
+[2026-02-20 11:21:59] [WARN] Token inválido o expirado {
+  "service": "my-gasolinera-api"
+}
+[2026-02-20 11:21:59] [INFO] Iniciando reinicio de contraseña {
+  "service": "my-gasolinera-api"
+}
+[2026-02-20 11:21:59] [INFO] Contraseña actualizada exitosamente {
+  "service": "my-gasolinera-api",
+  "email": "test@example.com"
+}
+[2026-02-20 11:21:59] [INFO] Iniciando reinicio de contraseña {
+  "service": "my-gasolinera-api"
+}
+[2026-02-20 11:21:59] [WARN] Contraseña demasiado corta en reinicio {
+  "service": "my-gasolinera-api"
+}
+[2026-02-20 11:23:26] [INFO] Usuario registrado exitosamente {
+  "service": "my-gasolinera-api",
+  "email": "nuevo@example.com",
+  "nombre": "Nuevo Usuario",
+  "id_usuario": 1
+}
+[2026-02-20 11:23:26] [WARN] Intento de registro con email duplicado {
+  "service": "my-gasolinera-api",
+  "email": "existente@example.com"
+}
+[2026-02-20 11:23:26] [WARN] Intento de registro sin email o password {
+  "service": "my-gasolinera-api",
+  "email": "test@example.com"
+}
+[2026-02-20 11:23:26] [INFO] Login exitoso {
+  "service": "my-gasolinera-api",
+  "email": "test@example.com",
+  "id_usuario": 1,
+  "nombre": "Test User"
+}
+[2026-02-20 11:23:26] [WARN] Login fallido: contraseña incorrecta {
+  "service": "my-gasolinera-api",
+  "email": "test@example.com",
+  "id_usuario": 1
+}
+[2026-02-20 11:23:26] [WARN] Login fallido: usuario no encontrado o inactivo {
+  "service": "my-gasolinera-api",
+  "email": "noexiste@example.com"
+}
+[2026-02-20 11:23:26] [INFO] Solicitud de recuperación de contraseña {
+  "service": "my-gasolinera-api",
+  "email": "test@example.com"
+}
+[2026-02-20 11:23:26] [INFO] Email de recuperación enviado exitosamente {
+  "service": "my-gasolinera-api",
+  "email": "test@example.com"
+}
+[2026-02-20 11:23:26] [INFO] Solicitud de recuperación de contraseña {
+  "service": "my-gasolinera-api",
+  "email": "noexiste@example.com"
+}
+[2026-02-20 11:23:26] [WARN] Solicitud de recuperación para email no registrado {
+  "service": "my-gasolinera-api",
+  "email": "noexiste@example.com"
+}
+[2026-02-20 11:23:26] [INFO] Token verificado exitosamente {
+  "service": "my-gasolinera-api",
+  "email": "test@example.com"
+}
+[2026-02-20 11:23:26] [WARN] Token inválido o expirado {
+  "service": "my-gasolinera-api"
+}
+[2026-02-20 11:23:26] [INFO] Iniciando reinicio de contraseña {
+  "service": "my-gasolinera-api"
+}
+[2026-02-20 11:23:26] [INFO] Contraseña actualizada exitosamente {
+  "service": "my-gasolinera-api",
+  "email": "test@example.com"
+}
+[2026-02-20 11:23:26] [INFO] Iniciando reinicio de contraseña {
+  "service": "my-gasolinera-api"
+}
+[2026-02-20 11:23:26] [WARN] Contraseña demasiado corta en reinicio {
+  "service": "my-gasolinera-api"
+}
+[2026-02-20 11:23:51] [INFO] Usuario registrado exitosamente {
+  "service": "my-gasolinera-api",
+  "email": "nuevo@example.com",
+  "nombre": "Nuevo Usuario",
+  "id_usuario": 1
+}
+[2026-02-20 11:23:51] [WARN] Intento de registro con email duplicado {
+  "service": "my-gasolinera-api",
+  "email": "existente@example.com"
+}
+[2026-02-20 11:23:51] [WARN] Intento de registro sin email o password {
+  "service": "my-gasolinera-api",
+  "email": "test@example.com"
+}
+[2026-02-20 11:23:51] [INFO] Login exitoso {
+  "service": "my-gasolinera-api",
+  "email": "test@example.com",
+  "id_usuario": 1,
+  "nombre": "Test User"
+}
+[2026-02-20 11:23:51] [WARN] Login fallido: contraseña incorrecta {
+  "service": "my-gasolinera-api",
+  "email": "test@example.com",
+  "id_usuario": 1
+}
+[2026-02-20 11:23:51] [WARN] Login fallido: usuario no encontrado o inactivo {
+  "service": "my-gasolinera-api",
+  "email": "noexiste@example.com"
+}
+[2026-02-20 11:23:51] [INFO] Solicitud de recuperación de contraseña {
+  "service": "my-gasolinera-api",
+  "email": "test@example.com"
+}
+[2026-02-20 11:23:51] [INFO] Email de recuperación enviado exitosamente {
+  "service": "my-gasolinera-api",
+  "email": "test@example.com"
+}
+[2026-02-20 11:23:51] [INFO] Solicitud de recuperación de contraseña {
+  "service": "my-gasolinera-api",
+  "email": "noexiste@example.com"
+}
+[2026-02-20 11:23:51] [WARN] Solicitud de recuperación para email no registrado {
+  "service": "my-gasolinera-api",
+  "email": "noexiste@example.com"
+}
+[2026-02-20 11:23:51] [INFO] Token verificado exitosamente {
+  "service": "my-gasolinera-api",
+  "email": "test@example.com"
+}
+[2026-02-20 11:23:51] [WARN] Token inválido o expirado {
+  "service": "my-gasolinera-api"
+}
+[2026-02-20 11:23:51] [INFO] Iniciando reinicio de contraseña {
+  "service": "my-gasolinera-api"
+}
+[2026-02-20 11:23:51] [INFO] Contraseña actualizada exitosamente {
+  "service": "my-gasolinera-api",
+  "email": "test@example.com"
+}
+[2026-02-20 11:23:51] [INFO] Iniciando reinicio de contraseña {
+  "service": "my-gasolinera-api"
+}
+[2026-02-20 11:23:51] [WARN] Contraseña demasiado corta en reinicio {
+  "service": "my-gasolinera-api"
+}
+[2026-02-20 11:29:38] [INFO] Usuario registrado exitosamente {
+  "service": "my-gasolinera-api",
+  "email": "nuevo@example.com",
+  "nombre": "Nuevo Usuario",
+  "id_usuario": 1
+}
+[2026-02-20 11:29:39] [WARN] Intento de registro con email duplicado {
+  "service": "my-gasolinera-api",
+  "email": "existente@example.com"
+}
+[2026-02-20 11:29:39] [WARN] Intento de registro sin email o password {
+  "service": "my-gasolinera-api",
+  "email": "test@example.com"
+}
+[2026-02-20 11:29:39] [INFO] Login exitoso {
+  "service": "my-gasolinera-api",
+  "email": "test@example.com",
+  "id_usuario": 1,
+  "nombre": "Test User"
+}
+[2026-02-20 11:29:39] [WARN] Login fallido: contraseña incorrecta {
+  "service": "my-gasolinera-api",
+  "email": "test@example.com",
+  "id_usuario": 1
+}
+[2026-02-20 11:29:39] [WARN] Login fallido: usuario no encontrado o inactivo {
+  "service": "my-gasolinera-api",
+  "email": "noexiste@example.com"
+}
+[2026-02-20 11:29:39] [INFO] Solicitud de recuperación de contraseña {
+  "service": "my-gasolinera-api",
+  "email": "test@example.com"
+}
+[2026-02-20 11:29:39] [INFO] Email de recuperación enviado exitosamente {
+  "service": "my-gasolinera-api",
+  "email": "test@example.com"
+}
+[2026-02-20 11:29:39] [INFO] Solicitud de recuperación de contraseña {
+  "service": "my-gasolinera-api",
+  "email": "noexiste@example.com"
+}
+[2026-02-20 11:29:39] [WARN] Solicitud de recuperación para email no registrado {
+  "service": "my-gasolinera-api",
+  "email": "noexiste@example.com"
+}
+[2026-02-20 11:29:39] [INFO] Token verificado exitosamente {
+  "service": "my-gasolinera-api",
+  "email": "test@example.com"
+}
+[2026-02-20 11:29:39] [WARN] Token inválido o expirado {
+  "service": "my-gasolinera-api"
+}
+[2026-02-20 11:29:39] [INFO] Iniciando reinicio de contraseña {
+  "service": "my-gasolinera-api"
+}
+[2026-02-20 11:29:39] [INFO] Contraseña actualizada exitosamente {
+  "service": "my-gasolinera-api",
+  "email": "test@example.com"
+}
+[2026-02-20 11:29:39] [INFO] Iniciando reinicio de contraseña {
+  "service": "my-gasolinera-api"
+}
+[2026-02-20 11:29:39] [WARN] Contraseña demasiado corta en reinicio {
+  "service": "my-gasolinera-api"
+}
