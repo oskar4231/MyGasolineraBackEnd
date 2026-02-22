@@ -27934,3 +27934,23 @@
   "ip": "127.0.0.1",
   "respuesta": "{\"success\":false,\"message\":\"Error interno del servidor\"}"
 }
+[2026-02-23 00:19:14] [INFO] Servidor iniciado correctamente {
+  "service": "my-gasolinera-api",
+  "puerto": "3000",
+  "entorno": "development"
+}
+[2026-02-23 00:19:14] [INFO] ================================= {
+  "service": "my-gasolinera-api"
+}
+[2026-02-23 00:19:14] [INFO] ✅ SERVIDOR INICIADO CORRECTAMENTE {
+  "service": "my-gasolinera-api"
+}
+[2026-02-23 00:19:14] [INFO] 📍 Puerto: 3000 {
+  "service": "my-gasolinera-api"
+}
+[2026-02-23 00:19:14] [INFO] 🌐 Local: http://localhost:3000 {
+  "service": "my-gasolinera-api"
+}
+[2026-02-23 00:19:14] [INFO] ================================= {
+  "service": "my-gasolinera-api"
+}
