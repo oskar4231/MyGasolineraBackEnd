@@ -22688,3 +22688,23 @@
 [2026-02-22 22:20:53] [INFO] ================================= {
   "service": "my-gasolinera-api"
 }
+[2026-02-22 23:15:33] [INFO] Servidor iniciado correctamente {
+  "service": "my-gasolinera-api",
+  "puerto": "3000",
+  "entorno": "development"
+}
+[2026-02-22 23:15:33] [INFO] ================================= {
+  "service": "my-gasolinera-api"
+}
+[2026-02-22 23:15:33] [INFO] ✅ SERVIDOR INICIADO CORRECTAMENTE {
+  "service": "my-gasolinera-api"
+}
+[2026-02-22 23:15:33] [INFO] 📍 Puerto: 3000 {
+  "service": "my-gasolinera-api"
+}
+[2026-02-22 23:15:33] [INFO] 🌐 Local: http://localhost:3000 {
+  "service": "my-gasolinera-api"
+}
+[2026-02-22 23:15:33] [INFO] ================================= {
+  "service": "my-gasolinera-api"
+}

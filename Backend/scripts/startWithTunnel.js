@@ -51,29 +51,9 @@ async function startWithTunnel() {
 }
 
 // Iniciar
-const fs = require('fs');
-const path = require('path');
-
 async function main() {
-    const switchPath = path.join(__dirname, '..', '..', 'Importante', 'Sistema', 'switch.txt');
-    let mode = '1'; // Default to Ngrok
-
-    if (fs.existsSync(switchPath)) {
-        const content = fs.readFileSync(switchPath, 'utf8');
-        // Get first line, remove comments (# or //), and trim whitespace
-        mode = content.split('\n')[0]
-            .split('#')[0]
-            .split('//')[0]
-            .trim();
-    } else {
-        console.warn('⚠️ No se encontró Importante/switch.txt, creando uno por defecto (1 - Ngrok)...');
-        // Ensure Importante dir exists
-        const importanteDir = path.dirname(switchPath);
-        if (!fs.existsSync(importanteDir)) {
-            fs.mkdirSync(importanteDir, { recursive: true });
-        }
-        fs.writeFileSync(switchPath, '1');
-    }
+    // Leer variable desde el .env (1 = Ngrok, 0 = Local)
+    const mode = process.env.USE_NGROK || '1';
 
     if (mode === '0') {
         console.log('=================================');
