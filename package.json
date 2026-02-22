@@ -11,9 +11,9 @@
     "start-with-sync": "npm run sync-gasolineras && node server.js",
     "start:tunnel": "node Backend/scripts/startWithTunnel.js",
     "start:tunnel:linux": "PLATFORM=linux node Backend/scripts/startWithTunnel.js",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test": "cross-env NODE_ENV=test jest",
+    "test:watch": "cross-env NODE_ENV=test jest --watch",
+    "test:coverage": "cross-env NODE_ENV=test jest --coverage"
   },
   "keywords": [
     "gasolinera",
