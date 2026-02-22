@@ -22628,3 +22628,63 @@
 [2026-02-20 11:29:39] [WARN] Contraseña demasiado corta en reinicio {
   "service": "my-gasolinera-api"
 }
+[2026-02-22 22:16:56] [INFO] Servidor iniciado correctamente {
+  "service": "my-gasolinera-api",
+  "puerto": "3000",
+  "entorno": "desarrollo.localhost"
+}
+[2026-02-22 22:16:56] [INFO] ================================= {
+  "service": "my-gasolinera-api"
+}
+[2026-02-22 22:16:56] [INFO] ✅ SERVIDOR INICIADO CORRECTAMENTE {
+  "service": "my-gasolinera-api"
+}
+[2026-02-22 22:16:56] [INFO] 📍 Puerto: 3000 {
+  "service": "my-gasolinera-api"
+}
+[2026-02-22 22:16:56] [INFO] 🌐 Local: http://localhost:3000 {
+  "service": "my-gasolinera-api"
+}
+[2026-02-22 22:16:56] [INFO] ================================= {
+  "service": "my-gasolinera-api"
+}
+[2026-02-22 22:17:05] [INFO] Servidor iniciado correctamente {
+  "service": "my-gasolinera-api",
+  "puerto": "3000",
+  "entorno": "desarrollo.url"
+}
+[2026-02-22 22:17:05] [INFO] ================================= {
+  "service": "my-gasolinera-api"
+}
+[2026-02-22 22:17:05] [INFO] ✅ SERVIDOR INICIADO CORRECTAMENTE {
+  "service": "my-gasolinera-api"
+}
+[2026-02-22 22:17:05] [INFO] 📍 Puerto: 3000 {
+  "service": "my-gasolinera-api"
+}
+[2026-02-22 22:17:05] [INFO] 🌐 Local: http://localhost:3000 {
+  "service": "my-gasolinera-api"
+}
+[2026-02-22 22:17:05] [INFO] ================================= {
+  "service": "my-gasolinera-api"
+}
+[2026-02-22 22:20:53] [INFO] Servidor iniciado correctamente {
+  "service": "my-gasolinera-api",
+  "puerto": "3000",
+  "entorno": "development"
+}
+[2026-02-22 22:20:53] [INFO] ================================= {
+  "service": "my-gasolinera-api"
+}
+[2026-02-22 22:20:53] [INFO] ✅ SERVIDOR INICIADO CORRECTAMENTE {
+  "service": "my-gasolinera-api"
+}
+[2026-02-22 22:20:53] [INFO] 📍 Puerto: 3000 {
+  "service": "my-gasolinera-api"
+}
+[2026-02-22 22:20:53] [INFO] 🌐 Local: http://localhost:3000 {
+  "service": "my-gasolinera-api"
+}
+[2026-02-22 22:20:53] [INFO] ================================= {
+  "service": "my-gasolinera-api"
+}
