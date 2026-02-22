@@ -153,6 +153,7 @@ npm run test
 ## 📊 Estructura de la Base de Datos
 
 ```mermaid
+erDiagram
     USER ||--o{ CAR : posee
     USER ||--o{ BILL : tiene
     USER ||--o{ FAV : guarda
