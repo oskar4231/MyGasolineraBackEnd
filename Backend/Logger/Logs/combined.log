@@ -28124,3 +28124,446 @@
 [2026-03-02 18:21:55] [WARN] Contraseña demasiado corta en reinicio {
   "service": "my-gasolinera-api"
 }
+[2026-03-02 18:46:14] [INFO] Servidor iniciado correctamente {
+  "service": "my-gasolinera-api",
+  "puerto": "3000",
+  "entorno": "development"
+}
+[2026-03-02 18:46:14] [INFO] ================================= {
+  "service": "my-gasolinera-api"
+}
+[2026-03-02 18:46:14] [INFO] ✅ SERVIDOR INICIADO CORRECTAMENTE {
+  "service": "my-gasolinera-api"
+}
+[2026-03-02 18:46:14] [INFO] 📍 Puerto: 3000 {
+  "service": "my-gasolinera-api"
+}
+[2026-03-02 18:46:14] [INFO] 🌐 Local: http://localhost:3000 {
+  "service": "my-gasolinera-api"
+}
+[2026-03-02 18:46:14] [INFO] ================================= {
+  "service": "my-gasolinera-api"
+}
+[2026-03-02 18:51:52] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "ip": "127.0.0.1",
+  "userAgent": "Dart/3.11 (dart:io)",
+  "body": {
+    "email": "Admins",
+    "password": "***REDACTED***"
+  }
+}
+[2026-03-02 18:51:52] [INFO] Login exitoso {
+  "service": "my-gasolinera-api",
+  "email": "Admins@admin.com",
+  "id_usuario": 36,
+  "nombre": "Admins"
+}
+[2026-03-02 18:51:52] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 200,
+  "duracion_ms": 102,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-03-02 18:51:52] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 200,
+  "duracion_ms": 103,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-03-02 18:51:53] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/cargarImagen/Admins",
+  "ip": "127.0.0.1",
+  "userAgent": "Dart/3.11 (dart:io)",
+  "body": {}
+}
+[2026-03-02 18:51:53] [INFO] Foto de perfil obtenida {
+  "service": "my-gasolinera-api",
+  "email": "admins@admins.com",
+  "tiene_foto": true
+}
+[2026-03-02 18:51:53] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/cargarImagen/Admins",
+  "status": 200,
+  "duracion_ms": 2,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-03-02 18:51:53] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/cargarImagen/Admins",
+  "status": 200,
+  "duracion_ms": 3,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-03-02 18:51:53] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/usuarios/perfil/Admins",
+  "ip": "127.0.0.1",
+  "userAgent": "Dart/3.11 (dart:io)",
+  "body": {}
+}
+[2026-03-02 18:51:53] [INFO] Perfil de usuario obtenido exitosamente {
+  "service": "my-gasolinera-api",
+  "email": "Admins@admin.com",
+  "nombre": "Admins"
+}
+[2026-03-02 18:51:53] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/usuarios/perfil/Admins",
+  "status": 200,
+  "duracion_ms": 2,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-03-02 18:51:53] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/usuarios/perfil/Admins",
+  "status": 200,
+  "duracion_ms": 2,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-03-02 18:51:53] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/uploads/profile-photos/admins_admins_com_1770906147848.jpg",
+  "ip": "127.0.0.1",
+  "userAgent": "Dart/3.11 (dart:io)",
+  "body": {}
+}
+[2026-03-02 18:51:55] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/cargarImagen/Admins",
+  "ip": "127.0.0.1",
+  "userAgent": "Dart/3.11 (dart:io)",
+  "body": {}
+}
+[2026-03-02 18:51:55] [INFO] Foto de perfil obtenida {
+  "service": "my-gasolinera-api",
+  "email": "admins@admins.com",
+  "tiene_foto": true
+}
+[2026-03-02 18:51:55] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/cargarImagen/Admins",
+  "status": 200,
+  "duracion_ms": 1,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-03-02 18:51:55] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/cargarImagen/Admins",
+  "status": 200,
+  "duracion_ms": 2,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-03-02 18:51:55] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/usuarios/perfil/Admins",
+  "ip": "127.0.0.1",
+  "userAgent": "Dart/3.11 (dart:io)",
+  "body": {}
+}
+[2026-03-02 18:51:55] [INFO] Perfil de usuario obtenido exitosamente {
+  "service": "my-gasolinera-api",
+  "email": "Admins@admin.com",
+  "nombre": "Admins"
+}
+[2026-03-02 18:51:55] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/usuarios/perfil/Admins",
+  "status": 200,
+  "duracion_ms": 2,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-03-02 18:51:55] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/usuarios/perfil/Admins",
+  "status": 200,
+  "duracion_ms": 3,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-03-02 18:51:56] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/uploads/profile-photos/admins_admins_com_1770906147848.jpg",
+  "ip": "127.0.0.1",
+  "userAgent": "Dart/3.11 (dart:io)",
+  "body": {}
+}
+[2026-03-02 18:52:02] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/uploads/profile-photos/admins_admins_com_1770906147848.jpg",
+  "ip": "127.0.0.1",
+  "userAgent": "Dart/3.11 (dart:io)",
+  "body": {}
+}
+[2026-03-02 18:52:02] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/api/perfil/upload-photo",
+  "ip": "127.0.0.1",
+  "userAgent": "Dart/3.11 (dart:io)",
+  "body": {}
+}
+[2026-03-02 18:52:02] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/uploads/profile-photos/admins_admins_com_1770906147848.jpg",
+  "ip": "127.0.0.1",
+  "userAgent": "Dart/3.11 (dart:io)",
+  "body": {}
+}
+[2026-03-02 18:52:02] [INFO] Foto de perfil actualizada {
+  "service": "my-gasolinera-api",
+  "email": "Admins@admin.com",
+  "photoPath": "uploads/fotos_perfil/Admins_admin_com_1772473922418.jpg"
+}
+[2026-03-02 18:52:02] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/upload-photo",
+  "status": 200,
+  "duracion_ms": 88,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-03-02 18:52:02] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/upload-photo",
+  "status": 200,
+  "duracion_ms": 88,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-03-02 18:52:17] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "ip": "127.0.0.1",
+  "userAgent": "Dart/3.11 (dart:io)",
+  "body": {
+    "email": "Admins",
+    "password": "***REDACTED***"
+  }
+}
+[2026-03-02 18:52:17] [INFO] Login exitoso {
+  "service": "my-gasolinera-api",
+  "email": "Admins@admin.com",
+  "id_usuario": 36,
+  "nombre": "Admins"
+}
+[2026-03-02 18:52:17] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 200,
+  "duracion_ms": 68,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-03-02 18:52:17] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 200,
+  "duracion_ms": 69,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-03-02 18:52:17] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/cargarImagen/Admins",
+  "ip": "127.0.0.1",
+  "userAgent": "Dart/3.11 (dart:io)",
+  "body": {}
+}
+[2026-03-02 18:52:17] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/usuarios/perfil/Admins",
+  "ip": "127.0.0.1",
+  "userAgent": "Dart/3.11 (dart:io)",
+  "body": {}
+}
+[2026-03-02 18:52:17] [INFO] Foto de perfil obtenida {
+  "service": "my-gasolinera-api",
+  "email": "admins@admins.com",
+  "tiene_foto": true
+}
+[2026-03-02 18:52:17] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/cargarImagen/Admins",
+  "status": 200,
+  "duracion_ms": 4,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-03-02 18:52:18] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/cargarImagen/Admins",
+  "status": 200,
+  "duracion_ms": 5,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-03-02 18:52:18] [INFO] Perfil de usuario obtenido exitosamente {
+  "service": "my-gasolinera-api",
+  "email": "Admins@admin.com",
+  "nombre": "Admins"
+}
+[2026-03-02 18:52:18] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/usuarios/perfil/Admins",
+  "status": 200,
+  "duracion_ms": 4,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-03-02 18:52:18] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/usuarios/perfil/Admins",
+  "status": 200,
+  "duracion_ms": 4,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-03-02 18:52:18] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/uploads/profile-photos/admins_admins_com_1770906147848.jpg",
+  "ip": "127.0.0.1",
+  "userAgent": "Dart/3.11 (dart:io)",
+  "body": {}
+}
+[2026-03-02 18:52:18] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.48238246142026&swLng=-0.3862488269805908&neLat=39.503686296282794&neLng=-0.36939483135938644",
+  "ip": "127.0.0.1",
+  "userAgent": "Dart/3.11 (dart:io)",
+  "body": {}
+}
+[2026-03-02 18:52:18] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.48238246142026&swLng=-0.3862488269805908&neLat=39.503686296282794&neLng=-0.36939483135938644",
+  "status": 200,
+  "duracion_ms": 4,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-03-02 18:52:18] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/api/gasolineras?swLat=39.48238246142026&swLng=-0.3862488269805908&neLat=39.503686296282794&neLng=-0.36939483135938644",
+  "status": 200,
+  "duracion_ms": 5,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-03-02 18:52:19] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/cargarImagen/Admins",
+  "ip": "127.0.0.1",
+  "userAgent": "Dart/3.11 (dart:io)",
+  "body": {}
+}
+[2026-03-02 18:52:19] [INFO] Foto de perfil obtenida {
+  "service": "my-gasolinera-api",
+  "email": "admins@admins.com",
+  "tiene_foto": true
+}
+[2026-03-02 18:52:19] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/cargarImagen/Admins",
+  "status": 200,
+  "duracion_ms": 1,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-03-02 18:52:19] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/cargarImagen/Admins",
+  "status": 200,
+  "duracion_ms": 1,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-03-02 18:52:19] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/usuarios/perfil/Admins",
+  "ip": "127.0.0.1",
+  "userAgent": "Dart/3.11 (dart:io)",
+  "body": {}
+}
+[2026-03-02 18:52:19] [INFO] Perfil de usuario obtenido exitosamente {
+  "service": "my-gasolinera-api",
+  "email": "Admins@admin.com",
+  "nombre": "Admins"
+}
+[2026-03-02 18:52:19] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/usuarios/perfil/Admins",
+  "status": 200,
+  "duracion_ms": 2,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-03-02 18:52:19] [INFO] Respuesta exitosa {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/usuarios/perfil/Admins",
+  "status": 200,
+  "duracion_ms": 3,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1"
+}
+[2026-03-02 18:52:19] [INFO] Petición entrante {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/uploads/profile-photos/admins_admins_com_1770906147848.jpg",
+  "ip": "127.0.0.1",
+  "userAgent": "Dart/3.11 (dart:io)",
+  "body": {}
+}
