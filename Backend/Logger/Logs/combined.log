@@ -27954,3 +27954,43 @@
 [2026-02-23 00:19:14] [INFO] ================================= {
   "service": "my-gasolinera-api"
 }
+[2026-03-02 18:14:43] [INFO] Servidor iniciado correctamente {
+  "service": "my-gasolinera-api",
+  "puerto": "3000",
+  "entorno": "development"
+}
+[2026-03-02 18:14:43] [INFO] ================================= {
+  "service": "my-gasolinera-api"
+}
+[2026-03-02 18:14:43] [INFO] ✅ SERVIDOR INICIADO CORRECTAMENTE {
+  "service": "my-gasolinera-api"
+}
+[2026-03-02 18:14:43] [INFO] 📍 Puerto: 3000 {
+  "service": "my-gasolinera-api"
+}
+[2026-03-02 18:14:43] [INFO] 🌐 Local: http://localhost:3000 {
+  "service": "my-gasolinera-api"
+}
+[2026-03-02 18:14:43] [INFO] ================================= {
+  "service": "my-gasolinera-api"
+}
+[2026-03-02 18:15:05] [INFO] Servidor iniciado correctamente {
+  "service": "my-gasolinera-api",
+  "puerto": "3000",
+  "entorno": "development"
+}
+[2026-03-02 18:15:05] [INFO] ================================= {
+  "service": "my-gasolinera-api"
+}
+[2026-03-02 18:15:05] [INFO] ✅ SERVIDOR INICIADO CORRECTAMENTE {
+  "service": "my-gasolinera-api"
+}
+[2026-03-02 18:15:05] [INFO] 📍 Puerto: 3000 {
+  "service": "my-gasolinera-api"
+}
+[2026-03-02 18:15:05] [INFO] 🌐 Local: http://localhost:3000 {
+  "service": "my-gasolinera-api"
+}
+[2026-03-02 18:15:05] [INFO] ================================= {
+  "service": "my-gasolinera-api"
+}

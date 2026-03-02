@@ -1,10 +1,10 @@
-﻿# Node modules (en cualquier ubicacion del proyecto)
+﻿# Node modules
 node_modules/
 
 # Variables de entorno
 .env
 
-# Node portable (instalacion local de Node.js)
+# Instalacion portable de Node.js
 node-v24.11.1-win-x64/
 Dependencias/node/
 

@@ -2,16 +2,16 @@ const pool = require('../../../Importante/BaseDeDatos/bbdd');
 const path = require('path');
 const fs = require('fs');
 const logger = require('../../../Backend/Logger/LoggerLogica/logger');
+const QUERIES = require('../../../Importante/BaseDeDatos/queries');
+
+// Ruta base donde Multer guarda las fotos de perfil
+const FOTOS_PERFIL_DIR = path.join(__dirname, '..', '..', 'Imagenes', 'imagenes', 'fotos_perfil');
 
 exports.getProfile = async (req, res) => {
     let conn;
     try {
         conn = await pool.getConnection();
-
-        const [rows] = await conn.query(
-            'SELECT email, nombre, apellido, telefono, foto_perfil FROM usuarios WHERE email = ?',
-            [req.user.email]
-        );
+        const [rows] = await conn.query(QUERIES.PERFIL.GET_PROFILE, [req.user.email]);
 
         if (rows.length === 0) {
             return res.status(404).json({ error: req.t('profile.user_not_found') });
@@ -36,28 +36,34 @@ exports.uploadPhoto = async (req, res) => {
         conn = await pool.getConnection();
 
         // Obtener la foto anterior para eliminarla
-        const [oldPhoto] = await conn.query('SELECT foto_perfil FROM usuarios WHERE email = ?', [req.user.email]);
+        const [oldPhoto] = await conn.query(QUERIES.PERFIL.GET_OLD_PHOTO, [req.user.email]);
 
-        // Actualizar la base de datos con la nueva ruta de la foto
-        const photoPath = `uploads/profile-photos/${req.file.filename}`;
-        await conn.query('UPDATE usuarios SET foto_perfil = ? WHERE email = ?', [photoPath, req.user.email]);
+        // Fix: ruta relativa consistente con el servidor estático
+        // server.js sirve /uploads → Frontend/Imagenes/imagenes/
+        // Multer guarda en Frontend/Imagenes/imagenes/fotos_perfil/
+        // → La URL pública debe ser: uploads/fotos_perfil/<filename>
+        const photoPath = `uploads/fotos_perfil/${req.file.filename}`;
+        await conn.query(QUERIES.PERFIL.UPDATE_PHOTO, [photoPath, req.user.email]);
 
-        // Eliminar la foto anterior si existe
+        // Eliminar la foto anterior si existe en disco
         if (oldPhoto.length > 0 && oldPhoto[0].foto_perfil) {
-            const oldPhotoPath = path.join(__dirname, '..', oldPhoto[0].foto_perfil);
-            if (fs.existsSync(oldPhotoPath)) {
-                fs.unlinkSync(oldPhotoPath);
+            // Construir ruta absoluta desde el filename almacenado en BD
+            const oldFilename = path.basename(oldPhoto[0].foto_perfil);
+            const oldPhotoAbsPath = path.join(FOTOS_PERFIL_DIR, oldFilename);
+            if (fs.existsSync(oldPhotoAbsPath)) {
+                fs.unlinkSync(oldPhotoAbsPath);
+                logger.debug('Foto de perfil anterior eliminada', { path: oldPhotoAbsPath });
             }
         }
 
+        logger.info('Foto de perfil actualizada', { email: req.user.email, photoPath });
         res.json({ status: 'success', message: req.t('profile.photo_updated'), photoUrl: photoPath });
 
     } catch (error) {
         logger.error('Error subiendo foto de perfil:', { error: error.message });
-        // Eliminar el archivo subido si hubo un error en la BD
+        // Eliminar el archivo recién subido si hubo error en BD
         if (req.file) {
-            const uploadDir = path.join(__dirname, '..', '..', 'Imagenes', 'imagenes', 'fotos_perfil');
-            const filePath = path.join(uploadDir, req.file.filename);
+            const filePath = path.join(FOTOS_PERFIL_DIR, req.file.filename);
             if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
         }
         res.status(500).json({ status: 'error', message: req.t('profile.photo_upload_error') + ': ' + error.message });
@@ -69,8 +75,7 @@ exports.uploadPhoto = async (req, res) => {
 exports.getProfilePhoto = (req, res) => {
     try {
         const filename = req.params.filename;
-        const uploadDir = path.join(__dirname, '..', '..', 'Imagenes', 'imagenes', 'fotos_perfil');
-        const filepath = path.join(uploadDir, filename);
+        const filepath = path.join(FOTOS_PERFIL_DIR, filename);
 
         if (!fs.existsSync(filepath)) {
             return res.status(404).json({ error: req.t('profile.photo_not_found') });
