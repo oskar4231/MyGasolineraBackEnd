@@ -58,7 +58,7 @@ exports.getCoches = async (req, res) => {
         }
 
         const id_usuario = userRows[0].id_usuario;
-        const [coches] = await conn.query('SELECT id_coche, marca, modelo, combustible FROM coches WHERE id_usuario = ?', [id_usuario]);
+        const [coches] = await conn.query('SELECT id_coche, marca, modelo, combustible, kilometraje_inicial, capacidad_tanque, consumo_teorico FROM coches WHERE id_usuario = ?', [id_usuario]);
 
         res.json(coches);
 
