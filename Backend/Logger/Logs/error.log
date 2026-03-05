@@ -3510,3 +3510,353 @@
   "ip": "127.0.0.1",
   "respuesta": "{\"success\":false,\"message\":\"Error interno del servidor\"}"
 }
+[2026-03-05 19:33:27] [ERROR] Error al obtener perfil de usuario {
+  "service": "my-gasolinera-api",
+  "error": "Access denied for user ''@'localhost' (using password: NO)",
+  "stack": "Error: Access denied for user ''@'localhost' (using password: NO)\n    at PromisePool.query (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\mysql2\\lib\\promise\\pool.js:36:22)\n    at exports.getUserProfile (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\Frontend\\Perfil\\controladores\\authController.js:300:38)\n    at Layer.handle [as handle_request] (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:284:15\n    at param (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:365:14)\n    at param (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:376:14)\n    at router.process_params (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:421:3)",
+  "email": "juan@juan.com"
+}
+[2026-03-05 19:33:27] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/usuarios/perfil/juan@juan.com",
+  "status": 500,
+  "duracion_ms": 31,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": {
+    "success": false,
+    "message": "errors.server_error",
+    "error": "Access denied for user ''@'localhost' (using password: NO)"
+  }
+}
+[2026-03-05 19:33:27] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/usuarios/perfil/juan@juan.com",
+  "status": 500,
+  "duracion_ms": 32,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": "{\"success\":false,\"message\":\"errors.server_error\",\"error\":\"Access denied for user ''@'localhost' (using password: NO)\"}"
+}
+[2026-03-05 19:33:27] [ERROR] Error al obtener foto de perfil {
+  "service": "my-gasolinera-api",
+  "error": "Access denied for user ''@'localhost' (using password: NO)",
+  "stack": "Error: Access denied for user ''@'localhost' (using password: NO)\n    at PromisePool.query (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\mysql2\\lib\\promise\\pool.js:36:22)\n    at exports.getProfileImage (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\Frontend\\Perfil\\controladores\\authController.js:273:37)\n    at Layer.handle [as handle_request] (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:284:15\n    at param (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:365:14)\n    at param (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:376:14)\n    at router.process_params (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:421:3)",
+  "email": "juan@juan.com"
+}
+[2026-03-05 19:33:27] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/cargarImagen/juan@juan.com",
+  "status": 500,
+  "duracion_ms": 32,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": {
+    "status": "error",
+    "error": "profile.profile_image_error",
+    "details": "Access denied for user ''@'localhost' (using password: NO)"
+  }
+}
+[2026-03-05 19:33:27] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "GET",
+  "url": "/cargarImagen/juan@juan.com",
+  "status": 500,
+  "duracion_ms": 32,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": "{\"status\":\"error\",\"error\":\"profile.profile_image_error\",\"details\":\"Access denied for user ''@'localhost' (using password: NO)\"}"
+}
+[2026-03-05 19:33:41] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "Access denied for user ''@'localhost' (using password: NO)",
+  "stack": "Error: Access denied for user ''@'localhost' (using password: NO)\n    at PromisePool.query (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\mysql2\\lib\\promise\\pool.js:36:22)\n    at exports.login (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\Frontend\\Perfil\\controladores\\authController.js:69:35)\n    at Layer.handle [as handle_request] (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:175:3)",
+  "email": "juan"
+}
+[2026-03-05 19:33:41] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 5,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": {
+    "status": "error",
+    "message": "general.server_error: Access denied for user ''@'localhost' (using password: NO)"
+  }
+}
+[2026-03-05 19:33:41] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 6,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": "{\"status\":\"error\",\"message\":\"general.server_error: Access denied for user ''@'localhost' (using password: NO)\"}"
+}
+[2026-03-05 19:33:51] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "Access denied for user ''@'localhost' (using password: NO)",
+  "stack": "Error: Access denied for user ''@'localhost' (using password: NO)\n    at PromisePool.query (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\mysql2\\lib\\promise\\pool.js:36:22)\n    at exports.login (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\Frontend\\Perfil\\controladores\\authController.js:69:35)\n    at Layer.handle [as handle_request] (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:175:3)",
+  "email": "juan@juan.com"
+}
+[2026-03-05 19:33:51] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 4,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": {
+    "status": "error",
+    "message": "general.server_error: Access denied for user ''@'localhost' (using password: NO)"
+  }
+}
+[2026-03-05 19:33:51] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 4,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": "{\"status\":\"error\",\"message\":\"general.server_error: Access denied for user ''@'localhost' (using password: NO)\"}"
+}
+[2026-03-05 19:34:17] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "Access denied for user ''@'localhost' (using password: NO)",
+  "stack": "Error: Access denied for user ''@'localhost' (using password: NO)\n    at PromisePool.query (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\mysql2\\lib\\promise\\pool.js:36:22)\n    at exports.login (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\Frontend\\Perfil\\controladores\\authController.js:69:35)\n    at Layer.handle [as handle_request] (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:175:3)",
+  "email": "test@test.com"
+}
+[2026-03-05 19:34:17] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 3,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": {
+    "status": "error",
+    "message": "general.server_error: Access denied for user ''@'localhost' (using password: NO)"
+  }
+}
+[2026-03-05 19:34:17] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 4,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": "{\"status\":\"error\",\"message\":\"general.server_error: Access denied for user ''@'localhost' (using password: NO)\"}"
+}
+[2026-03-05 19:35:18] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "Access denied for user ''@'localhost' (using password: NO)",
+  "stack": "Error: Access denied for user ''@'localhost' (using password: NO)\n    at PromisePool.query (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\mysql2\\lib\\promise\\pool.js:36:22)\n    at exports.login (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\Frontend\\Perfil\\controladores\\authController.js:69:35)\n    at Layer.handle [as handle_request] (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:175:3)",
+  "email": "test@test.com"
+}
+[2026-03-05 19:35:18] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 14,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": {
+    "status": "error",
+    "message": "general.server_error: Access denied for user ''@'localhost' (using password: NO)"
+  }
+}
+[2026-03-05 19:35:18] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 15,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": "{\"status\":\"error\",\"message\":\"general.server_error: Access denied for user ''@'localhost' (using password: NO)\"}"
+}
+[2026-03-05 19:35:19] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "Access denied for user ''@'localhost' (using password: NO)",
+  "stack": "Error: Access denied for user ''@'localhost' (using password: NO)\n    at PromisePool.query (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\mysql2\\lib\\promise\\pool.js:36:22)\n    at exports.login (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\Frontend\\Perfil\\controladores\\authController.js:69:35)\n    at Layer.handle [as handle_request] (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:175:3)",
+  "email": "test@test.com"
+}
+[2026-03-05 19:35:19] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 3,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": {
+    "status": "error",
+    "message": "general.server_error: Access denied for user ''@'localhost' (using password: NO)"
+  }
+}
+[2026-03-05 19:35:19] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 3,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": "{\"status\":\"error\",\"message\":\"general.server_error: Access denied for user ''@'localhost' (using password: NO)\"}"
+}
+[2026-03-05 19:35:58] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "Access denied for user ''@'localhost' (using password: NO)",
+  "stack": "Error: Access denied for user ''@'localhost' (using password: NO)\n    at PromisePool.query (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\mysql2\\lib\\promise\\pool.js:36:22)\n    at exports.login (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\Frontend\\Perfil\\controladores\\authController.js:69:35)\n    at Layer.handle [as handle_request] (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:175:3)",
+  "email": "test@test.com"
+}
+[2026-03-05 19:35:58] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 16,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": {
+    "status": "error",
+    "message": "general.server_error: Access denied for user ''@'localhost' (using password: NO)"
+  }
+}
+[2026-03-05 19:35:58] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 16,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": "{\"status\":\"error\",\"message\":\"general.server_error: Access denied for user ''@'localhost' (using password: NO)\"}"
+}
+[2026-03-05 19:35:59] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "Access denied for user ''@'localhost' (using password: NO)",
+  "stack": "Error: Access denied for user ''@'localhost' (using password: NO)\n    at PromisePool.query (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\mysql2\\lib\\promise\\pool.js:36:22)\n    at exports.login (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\Frontend\\Perfil\\controladores\\authController.js:69:35)\n    at Layer.handle [as handle_request] (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:175:3)",
+  "email": "test@test.com"
+}
+[2026-03-05 19:35:59] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 3,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": {
+    "status": "error",
+    "message": "general.server_error: Access denied for user ''@'localhost' (using password: NO)"
+  }
+}
+[2026-03-05 19:35:59] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 3,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": "{\"status\":\"error\",\"message\":\"general.server_error: Access denied for user ''@'localhost' (using password: NO)\"}"
+}
+[2026-03-05 19:36:00] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "Access denied for user ''@'localhost' (using password: NO)",
+  "stack": "Error: Access denied for user ''@'localhost' (using password: NO)\n    at PromisePool.query (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\mysql2\\lib\\promise\\pool.js:36:22)\n    at exports.login (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\Frontend\\Perfil\\controladores\\authController.js:69:35)\n    at Layer.handle [as handle_request] (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:175:3)",
+  "email": "test@test.com"
+}
+[2026-03-05 19:36:00] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 3,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": {
+    "status": "error",
+    "message": "general.server_error: Access denied for user ''@'localhost' (using password: NO)"
+  }
+}
+[2026-03-05 19:36:00] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 3,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": "{\"status\":\"error\",\"message\":\"general.server_error: Access denied for user ''@'localhost' (using password: NO)\"}"
+}
+[2026-03-05 19:36:01] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "Access denied for user ''@'localhost' (using password: NO)",
+  "stack": "Error: Access denied for user ''@'localhost' (using password: NO)\n    at PromisePool.query (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\mysql2\\lib\\promise\\pool.js:36:22)\n    at exports.login (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\Frontend\\Perfil\\controladores\\authController.js:69:35)\n    at Layer.handle [as handle_request] (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:175:3)",
+  "email": "test@test.com"
+}
+[2026-03-05 19:36:01] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 2,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": {
+    "status": "error",
+    "message": "general.server_error: Access denied for user ''@'localhost' (using password: NO)"
+  }
+}
+[2026-03-05 19:36:01] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 3,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": "{\"status\":\"error\",\"message\":\"general.server_error: Access denied for user ''@'localhost' (using password: NO)\"}"
+}
+[2026-03-05 19:36:19] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "Access denied for user ''@'localhost' (using password: NO)",
+  "stack": "Error: Access denied for user ''@'localhost' (using password: NO)\n    at PromisePool.query (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\mysql2\\lib\\promise\\pool.js:36:22)\n    at exports.login (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\Frontend\\Perfil\\controladores\\authController.js:69:35)\n    at Layer.handle [as handle_request] (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:284:15\n    at router.process_params (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at router.handle (C:\\Users\\oscmattri.EDU.001\\Documents\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:175:3)",
+  "email": "test@test.com"
+}
+[2026-03-05 19:36:19] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 4,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": {
+    "status": "error",
+    "message": "general.server_error: Access denied for user ''@'localhost' (using password: NO)"
+  }
+}
+[2026-03-05 19:36:19] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 4,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": "{\"status\":\"error\",\"message\":\"general.server_error: Access denied for user ''@'localhost' (using password: NO)\"}"
+}
