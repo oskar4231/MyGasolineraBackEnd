@@ -114,6 +114,11 @@ exports.deleteUser = async (req, res) => {
             return res.status(400).json({ success: false, message: req.t('auth.identifier_required') });
         }
 
+        if (req.user.email !== email) {
+            logger.warn('Intento de borrar un usuario distinto al logueado', { user: req.user.email, emailBorrar: email });
+            return res.status(403).json({ success: false, message: 'Forbidden: No tienes permisos para borrar este usuario' });
+        }
+
         logger.trace('Ejecutando UPDATE para desactivar usuario', { email });
         const [result] = await pool.query(QUERIES.AUTH.DEACTIVATE_USER, [email, email]);
 

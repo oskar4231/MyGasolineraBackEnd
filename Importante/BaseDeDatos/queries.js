@@ -298,6 +298,12 @@ const QUERIES = {
 
   // ─────────────────────────────────────────────────────────────
   // GASOLINERAS — Consultas con distintos filtros geográficos
+  // RECOMENDACIÓN DE OPTIMIZACIÓN (BBDD):
+  // Si la BBDD crece, las consultas con "latitud BETWEEN ? AND ?" o
+  // de Haversine serán lentas. Para mejorar el rendimiento,
+  // ejecuta en tu BD los siguientes comandos SQL una sola vez:
+  // 1. CREATE INDEX idx_gasolineras_coords ON gasolineras(latitud, longitud);
+  // 2. CREATE INDEX idx_gasolineras_provincia ON gasolineras(id_provincia);
   // ─────────────────────────────────────────────────────────────
   GASOLINERAS: {
     // Base SELECT (sin horario duplicado) + placeholder WHERE para componer dinámicamente
