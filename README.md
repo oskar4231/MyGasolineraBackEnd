@@ -29,11 +29,13 @@ El sistema ha sido modernizado para incluir **acceso remoto seguro** mediante Cl
 - 🔐 **Autenticación segura** con JWT y bcrypt
 - 👤 **Gestión de usuarios** (registro, login, recuperación de contraseña por email)
 - 🚙 **Gestión de vehículos** por usuario
-- ⛽ **Sistema de gasolineras** con sincronización automática de precios
+- ⛽ **Sistema de gasolineras** con sincronización automática y **búsqueda espacial optimizada** (Bounding Box)
 - 🌐 **Acceso Remoto Automático** via Ngrok
 - ⭐ **Favoritos** para guardar gasolineras preferidas
 - 🧾 **Gestión de facturas** con subida de imágenes (Multer)
 - 🔒 **Middleware de autenticación** para rutas protegidas
+- 🌍 **Internacionalización (i18n)** para soporte de múltiples idiomas
+- 📊 **Logger Avanzado (Winston)** y **Manejo de Errores Centralizado**
 
 ---
 
@@ -51,6 +53,7 @@ El sistema ha sido modernizado para incluir **acceso remoto seguro** mediante Cl
 | **cors** | ^2.8.5 | Cross-Origin Resource Sharing |
 | **axios** | ^1.5.0 | Cliente HTTP |
 | **multer** | ^2.0.2 | Subida de archivos |
+| **winston** | - | Sistema de logging avanzado |
 
 ---
 
@@ -189,8 +192,12 @@ erDiagram
 ## 📝 Changelog (Último Sprint)
 
 ### Mejoras de Arquitectura
+- **Modularización Estructural:** División del código en dominios lógicos (Coches, Estadísticas, Facturas, Gasolineras, Idiomas, Imágenes, Perfil) dentro de la carpeta `Frontend/` y módulos de soporte en `Backend/`.
+- **Sistema de Logging y Errores:** Nuevo logger avanzado basado en `winston` (`combined.log`, `error.log`) y middleware centralizado de manejo de errores (`errorHandler`).
+- **Internacionalización (i18n):** Nuevo sistema de soporte multidioma basado en cabeceras HTTP y archivos JSON estáticos.
+- **Optimización Geoespacial MAPA:** Implementación de índices GIS y predicados geométricos en MariaDB (`MBRContains`) mediante polígonos WKT para búsquedas espaciales ultrarrápidas de gasolineras (ver `DOCUMENTACION_BACKEND_MAPA.md`).
 - **Simplificación del Entorno:** Se ha migrado y centralizado toda la configuración del sistema a un único archivo `.env` maestro (Base de datos, Email, e Interruptores), eliminando lecturas innecesarias en el sistema de archivos (ej. `switch.txt`).
-- **Sistema Ngrok optimizado:** El script `startWithTunnel.js` ha sido reescrito para no depender del File System y reaccionar directamente al modificador `USE_NGROK` integrado de la configuración de Node, haciendo que iniciar el modo local o remoto sea tan simple como encender un switch en el `.env`.
+- **Sistema Ngrok optimizado:** El script `startWithTunnel.js` ha sido reescrito para no depender del File System y reaccionar directamente al modificador `USE_NGROK` integrado de la configuración de Node.
 - **Integración para Tests:** Se ha modificado el `package.json` para inyectar automáticamente la variable `NODE_ENV=test` al correr los scripts de tests de Jest, maximizando la velocidad de ejecución y previniendo colisiones de BD a través de Express.
 - **Servidor de Correos:** La recuperación de cuenta se ha actualizado para basarse en el servidor **Gmail/SMTP**, dejando detrás Mailtrap para avanzar hacia una implementación en producción real.
 
