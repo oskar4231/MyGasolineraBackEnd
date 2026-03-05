@@ -85,6 +85,7 @@ exports.login = async (req, res) => {
                 message: req.t('auth.incorrect_credentials')
             });
         }
+
         if (user.activo === 0) {
             logger.warn('Login fallido: cuenta inactiva', { email, id_usuario: user.id_usuario });
             return res.status(401).json({
@@ -92,6 +93,7 @@ exports.login = async (req, res) => {
                 message: req.t('auth.account_inactive')
             });
         }
+
         const token = jwt.sign({ email: user.email, id: user.id_usuario }, process.env.JWT_SECRET, { expiresIn: '24h' });
         logger.info('Login exitoso', { email: user.email, id_usuario: user.id_usuario, nombre: user.nombre });
 
