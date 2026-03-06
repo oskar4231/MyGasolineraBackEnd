@@ -316,6 +316,16 @@ class SincronizadorGasolineras {
     }
 }
 
-// Ejecutar el script
-const sincronizador = new SincronizadorGasolineras();
-sincronizador.ejecutar();
+module.exports = SincronizadorGasolineras;
+
+// Ejecutar el script solo si se llama directamente (ej. node sincronizarGasolineras.js)
+if (require.main === module) {
+    const sincronizador = new SincronizadorGasolineras();
+    sincronizador.ejecutar().then(() => {
+        // Asegurarse de que el proceso cierra al acabar
+        process.exit(0);
+    }).catch(err => {
+        console.error(err);
+        process.exit(1);
+    });
+}

@@ -1,10 +1,23 @@
 const pool = require('../../../Importante/BaseDeDatos/bbdd');
 const logger = require('../../../Backend/Logger/LoggerLogica/logger');
 const QUERIES = require('../../../Importante/BaseDeDatos/queries');
+const NodeCache = require('node-cache');
+
+// Caché en RAM: stdTTL 900 segundos (15 minutos coincidiendo con el CronJob)
+const cache = new NodeCache({ stdTTL: 900 });
 
 exports.getGasolineras = async (req, res) => {
     try {
         const { lat, lng, id_provincia, swLat, swLng, neLat, neLng } = req.query;
+
+        // Generar clave única para la caché
+        const cacheKey = `gasolineras_${lat || ''}_${lng || ''}_${id_provincia || ''}_${swLat || ''}_${swLng || ''}_${neLat || ''}_${neLng || ''}`;
+
+        const cachedResponse = cache.get(cacheKey);
+        if (cachedResponse) {
+            // Devolver desde RAM (saltando MySQL)
+            return res.json(cachedResponse);
+        }
 
         // Base query (sin horario duplicado)
         let query = QUERIES.GASOLINERAS.BASE_SELECT;
@@ -32,7 +45,7 @@ exports.getGasolineras = async (req, res) => {
 
         const [rows] = await pool.execute(query, params);
 
-        res.json({
+        const responseData = {
             success: true,
             count: rows.length,
             gasolineras: rows.map(g => ({
@@ -50,7 +63,12 @@ exports.getGasolineras = async (req, res) => {
                 'IDProvincia': g.idProvincia,
                 'Provincia': g.provincia,
             }))
-        });
+        };
+
+        // Guardar la respuesta cocinada en Caché
+        cache.set(cacheKey, responseData);
+
+        res.json(responseData);
 
     } catch (error) {
         logger.error('Error obteniendo gasolineras:', { error: error.message, stack: error.stack });

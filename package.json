@@ -8,7 +8,8 @@
     "dev": "node --watch server.js",
     "sincronizar": "node Frontend/Gasolineras/scripts/sincronizarGasolineras.js",
     "sinc-gasolineras": "node Frontend/Gasolineras/scripts/sincronizarGasolineras.js",
-    "start-with-sync": "npm run sync-gasolineras && node server.js",
+    "start-with-sync": "npm run sinc-gasolineras && node server.js",
+    "start:prod": "pm2 start server.js -i max --name mygasolinera-api",
     "start:tunnel": "node Backend/scripts/startWithTunnel.js",
     "start:tunnel:linux": "PLATFORM=linux node Backend/scripts/startWithTunnel.js",
     "test": "cross-env NODE_ENV=test jest",
@@ -25,6 +26,7 @@
   "dependencies": {
     "axios": "^1.5.0",
     "bcryptjs": "^2.4.3",
+    "compression": "^1.8.1",
     "cors": "^2.8.5",
     "cross-env": "^10.1.0",
     "dotenv": "^16.6.1",
@@ -32,7 +34,10 @@
     "jsonwebtoken": "^9.0.2",
     "multer": "^2.0.2",
     "mysql2": "^3.15.3",
+    "node-cache": "^5.1.2",
+    "node-cron": "^4.2.1",
     "nodemailer": "^7.0.11",
+    "pm2": "^6.0.14",
     "uuid": "^13.0.0",
     "winston": "^3.19.0"
   },

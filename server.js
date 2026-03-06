@@ -2,11 +2,15 @@ require('dotenv').config();
 
 const express = require('express');
 const cors = require('cors');
+const compression = require('compression'); // <-- Importar compression
 const app = express();
 const path = require('path');
 const logger = require('./Backend/Logger/LoggerLogica/logger');
 const loggerMiddleware = require('./Backend/Logger/LoggerLogica/Middleware/loggerMiddleware');
 const errorHandler = require('./Backend/ManejoDeErrores/errorHandler');
+
+// Habilitar compresión de respuestas HTTP para mejor rendimiento
+app.use(compression());
 
 // CORS Manual - Añadir headers CORS manualmente ANTES del middleware cors()
 // Esto asegura que los headers estén presentes incluso a través de Cloudflare Tunnel
@@ -123,6 +127,21 @@ app.use((err, req, res, next) => {
 });
 
 app.use(errorHandler);
+
+const cron = require('node-cron');
+const SincronizadorGasolineras = require('./Frontend/Gasolineras/scripts/sincronizarGasolineras');
+
+// Tarea Programada: Sincronizar gasolineras cada 15 minutos
+cron.schedule('*/15 * * * *', async () => {
+  logger.info('Arrancando sincronización de gasolineras (CronJob cada 15m)...');
+  try {
+    const sincronizador = new SincronizadorGasolineras();
+    await sincronizador.ejecutar();
+    logger.info('Sincronización de gasolineras por CronJob finalizada.');
+  } catch (error) {
+    logger.error('Error en el CronJob de sincronización de gasolineras', { error: error.message });
+  }
+});
 
 // Iniciar servidor
 const PORT = process.env.PORT || 3000;
