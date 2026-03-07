@@ -9,7 +9,7 @@ router.post('/register', authController.register);
 router.post('/login', authController.login);
 
 // ==================== BORRAR / INACTIVAR USUARIO ====================
-const { authenticateToken } = require('../../../Middleware/Autentificacion/auth');
+const authenticateToken = require('../../../Middleware/Autentificacion/auth');
 router.delete('/usuarios/:email', authenticateToken, authController.deleteUser);
 
 // ==================== FORGOT PASSWORD ====================

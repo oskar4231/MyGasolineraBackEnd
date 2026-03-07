@@ -3860,3 +3860,32 @@
   "ip": "127.0.0.1",
   "respuesta": "{\"status\":\"error\",\"message\":\"general.server_error: Access denied for user ''@'localhost' (using password: NO)\"}"
 }
+[2026-03-07 13:37:45] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "Server requests authentication using unknown plugin auth_gssapi_client. See TODO: add plugins doco here on how to configure or author authentication plugins.",
+  "stack": "Error: Server requests authentication using unknown plugin auth_gssapi_client. See TODO: add plugins doco here on how to configure or author authentication plugins.\n    at PromisePool.query (C:\\Users\\Oscar\\OneDrive\\Documentos\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\mysql2\\lib\\promise\\pool.js:36:22)\n    at exports.login (C:\\Users\\Oscar\\OneDrive\\Documentos\\MyGasolineraBBDD\\MyGasolineraBackEnd\\Frontend\\Perfil\\controladores\\authController.js:69:35)\n    at Layer.handle [as handle_request] (C:\\Users\\Oscar\\OneDrive\\Documentos\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Oscar\\OneDrive\\Documentos\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\Oscar\\OneDrive\\Documentos\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Oscar\\OneDrive\\Documentos\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Oscar\\OneDrive\\Documentos\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:284:15\n    at Function.process_params (C:\\Users\\Oscar\\OneDrive\\Documentos\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:346:12)\n    at next (C:\\Users\\Oscar\\OneDrive\\Documentos\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:280:10)\n    at Function.handle (C:\\Users\\Oscar\\OneDrive\\Documentos\\MyGasolineraBBDD\\MyGasolineraBackEnd\\node_modules\\express\\lib\\router\\index.js:175:3)",
+  "email": "test@test.com"
+}
+[2026-03-07 13:37:45] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 78,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": {
+    "status": "error",
+    "message": "general.server_error: Server requests authentication using unknown plugin auth_gssapi_client. See TODO: add plugins doco here on how to configure or author authentication plugins."
+  }
+}
+[2026-03-07 13:37:45] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/login",
+  "status": 500,
+  "duracion_ms": 79,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": "{\"status\":\"error\",\"message\":\"general.server_error: Server requests authentication using unknown plugin auth_gssapi_client. See TODO: add plugins doco here on how to configure or author authentication plugins.\"}"
+}
