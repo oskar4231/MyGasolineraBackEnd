@@ -1,7 +1,9 @@
 require('dotenv').config();
 
-const { spawn } = require('child_process');
+const { spawn, execSync } = require('child_process');
 const ngrokManager = require('./ngrokManager');
+
+const usePm2 = process.env.USE_PM2 === 'true';
 
 const PORT = process.env.PORT || 3000;
 
@@ -12,11 +14,20 @@ async function startWithTunnel() {
         console.log('=================================\n');
 
         // 1. Iniciar el servidor Express
-        console.log('📦 Paso 1: Iniciando servidor Express...');
-        const serverProcess = spawn('node', ['server.js'], {
-            stdio: 'inherit',
-            cwd: __dirname + '/../..'
-        });
+        let serverProcess;
+        if (usePm2) {
+            console.log('📦 Paso 1: Iniciando servidor Express con PM2 (Multinúcleo)...');
+            execSync('npx pm2 start server.js -i max --name mygasolinera-api', {
+                stdio: 'inherit',
+                cwd: __dirname + '/../..'
+            });
+        } else {
+            console.log('📦 Paso 1: Iniciando servidor Express...');
+            serverProcess = spawn(/^win/.test(process.platform) ? 'node.cmd' : 'node', ['server.js'], {
+                stdio: 'inherit',
+                cwd: __dirname + '/../..'
+            });
+        }
 
         // Esperar un poco para que el servidor inicie
         await new Promise(resolve => setTimeout(resolve, 3000));
@@ -36,7 +47,15 @@ async function startWithTunnel() {
         const cleanup = () => {
             console.log('\n🛑 Deteniendo servicios...');
             ngrokManager.stop();
-            serverProcess.kill();
+            if (usePm2) {
+                try {
+                    execSync('npx pm2 delete mygasolinera-api', { stdio: 'inherit', cwd: __dirname + '/../..' });
+                } catch (e) {
+                    console.error('Error al detener PM2:', e.message);
+                }
+            } else if (serverProcess) {
+                serverProcess.kill();
+            }
             process.exit(0);
         };
 
@@ -61,10 +80,19 @@ async function main() {
         console.log('=================================\n');
 
         // Start only server
-        const serverProcess = spawn('node', ['server.js'], {
-            stdio: 'inherit',
-            cwd: __dirname + '/../..'
-        });
+        let serverProcess;
+        if (usePm2) {
+            console.log('\n📦 Iniciando servidor Express con PM2 (Multinúcleo)...');
+            execSync('npx pm2 start server.js -i max --name mygasolinera-api', {
+                stdio: 'inherit',
+                cwd: __dirname + '/../..'
+            });
+        } else {
+            serverProcess = spawn(/^win/.test(process.platform) ? 'node.cmd' : 'node', ['server.js'], {
+                stdio: 'inherit',
+                cwd: __dirname + '/../..'
+            });
+        }
 
         console.log(`\n✅ SERVIDOR INICIADO EN LOCAL`);
         console.log(`🌐 Local URL: http://localhost:${PORT}`);
@@ -73,7 +101,15 @@ async function main() {
         // Handle cleanup for local mode
         const cleanup = () => {
             console.log('\n🛑 Deteniendo servidor...');
-            serverProcess.kill();
+            if (usePm2) {
+                try {
+                    execSync('npx pm2 delete mygasolinera-api', { stdio: 'inherit', cwd: __dirname + '/../..' });
+                } catch (e) {
+                    console.error('Error al detener PM2:', e.message);
+                }
+            } else if (serverProcess) {
+                serverProcess.kill();
+            }
             process.exit(0);
         };
         process.on('SIGINT', cleanup);
