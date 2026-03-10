@@ -38321,3 +38321,23 @@
 [2026-03-08 23:45:26] [INFO] Sincronización de gasolineras por CronJob finalizada. {
   "service": "my-gasolinera-api"
 }
+[2026-03-09 16:46:47] [INFO] Servidor iniciado correctamente {
+  "service": "my-gasolinera-api",
+  "puerto": "3000",
+  "entorno": "development"
+}
+[2026-03-09 16:46:47] [INFO] ================================= {
+  "service": "my-gasolinera-api"
+}
+[2026-03-09 16:46:47] [INFO] ✅ SERVIDOR INICIADO CORRECTAMENTE {
+  "service": "my-gasolinera-api"
+}
+[2026-03-09 16:46:47] [INFO] 📍 Puerto: 3000 {
+  "service": "my-gasolinera-api"
+}
+[2026-03-09 16:46:47] [INFO] 🌐 Local: http://localhost:3000 {
+  "service": "my-gasolinera-api"
+}
+[2026-03-09 16:46:47] [INFO] ================================= {
+  "service": "my-gasolinera-api"
+}
