@@ -1,0 +1,17 @@
+CREATE TABLE IF NOT EXISTS `coches` (
+  `id_coche` int(11) NOT NULL AUTO_INCREMENT,
+  `id_usuario` int(11) DEFAULT NULL,
+  `marca` varchar(50) DEFAULT NULL,
+  `modelo` varchar(50) DEFAULT NULL,
+  `combustible` varchar(30) DEFAULT NULL,
+  `kilometraje_inicial` int(11) DEFAULT NULL COMMENT 'Km cuando empezaste a registrar',
+  `capacidad_tanque` decimal(10,2) DEFAULT NULL COMMENT 'Litros del tanque',
+  `consumo_teorico` decimal(10,2) DEFAULT NULL COMMENT 'L/100km según fabricante',
+  `fecha_ultimo_cambio_aceite` date DEFAULT NULL COMMENT 'Última vez que cambiaste aceite',
+  `km_ultimo_cambio_aceite` int(11) DEFAULT NULL COMMENT 'Km del último cambio de aceite',
+  `intervalo_cambio_aceite_km` int(11) DEFAULT 15000 COMMENT 'Cada cuántos km cambiar aceite',
+  `intervalo_cambio_aceite_meses` int(11) DEFAULT 12 COMMENT 'Cada cuántos meses cambiar aceite',
+  PRIMARY KEY (`id_coche`),
+  KEY `id_usuario` (`id_usuario`),
+  CONSTRAINT `coches_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;

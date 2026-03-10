@@ -22,10 +22,10 @@ const QUERIES = {
       'SELECT * FROM usuarios WHERE (email = ? OR nombre = ?) AND activo = 1',
 
     DEACTIVATE_USER:
-      'UPDATE usuarios SET activo = 0 WHERE email = ? OR nombre = ?',
+      'UPDATE usuarios SET activo = 0 WHERE id_usuario = ?',
 
     CHECK_USER_ACTIVE:
-      'SELECT id_usuario, activo FROM usuarios WHERE email = ? OR nombre = ?',
+      'SELECT id_usuario, activo FROM usuarios WHERE id_usuario = ?',
 
     GET_EMAIL_BY_NOMBRE:
       'SELECT email FROM usuarios WHERE nombre = ?',
@@ -54,13 +54,13 @@ const QUERIES = {
   // ─────────────────────────────────────────────────────────────
   PERFIL: {
     GET_PROFILE:
-      'SELECT email, nombre, apellido, telefono, foto_perfil FROM usuarios WHERE email = ?',
+      'SELECT email, nombre, foto_perfil FROM usuarios WHERE id_usuario = ?',
 
     GET_OLD_PHOTO:
-      'SELECT foto_perfil FROM usuarios WHERE email = ?',
+      'SELECT foto_perfil FROM usuarios WHERE id_usuario = ?',
 
     UPDATE_PHOTO:
-      'UPDATE usuarios SET foto_perfil = ? WHERE email = ?',
+      'UPDATE usuarios SET foto_perfil = ? WHERE id_usuario = ?',
   },
 
   // ─────────────────────────────────────────────────────────────

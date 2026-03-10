@@ -11,7 +11,7 @@ exports.getProfile = async (req, res) => {
     let conn;
     try {
         conn = await pool.getConnection();
-        const [rows] = await conn.query(QUERIES.PERFIL.GET_PROFILE, [req.user.email]);
+        const [rows] = await conn.query(QUERIES.PERFIL.GET_PROFILE, [req.user.id]);
 
         if (rows.length === 0) {
             return res.status(404).json({ error: req.t('profile.user_not_found') });
@@ -36,14 +36,14 @@ exports.uploadPhoto = async (req, res) => {
         conn = await pool.getConnection();
 
         // Obtener la foto anterior para eliminarla
-        const [oldPhoto] = await conn.query(QUERIES.PERFIL.GET_OLD_PHOTO, [req.user.email]);
+        const [oldPhoto] = await conn.query(QUERIES.PERFIL.GET_OLD_PHOTO, [req.user.id]);
 
         // Fix: ruta relativa consistente con el servidor estático
         // server.js sirve /uploads → Frontend/Imagenes/imagenes/
         // Multer guarda en Frontend/Imagenes/imagenes/fotos_perfil/
         // → La URL pública debe ser: uploads/fotos_perfil/<filename>
         const photoPath = `uploads/fotos_perfil/${req.file.filename}`;
-        await conn.query(QUERIES.PERFIL.UPDATE_PHOTO, [photoPath, req.user.email]);
+        await conn.query(QUERIES.PERFIL.UPDATE_PHOTO, [photoPath, req.user.id]);
 
         // Eliminar la foto anterior si existe en disco
         if (oldPhoto.length > 0 && oldPhoto[0].foto_perfil) {
@@ -56,7 +56,7 @@ exports.uploadPhoto = async (req, res) => {
             }
         }
 
-        logger.info('Foto de perfil actualizada', { email: req.user.email, photoPath });
+        logger.info('Foto de perfil actualizada', { id: req.user.id, photoPath });
         res.json({ status: 'success', message: req.t('profile.photo_updated'), photoUrl: photoPath });
 
     } catch (error) {
