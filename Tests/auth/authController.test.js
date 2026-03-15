@@ -226,47 +226,74 @@ describe('AuthController Tests', () => {
   describe('resetPassword', () => {
     test('debe resetear contraseña con token válido', async () => {
       const req = mockRequest({
-        body: {
-          token: '123456',
-          newPassword: 'newpassword123'
-        }
+        body: { token: '123456', newPassword: 'newpassword123' }
       });
       const res = mockResponse();
 
       const futureDate = new Date(Date.now() + 3600000);
-      // Mock: token válido
       mockPool.query.mockResolvedValueOnce([[{
-        token: '123456',
-        email: 'test@example.com',
-        used: false,
-        expires_at: futureDate
+        token: '123456', email: 'test@example.com', used: false, expires_at: futureDate
       }]]);
-      // Mock: actualizar contraseña
       mockPool.query.mockResolvedValueOnce([{ affectedRows: 1 }]);
-      // Mock: marcar token como usado
       mockPool.query.mockResolvedValueOnce([{ affectedRows: 1 }]);
 
       await authController.resetPassword(req, res);
 
-      expect(res.json).toHaveBeenCalledWith(
-        expect.objectContaining({
-          status: 'success'
-        })
-      );
+      expect(res.json).toHaveBeenCalledWith(expect.objectContaining({ status: 'success' }));
     });
 
     test('debe rechazar contraseña muy corta', async () => {
+      const req = mockRequest({ body: { token: '123456', newPassword: '123' } });
+      const res = mockResponse();
+      await authController.resetPassword(req, res);
+      expect(res.status).toHaveBeenCalledWith(400);
+    });
+  });
+
+  describe('deleteUser', () => {
+    test('debe desactivar usuario por id correctamente', async () => {
       const req = mockRequest({
-        body: {
-          token: '123456',
-          newPassword: '123' // Muy corta
-        }
+        params: { id: '1' },
+        user: { id: 1, email: 'test@example.com' }
       });
       const res = mockResponse();
 
-      await authController.resetPassword(req, res);
+      // Mock: UPDATE afectó 1 fila
+      mockPool.query.mockResolvedValueOnce([{ affectedRows: 1 }]);
 
-      expect(res.status).toHaveBeenCalledWith(400);
+      await authController.deleteUser(req, res);
+
+      expect(res.json).toHaveBeenCalledWith(
+        expect.objectContaining({ success: true })
+      );
+    });
+
+    test('debe devolver 403 si el id del token no coincide con el param', async () => {
+      const req = mockRequest({
+        params: { id: '99' },
+        user: { id: 1, email: 'test@example.com' }
+      });
+      const res = mockResponse();
+
+      await authController.deleteUser(req, res);
+
+      expect(res.status).toHaveBeenCalledWith(403);
+    });
+
+    test('debe devolver 404 si el usuario no existe en la BD', async () => {
+      const req = mockRequest({
+        params: { id: '1' },
+        user: { id: 1, email: 'test@example.com' }
+      });
+      const res = mockResponse();
+
+      // Mock: UPDATE no afectó filas, usuario no encontrado / ya inactivo
+      mockPool.query.mockResolvedValueOnce([{ affectedRows: 0 }]);
+      mockPool.query.mockResolvedValueOnce([[]]); // check activo vacío
+
+      await authController.deleteUser(req, res);
+
+      expect(res.status).toHaveBeenCalledWith(404);
     });
   });
 });

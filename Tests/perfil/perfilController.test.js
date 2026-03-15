@@ -27,8 +27,6 @@ describe('PerfilController Tests', () => {
       mockConnection.query.mockResolvedValueOnce([[{
         email: 'test@example.com',
         nombre: 'Test User',
-        apellido: 'Apellido',
-        telefono: '123456789',
         foto_perfil: 'uploads/profile-photos/test.jpg'
       }]]);
 
@@ -38,7 +36,8 @@ describe('PerfilController Tests', () => {
         expect.objectContaining({
           user: expect.objectContaining({
             email: 'test@example.com',
-            nombre: 'Test User'
+            nombre: 'Test User',
+            foto_perfil: expect.any(String)
           })
         })
       );

@@ -114,38 +114,39 @@ exports.login = async (req, res) => {
 
 exports.deleteUser = async (req, res) => {
     try {
-        const { email } = req.params;
-        logger.info('Iniciando desactivación de usuario', { email });
+        const { id } = req.params;
+        const userId = parseInt(id, 10);
+        logger.info('Iniciando desactivación de usuario', { id: userId });
 
-        if (!email) {
-            logger.warn('Intento de desactivar usuario sin identificador', {});
+        if (!userId || isNaN(userId)) {
+            logger.warn('Intento de desactivar usuario sin identificador válido', {});
             return res.status(400).json({ success: false, message: req.t('auth.identifier_required') });
         }
 
-        if (req.user.email !== email) {
-            logger.warn('Intento de borrar un usuario distinto al logueado', { user: req.user.email, emailBorrar: email });
+        if (req.user.id !== userId) {
+            logger.warn('Intento de borrar un usuario distinto al logueado', { user: req.user.id, idBorrar: userId });
             return res.status(403).json({ success: false, message: 'Forbidden: No tienes permisos para borrar este usuario' });
         }
 
-        logger.trace('Ejecutando UPDATE para desactivar usuario', { email });
-        const [result] = await pool.query(QUERIES.AUTH.DEACTIVATE_USER, [email, email]);
+        logger.trace('Ejecutando UPDATE para desactivar usuario', { id: userId });
+        const [result] = await pool.query(QUERIES.AUTH.DEACTIVATE_USER, [userId]);
 
         if (result.affectedRows === 0) {
-            logger.debug('No se encontró usuario activo para desactivar', { email });
-            const [check] = await pool.query(QUERIES.AUTH.CHECK_USER_ACTIVE, [email, email]);
+            logger.debug('No se encontró usuario activo para desactivar', { id: userId });
+            const [check] = await pool.query(QUERIES.AUTH.CHECK_USER_ACTIVE, [userId]);
             if (check.length > 0 && check[0].activo === 0) {
-                logger.info('Usuario ya estaba inactivo', { email, id_usuario: check[0].id_usuario });
+                logger.info('Usuario ya estaba inactivo', { id: userId });
                 return res.json({ success: true, message: req.t('auth.user_already_inactive'), affectedRows: 0 });
             }
-            logger.warn('Usuario no encontrado para desactivar', { email });
+            logger.warn('Usuario no encontrado para desactivar', { id: userId });
             return res.status(404).json({ success: false, message: req.t('auth.user_not_found') });
         }
 
-        logger.info('Usuario desactivado correctamente', { email, affectedRows: result.affectedRows });
+        logger.info('Usuario desactivado correctamente', { id: userId, affectedRows: result.affectedRows });
         res.json({ success: true, message: req.t('auth.user_deactivated'), affectedRows: result.affectedRows });
 
     } catch (error) {
-        logger.error('Error al desactivar usuario', { error: error.message, stack: error.stack, email: req.params.email });
+        logger.error('Error al desactivar usuario', { error: error.message, stack: error.stack, id: req.params.id });
         res.status(500).json({ status: 'error', message: req.t('general.server_error') + ': ' + error.message });
     }
 };

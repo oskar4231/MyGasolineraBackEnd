@@ -1,0 +1,1 @@
+const fs=require('fs'); const content=fs.readFileSync('Importante/BaseDeDatos/backup_completo.sql', 'utf8'); const tables=content.match(/CREATE TABLE[\s\S]*?\)\s*ENGINE[^;]*;/g); if(tables) { const usr=tables.find(t=>t.includes('usuarios')); fs.writeFileSync('schema_usuarios.txt', usr || 'Not found'); }
