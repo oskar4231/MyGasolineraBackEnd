@@ -3889,3 +3889,61 @@
   "ip": "127.0.0.1",
   "respuesta": "{\"status\":\"error\",\"message\":\"general.server_error: Server requests authentication using unknown plugin auth_gssapi_client. See TODO: add plugins doco here on how to configure or author authentication plugins.\"}"
 }
+[2026-03-09 15:51:40] [ERROR] Error en recuperación de contraseña {
+  "service": "my-gasolinera-api",
+  "error": "Table 'mygasolinera.token_reiniciar_contraseña' doesn't exist",
+  "stack": "Error: Table 'mygasolinera.token_reiniciar_contraseña' doesn't exist\n    at PromisePool.query (C:\\Users\\Exomia\\algo\\ElBackend\\node_modules\\mysql2\\lib\\promise\\pool.js:36:22)\n    at exports.forgotPassword (C:\\Users\\Exomia\\algo\\ElBackend\\Frontend\\Perfil\\controladores\\authController.js:177:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)",
+  "email": "cauento221@gmail.com"
+}
+[2026-03-09 15:51:40] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/forgot-password",
+  "status": 500,
+  "duracion_ms": 5,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": {
+    "status": "error",
+    "message": "general.server_error: Table 'mygasolinera.token_reiniciar_contraseña' doesn't exist"
+  }
+}
+[2026-03-09 15:51:40] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/forgot-password",
+  "status": 500,
+  "duracion_ms": 5,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": "{\"status\":\"error\",\"message\":\"general.server_error: Table 'mygasolinera.token_reiniciar_contraseña' doesn't exist\"}"
+}
+[2026-03-09 15:51:46] [ERROR] Error en recuperación de contraseña {
+  "service": "my-gasolinera-api",
+  "error": "Table 'mygasolinera.token_reiniciar_contraseña' doesn't exist",
+  "stack": "Error: Table 'mygasolinera.token_reiniciar_contraseña' doesn't exist\n    at PromisePool.query (C:\\Users\\Exomia\\algo\\ElBackend\\node_modules\\mysql2\\lib\\promise\\pool.js:36:22)\n    at exports.forgotPassword (C:\\Users\\Exomia\\algo\\ElBackend\\Frontend\\Perfil\\controladores\\authController.js:177:20)\n    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)",
+  "email": "cauento221@gmail.com"
+}
+[2026-03-09 15:51:46] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/forgot-password",
+  "status": 500,
+  "duracion_ms": 2,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": {
+    "status": "error",
+    "message": "general.server_error: Table 'mygasolinera.token_reiniciar_contraseña' doesn't exist"
+  }
+}
+[2026-03-09 15:51:46] [ERROR] Error del servidor {
+  "service": "my-gasolinera-api",
+  "metodo": "POST",
+  "url": "/forgot-password",
+  "status": 500,
+  "duracion_ms": 2,
+  "usuario_id": "anónimo",
+  "ip": "127.0.0.1",
+  "respuesta": "{\"status\":\"error\",\"message\":\"general.server_error: Table 'mygasolinera.token_reiniciar_contraseña' doesn't exist\"}"
+}
