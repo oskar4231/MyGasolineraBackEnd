@@ -3947,3 +3947,1888 @@
   "ip": "127.0.0.1",
   "respuesta": "{\"status\":\"error\",\"message\":\"general.server_error: Table 'mygasolinera.token_reiniciar_contraseña' doesn't exist\"}"
 }
+[2026-03-23 17:00:47] [ERROR] Error en registro de usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.register (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:20:30)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:42:13)",
+  "email": "nuevo@example.com"
+}
+[2026-03-23 17:00:47] [ERROR] Error en registro de usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.register (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:20:30)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:61:13)",
+  "email": "existente@example.com"
+}
+[2026-03-23 17:00:47] [ERROR] Error en registro de usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.register (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:20:30)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:82:13)",
+  "email": "sinombre@example.com"
+}
+[2026-03-23 17:00:47] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:102:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:00:47] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:119:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:00:47] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:130:13)",
+  "email": "noexiste@example.com"
+}
+[2026-03-23 17:00:47] [ERROR] Error en recuperación de contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.forgotPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:165:25)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:197:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:00:47] [ERROR] Error en recuperación de contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.forgotPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:165:25)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:211:13)",
+  "email": "noexiste@example.com"
+}
+[2026-03-23 17:00:47] [ERROR] Error al verificar token {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.verifyToken (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:203:26)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:242:13)"
+}
+[2026-03-23 17:00:47] [ERROR] Error al verificar token {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.verifyToken (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:203:26)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:258:13)"
+}
+[2026-03-23 17:00:47] [ERROR] Error al reiniciar contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.resetPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:235:26)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:286:13)"
+}
+[2026-03-23 17:00:47] [ERROR] Error al reiniciar contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.resetPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:235:26)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:299:13)"
+}
+[2026-03-23 17:01:05] [ERROR] Error en registro de usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.register (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:20:30)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:42:13)",
+  "email": "nuevo@example.com"
+}
+[2026-03-23 17:01:05] [ERROR] Error en registro de usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.register (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:20:30)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:61:13)",
+  "email": "existente@example.com"
+}
+[2026-03-23 17:01:05] [ERROR] Error en registro de usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.register (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:20:30)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:82:13)",
+  "email": "sinombre@example.com"
+}
+[2026-03-23 17:01:05] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:102:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:01:05] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:119:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:01:05] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:130:13)",
+  "email": "noexiste@example.com"
+}
+[2026-03-23 17:01:05] [ERROR] Error en recuperación de contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.forgotPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:165:25)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:197:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:01:05] [ERROR] Error en recuperación de contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.forgotPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:165:25)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:211:13)",
+  "email": "noexiste@example.com"
+}
+[2026-03-23 17:01:05] [ERROR] Error al verificar token {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.verifyToken (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:203:26)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:242:13)"
+}
+[2026-03-23 17:01:05] [ERROR] Error al verificar token {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.verifyToken (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:203:26)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:258:13)"
+}
+[2026-03-23 17:01:05] [ERROR] Error al reiniciar contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.resetPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:235:26)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:286:13)"
+}
+[2026-03-23 17:01:05] [ERROR] Error al reiniciar contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.resetPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:235:26)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:299:13)"
+}
+[2026-03-23 17:01:06] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:46:13)"
+}
+[2026-03-23 17:01:06] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:57:13)"
+}
+[2026-03-23 17:01:06] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:69:13)"
+}
+[2026-03-23 17:01:06] [ERROR] Error insertando factura en BD {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:92:13)",
+  "titulo": "Repostaje"
+}
+[2026-03-23 17:01:06] [ERROR] Error en creación de factura {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:92:13)",
+  "titulo": "Repostaje"
+}
+[2026-03-23 17:01:06] [ERROR] Error insertando factura en BD {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:119:13)",
+  "titulo": "Test"
+}
+[2026-03-23 17:01:06] [ERROR] Error en creación de factura {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:119:13)",
+  "titulo": "Test"
+}
+[2026-03-23 17:01:06] [ERROR] Error insertando factura en BD {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:133:13)",
+  "titulo": "Sin descripción"
+}
+[2026-03-23 17:01:06] [ERROR] Error en creación de factura {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:133:13)",
+  "titulo": "Sin descripción"
+}
+[2026-03-23 17:01:06] [ERROR] Error al eliminar factura {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:136:27)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:149:13)",
+  "id_factura": "1"
+}
+[2026-03-23 17:01:06] [ERROR] Error al eliminar factura {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:136:27)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:163:13)",
+  "id_factura": "99"
+}
+[2026-03-23 17:01:06] [ERROR] Error al eliminar factura {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:136:27)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:175:13)",
+  "id_factura": "999"
+}
+[2026-03-23 17:01:08] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:46:13)"
+}
+[2026-03-23 17:01:08] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:57:13)"
+}
+[2026-03-23 17:01:08] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:69:13)"
+}
+[2026-03-23 17:01:08] [ERROR] Error insertando factura en BD {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:92:13)",
+  "titulo": "Repostaje"
+}
+[2026-03-23 17:01:08] [ERROR] Error en creación de factura {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:92:13)",
+  "titulo": "Repostaje"
+}
+[2026-03-23 17:01:08] [ERROR] Error insertando factura en BD {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:119:13)",
+  "titulo": "Test"
+}
+[2026-03-23 17:01:08] [ERROR] Error en creación de factura {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:119:13)",
+  "titulo": "Test"
+}
+[2026-03-23 17:01:08] [ERROR] Error insertando factura en BD {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:133:13)",
+  "titulo": "Sin descripción"
+}
+[2026-03-23 17:01:08] [ERROR] Error en creación de factura {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:133:13)",
+  "titulo": "Sin descripción"
+}
+[2026-03-23 17:01:08] [ERROR] Error al eliminar factura {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:136:27)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:149:13)",
+  "id_factura": "1"
+}
+[2026-03-23 17:01:08] [ERROR] Error al eliminar factura {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:136:27)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:163:13)",
+  "id_factura": "99"
+}
+[2026-03-23 17:01:08] [ERROR] Error al eliminar factura {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:136:27)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:175:13)",
+  "id_factura": "999"
+}
+[2026-03-23 17:01:08] [ERROR] Error en registro de usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.register (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:20:30)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:42:13)",
+  "email": "nuevo@example.com"
+}
+[2026-03-23 17:01:08] [ERROR] Error en registro de usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.register (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:20:30)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:61:13)",
+  "email": "existente@example.com"
+}
+[2026-03-23 17:01:08] [ERROR] Error en registro de usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.register (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:20:30)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:82:13)",
+  "email": "sinombre@example.com"
+}
+[2026-03-23 17:01:08] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:102:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:01:08] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:119:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:01:08] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:130:13)",
+  "email": "noexiste@example.com"
+}
+[2026-03-23 17:01:08] [ERROR] Error en recuperación de contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.forgotPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:165:25)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:197:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:01:08] [ERROR] Error en recuperación de contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.forgotPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:165:25)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:211:13)",
+  "email": "noexiste@example.com"
+}
+[2026-03-23 17:01:08] [ERROR] Error al verificar token {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.verifyToken (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:203:26)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:242:13)"
+}
+[2026-03-23 17:01:08] [ERROR] Error al verificar token {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.verifyToken (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:203:26)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:258:13)"
+}
+[2026-03-23 17:01:08] [ERROR] Error al reiniciar contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.resetPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:235:26)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:286:13)"
+}
+[2026-03-23 17:01:08] [ERROR] Error al reiniciar contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.resetPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:235:26)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:299:13)"
+}
+[2026-03-23 17:01:22] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:46:13)"
+}
+[2026-03-23 17:01:22] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:57:13)"
+}
+[2026-03-23 17:01:22] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:69:13)"
+}
+[2026-03-23 17:01:22] [ERROR] Error insertando factura en BD {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:92:13)",
+  "titulo": "Repostaje"
+}
+[2026-03-23 17:01:22] [ERROR] Error en creación de factura {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:92:13)",
+  "titulo": "Repostaje"
+}
+[2026-03-23 17:01:22] [ERROR] Error insertando factura en BD {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:119:13)",
+  "titulo": "Test"
+}
+[2026-03-23 17:01:22] [ERROR] Error en creación de factura {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:119:13)",
+  "titulo": "Test"
+}
+[2026-03-23 17:01:22] [ERROR] Error insertando factura en BD {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:133:13)",
+  "titulo": "Sin descripción"
+}
+[2026-03-23 17:01:22] [ERROR] Error en creación de factura {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:133:13)",
+  "titulo": "Sin descripción"
+}
+[2026-03-23 17:01:22] [ERROR] Error al eliminar factura {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:136:27)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:149:13)",
+  "id_factura": "1"
+}
+[2026-03-23 17:01:22] [ERROR] Error al eliminar factura {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:136:27)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:163:13)",
+  "id_factura": "99"
+}
+[2026-03-23 17:01:22] [ERROR] Error al eliminar factura {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:136:27)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:175:13)",
+  "id_factura": "999"
+}
+[2026-03-23 17:01:22] [ERROR] Error en registro de usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.register (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:20:30)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:42:13)",
+  "email": "nuevo@example.com"
+}
+[2026-03-23 17:01:22] [ERROR] Error en registro de usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.register (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:20:30)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:61:13)",
+  "email": "existente@example.com"
+}
+[2026-03-23 17:01:22] [ERROR] Error en registro de usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.register (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:20:30)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:82:13)",
+  "email": "sinombre@example.com"
+}
+[2026-03-23 17:01:22] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:102:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:01:22] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:119:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:01:22] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:130:13)",
+  "email": "noexiste@example.com"
+}
+[2026-03-23 17:01:22] [ERROR] Error en recuperación de contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.forgotPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:165:25)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:197:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:01:22] [ERROR] Error en recuperación de contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.forgotPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:165:25)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:211:13)",
+  "email": "noexiste@example.com"
+}
+[2026-03-23 17:01:22] [ERROR] Error al verificar token {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.verifyToken (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:203:26)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:242:13)"
+}
+[2026-03-23 17:01:22] [ERROR] Error al verificar token {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.verifyToken (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:203:26)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:258:13)"
+}
+[2026-03-23 17:01:22] [ERROR] Error al reiniciar contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.resetPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:235:26)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:286:13)"
+}
+[2026-03-23 17:01:22] [ERROR] Error al reiniciar contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.resetPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:235:26)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:299:13)"
+}
+[2026-03-23 17:01:39] [ERROR] Error en registro de usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.register (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:20:30)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:42:13)",
+  "email": "nuevo@example.com"
+}
+[2026-03-23 17:01:39] [ERROR] Error en registro de usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.register (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:20:30)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:61:13)",
+  "email": "existente@example.com"
+}
+[2026-03-23 17:01:39] [ERROR] Error en registro de usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.register (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:20:30)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:82:13)",
+  "email": "sinombre@example.com"
+}
+[2026-03-23 17:01:39] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:102:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:01:39] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:119:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:01:39] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:130:13)",
+  "email": "noexiste@example.com"
+}
+[2026-03-23 17:01:39] [ERROR] Error en recuperación de contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.forgotPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:165:25)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:197:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:01:39] [ERROR] Error en recuperación de contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.forgotPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:165:25)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:211:13)",
+  "email": "noexiste@example.com"
+}
+[2026-03-23 17:01:39] [ERROR] Error al verificar token {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.verifyToken (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:203:26)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:242:13)"
+}
+[2026-03-23 17:01:39] [ERROR] Error al verificar token {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.verifyToken (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:203:26)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:258:13)"
+}
+[2026-03-23 17:01:39] [ERROR] Error al reiniciar contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.resetPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:235:26)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:286:13)"
+}
+[2026-03-23 17:01:39] [ERROR] Error al reiniciar contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.resetPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:235:26)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:299:13)"
+}
+[2026-03-23 17:01:59] [ERROR] Error en registro de usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.register (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:20:30)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:42:13)",
+  "email": "nuevo@example.com"
+}
+[2026-03-23 17:01:59] [ERROR] Error en registro de usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.register (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:20:30)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:61:13)",
+  "email": "existente@example.com"
+}
+[2026-03-23 17:01:59] [ERROR] Error en registro de usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.register (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:20:30)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:82:13)",
+  "email": "sinombre@example.com"
+}
+[2026-03-23 17:01:59] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:102:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:01:59] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:119:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:01:59] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:130:13)",
+  "email": "noexiste@example.com"
+}
+[2026-03-23 17:01:59] [ERROR] Error en recuperación de contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.forgotPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:165:25)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:197:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:01:59] [ERROR] Error en recuperación de contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.forgotPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:165:25)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:211:13)",
+  "email": "noexiste@example.com"
+}
+[2026-03-23 17:01:59] [ERROR] Error al verificar token {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.verifyToken (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:203:26)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:242:13)"
+}
+[2026-03-23 17:01:59] [ERROR] Error al verificar token {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.verifyToken (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:203:26)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:258:13)"
+}
+[2026-03-23 17:01:59] [ERROR] Error al reiniciar contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.resetPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:235:26)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:286:13)"
+}
+[2026-03-23 17:01:59] [ERROR] Error al reiniciar contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.resetPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:235:26)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:299:13)"
+}
+[2026-03-23 17:02:13] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:46:13)"
+}
+[2026-03-23 17:02:13] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:57:13)"
+}
+[2026-03-23 17:02:13] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:69:13)"
+}
+[2026-03-23 17:02:13] [ERROR] Error insertando factura en BD {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:92:13)",
+  "titulo": "Repostaje"
+}
+[2026-03-23 17:02:13] [ERROR] Error en creación de factura {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:92:13)",
+  "titulo": "Repostaje"
+}
+[2026-03-23 17:02:13] [ERROR] Error insertando factura en BD {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:119:13)",
+  "titulo": "Test"
+}
+[2026-03-23 17:02:13] [ERROR] Error en creación de factura {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:119:13)",
+  "titulo": "Test"
+}
+[2026-03-23 17:02:13] [ERROR] Error insertando factura en BD {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:133:13)",
+  "titulo": "Sin descripción"
+}
+[2026-03-23 17:02:13] [ERROR] Error en creación de factura {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:133:13)",
+  "titulo": "Sin descripción"
+}
+[2026-03-23 17:02:13] [ERROR] Error al eliminar factura {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:136:27)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:149:13)",
+  "id_factura": "1"
+}
+[2026-03-23 17:02:13] [ERROR] Error al eliminar factura {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:136:27)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:163:13)",
+  "id_factura": "99"
+}
+[2026-03-23 17:02:13] [ERROR] Error al eliminar factura {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:136:27)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:175:13)",
+  "id_factura": "999"
+}
+[2026-03-23 17:02:13] [ERROR] Error en registro de usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.register (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:20:30)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:42:13)",
+  "email": "nuevo@example.com"
+}
+[2026-03-23 17:02:13] [ERROR] Error en registro de usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.register (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:20:30)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:61:13)",
+  "email": "existente@example.com"
+}
+[2026-03-23 17:02:13] [ERROR] Error en registro de usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.register (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:20:30)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:82:13)",
+  "email": "sinombre@example.com"
+}
+[2026-03-23 17:02:13] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:102:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:02:13] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:119:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:02:13] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:130:13)",
+  "email": "noexiste@example.com"
+}
+[2026-03-23 17:02:13] [ERROR] Error en recuperación de contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.forgotPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:165:25)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:197:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:02:13] [ERROR] Error en recuperación de contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.forgotPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:165:25)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:211:13)",
+  "email": "noexiste@example.com"
+}
+[2026-03-23 17:02:13] [ERROR] Error al verificar token {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.verifyToken (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:203:26)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:242:13)"
+}
+[2026-03-23 17:02:13] [ERROR] Error al verificar token {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.verifyToken (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:203:26)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:258:13)"
+}
+[2026-03-23 17:02:13] [ERROR] Error al reiniciar contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.resetPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:235:26)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:286:13)"
+}
+[2026-03-23 17:02:13] [ERROR] Error al reiniciar contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.resetPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:235:26)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:299:13)"
+}
+[2026-03-23 17:02:27] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:46:13)"
+}
+[2026-03-23 17:02:27] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:57:13)"
+}
+[2026-03-23 17:02:27] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:69:13)"
+}
+[2026-03-23 17:02:27] [ERROR] Error insertando factura en BD {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:92:13)",
+  "titulo": "Repostaje"
+}
+[2026-03-23 17:02:27] [ERROR] Error en creación de factura {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:92:13)",
+  "titulo": "Repostaje"
+}
+[2026-03-23 17:02:27] [ERROR] Error insertando factura en BD {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:119:13)",
+  "titulo": "Test"
+}
+[2026-03-23 17:02:27] [ERROR] Error en creación de factura {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:119:13)",
+  "titulo": "Test"
+}
+[2026-03-23 17:02:27] [ERROR] Error insertando factura en BD {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:133:13)",
+  "titulo": "Sin descripción"
+}
+[2026-03-23 17:02:27] [ERROR] Error en creación de factura {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:133:13)",
+  "titulo": "Sin descripción"
+}
+[2026-03-23 17:02:27] [ERROR] Error al eliminar factura {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:136:27)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:149:13)",
+  "id_factura": "1"
+}
+[2026-03-23 17:02:27] [ERROR] Error al eliminar factura {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:136:27)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:163:13)",
+  "id_factura": "99"
+}
+[2026-03-23 17:02:27] [ERROR] Error al eliminar factura {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:136:27)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:175:13)",
+  "id_factura": "999"
+}
+[2026-03-23 17:02:27] [ERROR] Error en registro de usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.register (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:20:30)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:42:13)",
+  "email": "nuevo@example.com"
+}
+[2026-03-23 17:02:27] [ERROR] Error en registro de usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.register (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:20:30)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:61:13)",
+  "email": "existente@example.com"
+}
+[2026-03-23 17:02:27] [ERROR] Error en registro de usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.register (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:20:30)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:82:13)",
+  "email": "sinombre@example.com"
+}
+[2026-03-23 17:02:27] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:102:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:02:27] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:119:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:02:27] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:130:13)",
+  "email": "noexiste@example.com"
+}
+[2026-03-23 17:02:27] [ERROR] Error en recuperación de contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.forgotPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:165:25)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:197:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:02:27] [ERROR] Error en recuperación de contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.forgotPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:165:25)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:211:13)",
+  "email": "noexiste@example.com"
+}
+[2026-03-23 17:02:27] [ERROR] Error al verificar token {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.verifyToken (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:203:26)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:242:13)"
+}
+[2026-03-23 17:02:27] [ERROR] Error al verificar token {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.verifyToken (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:203:26)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:258:13)"
+}
+[2026-03-23 17:02:27] [ERROR] Error al reiniciar contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.resetPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:235:26)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:286:13)"
+}
+[2026-03-23 17:02:27] [ERROR] Error al reiniciar contraseña {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.resetPassword (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:235:26)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:299:13)"
+}
+[2026-03-23 17:36:52] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:46:13)"
+}
+[2026-03-23 17:36:52] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:57:13)"
+}
+[2026-03-23 17:36:52] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:69:13)"
+}
+[2026-03-23 17:36:52] [ERROR] Error insertando factura en BD {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:92:13)",
+  "titulo": "Repostaje"
+}
+[2026-03-23 17:36:52] [ERROR] Error en creación de factura {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:92:13)",
+  "titulo": "Repostaje"
+}
+[2026-03-23 17:36:52] [ERROR] Error insertando factura en BD {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:119:13)",
+  "titulo": "Test"
+}
+[2026-03-23 17:36:52] [ERROR] Error en creación de factura {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:119:13)",
+  "titulo": "Test"
+}
+[2026-03-23 17:36:52] [ERROR] Error insertando factura en BD {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:133:13)",
+  "titulo": "Sin descripción"
+}
+[2026-03-23 17:36:52] [ERROR] Error en creación de factura {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:133:13)",
+  "titulo": "Sin descripción"
+}
+[2026-03-23 17:36:52] [ERROR] Error al eliminar factura {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:136:27)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:149:13)",
+  "id_factura": "1"
+}
+[2026-03-23 17:36:52] [ERROR] Error al eliminar factura {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:136:27)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:163:13)",
+  "id_factura": "99"
+}
+[2026-03-23 17:36:52] [ERROR] Error al eliminar factura {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:136:27)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:175:13)",
+  "id_factura": "999"
+}
+[2026-03-23 17:36:52] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:102:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:36:52] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:119:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:37:08] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:46:13)"
+}
+[2026-03-23 17:37:08] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:57:13)"
+}
+[2026-03-23 17:37:08] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:69:13)"
+}
+[2026-03-23 17:37:08] [ERROR] Error insertando factura en BD {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:92:13)",
+  "titulo": "Repostaje"
+}
+[2026-03-23 17:37:08] [ERROR] Error en creación de factura {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:92:13)",
+  "titulo": "Repostaje"
+}
+[2026-03-23 17:37:08] [ERROR] Error insertando factura en BD {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:119:13)",
+  "titulo": "Test"
+}
+[2026-03-23 17:37:08] [ERROR] Error en creación de factura {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:119:13)",
+  "titulo": "Test"
+}
+[2026-03-23 17:37:08] [ERROR] Error insertando factura en BD {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:133:13)",
+  "titulo": "Sin descripción"
+}
+[2026-03-23 17:37:08] [ERROR] Error en creación de factura {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:133:13)",
+  "titulo": "Sin descripción"
+}
+[2026-03-23 17:37:08] [ERROR] Error al eliminar factura {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:136:27)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:149:13)",
+  "id_factura": "1"
+}
+[2026-03-23 17:37:08] [ERROR] Error al eliminar factura {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:136:27)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:163:13)",
+  "id_factura": "99"
+}
+[2026-03-23 17:37:08] [ERROR] Error al eliminar factura {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:136:27)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:175:13)",
+  "id_factura": "999"
+}
+[2026-03-23 17:37:08] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:102:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:37:08] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:119:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:38:50] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:46:13)"
+}
+[2026-03-23 17:38:50] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:57:13)"
+}
+[2026-03-23 17:38:50] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:69:13)"
+}
+[2026-03-23 17:38:50] [ERROR] Error insertando factura en BD {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:92:13)",
+  "titulo": "Repostaje"
+}
+[2026-03-23 17:38:50] [ERROR] Error en creación de factura {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:92:13)",
+  "titulo": "Repostaje"
+}
+[2026-03-23 17:38:50] [ERROR] Error insertando factura en BD {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:119:13)",
+  "titulo": "Test"
+}
+[2026-03-23 17:38:50] [ERROR] Error en creación de factura {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:119:13)",
+  "titulo": "Test"
+}
+[2026-03-23 17:38:50] [ERROR] Error insertando factura en BD {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:133:13)",
+  "titulo": "Sin descripción"
+}
+[2026-03-23 17:38:50] [ERROR] Error en creación de factura {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:133:13)",
+  "titulo": "Sin descripción"
+}
+[2026-03-23 17:38:50] [ERROR] Error al eliminar factura {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:136:27)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:149:13)",
+  "id_factura": "1"
+}
+[2026-03-23 17:38:50] [ERROR] Error al eliminar factura {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:136:27)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:163:13)",
+  "id_factura": "99"
+}
+[2026-03-23 17:38:50] [ERROR] Error al eliminar factura {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:136:27)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:175:13)",
+  "id_factura": "999"
+}
+[2026-03-23 17:38:50] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:119:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:38:50] [ERROR] Error al desactivar usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteUser (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:136:29)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:172:13)",
+  "id": "1"
+}
+[2026-03-23 17:39:25] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:46:13)"
+}
+[2026-03-23 17:39:25] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:57:13)"
+}
+[2026-03-23 17:39:25] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:69:13)"
+}
+[2026-03-23 17:39:25] [ERROR] Error insertando factura en BD {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:92:13)",
+  "titulo": "Repostaje"
+}
+[2026-03-23 17:39:25] [ERROR] Error en creación de factura {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:92:13)",
+  "titulo": "Repostaje"
+}
+[2026-03-23 17:39:25] [ERROR] Error insertando factura en BD {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:119:13)",
+  "titulo": "Test"
+}
+[2026-03-23 17:39:25] [ERROR] Error en creación de factura {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:119:13)",
+  "titulo": "Test"
+}
+[2026-03-23 17:39:25] [ERROR] Error insertando factura en BD {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:133:13)",
+  "titulo": "Sin descripción"
+}
+[2026-03-23 17:39:25] [ERROR] Error en creación de factura {
+  "service": "my-gasolinera-api",
+  "error": "undefined is not iterable (cannot read property Symbol(Symbol.iterator))",
+  "stack": "TypeError: undefined is not iterable (cannot read property Symbol(Symbol.iterator))\n    at Object.<anonymous>.exports.createFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:101:21)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:133:13)",
+  "titulo": "Sin descripción"
+}
+[2026-03-23 17:39:25] [ERROR] Error al eliminar factura {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:136:27)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:149:13)",
+  "id_factura": "1"
+}
+[2026-03-23 17:39:25] [ERROR] Error al eliminar factura {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:136:27)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:163:13)",
+  "id_factura": "99"
+}
+[2026-03-23 17:39:25] [ERROR] Error al eliminar factura {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteFactura (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:136:27)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:175:13)",
+  "id_factura": "999"
+}
+[2026-03-23 17:39:25] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:119:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:39:25] [ERROR] Error al desactivar usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteUser (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:136:29)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:172:13)",
+  "id": "1"
+}
+[2026-03-23 17:40:04] [ERROR] Error al insertar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.insertCar (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:23:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:41:13)",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:04] [ERROR] Error al insertar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.insertCar (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:23:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:75:13)",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:04] [ERROR] Error al insertar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.insertCar (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:23:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:91:13)",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:04] [ERROR] Error al obtener coches {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getCoches (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:58:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:115:13)",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:04] [ERROR] Error al obtener coches {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getCoches (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:58:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:129:13)",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:04] [ERROR] Error al eliminar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteCoche (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:86:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:150:13)",
+  "id_coche": "1",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:04] [ERROR] Error al eliminar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteCoche (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:86:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:168:13)",
+  "id_coche": "5",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:04] [ERROR] Error al eliminar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteCoche (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:86:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:184:13)",
+  "id_coche": "999",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:04] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:119:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:40:04] [ERROR] Error al desactivar usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteUser (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:136:29)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:172:13)",
+  "id": "1"
+}
+[2026-03-23 17:40:07] [ERROR] Error al insertar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.insertCar (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:23:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:41:13)",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:07] [ERROR] Error al insertar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.insertCar (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:23:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:75:13)",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:07] [ERROR] Error al insertar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.insertCar (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:23:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:91:13)",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:07] [ERROR] Error al obtener coches {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getCoches (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:58:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:115:13)",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:07] [ERROR] Error al obtener coches {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getCoches (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:58:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:129:13)",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:07] [ERROR] Error al eliminar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteCoche (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:86:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:150:13)",
+  "id_coche": "1",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:07] [ERROR] Error al eliminar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteCoche (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:86:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:168:13)",
+  "id_coche": "5",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:07] [ERROR] Error al eliminar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteCoche (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:86:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:184:13)",
+  "id_coche": "999",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:07] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:119:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:40:07] [ERROR] Error al desactivar usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteUser (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:136:29)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:172:13)",
+  "id": "1"
+}
+[2026-03-23 17:40:26] [ERROR] Error al insertar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.insertCar (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:23:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:41:13)",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:26] [ERROR] Error al insertar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.insertCar (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:23:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:75:13)",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:26] [ERROR] Error al insertar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.insertCar (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:23:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:91:13)",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:26] [ERROR] Error al obtener coches {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getCoches (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:58:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:115:13)",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:26] [ERROR] Error al obtener coches {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getCoches (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:58:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:129:13)",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:26] [ERROR] Error al eliminar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteCoche (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:86:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:150:13)",
+  "id_coche": "1",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:26] [ERROR] Error al eliminar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteCoche (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:86:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:168:13)",
+  "id_coche": "5",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:26] [ERROR] Error al eliminar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteCoche (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:86:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:184:13)",
+  "id_coche": "999",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:27] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:119:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:40:27] [ERROR] Error al desactivar usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteUser (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:136:29)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:172:13)",
+  "id": "1"
+}
+[2026-03-23 17:40:43] [ERROR] Error al insertar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.insertCar (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:23:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:41:13)",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:43] [ERROR] Error al insertar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.insertCar (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:23:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:75:13)",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:43] [ERROR] Error al insertar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.insertCar (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:23:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:91:13)",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:43] [ERROR] Error al obtener coches {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getCoches (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:58:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:115:13)",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:43] [ERROR] Error al obtener coches {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getCoches (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:58:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:129:13)",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:43] [ERROR] Error al eliminar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteCoche (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:86:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:150:13)",
+  "id_coche": "1",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:43] [ERROR] Error al eliminar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteCoche (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:86:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:168:13)",
+  "id_coche": "5",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:43] [ERROR] Error al eliminar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteCoche (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:86:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:184:13)",
+  "id_coche": "999",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:40:44] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:119:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:40:44] [ERROR] Error al desactivar usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteUser (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:136:29)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:172:13)",
+  "id": "1"
+}
+[2026-03-23 17:43:02] [ERROR] Error al insertar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.insertCar (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:23:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:41:13)",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:43:02] [ERROR] Error al insertar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.insertCar (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:23:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:75:13)",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:43:02] [ERROR] Error al insertar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.insertCar (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:23:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:91:13)",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:43:02] [ERROR] Error al obtener coches {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getCoches (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:58:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:115:13)",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:43:03] [ERROR] Error al obtener coches {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getCoches (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:58:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:129:13)",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:43:03] [ERROR] Error al eliminar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteCoche (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:86:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:150:13)",
+  "id_coche": "1",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:43:03] [ERROR] Error al eliminar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteCoche (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:86:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:168:13)",
+  "id_coche": "5",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:43:03] [ERROR] Error al eliminar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteCoche (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:86:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:184:13)",
+  "id_coche": "999",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:43:03] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:41:13)"
+}
+[2026-03-23 17:43:03] [ERROR] Error en login {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.login (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:69:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:119:13)",
+  "email": "test@example.com"
+}
+[2026-03-23 17:43:03] [ERROR] Error al desactivar usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteUser (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:136:29)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:172:13)",
+  "id": "1"
+}
+[2026-03-23 17:43:42] [ERROR] Error al insertar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.insertCar (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:23:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:41:13)",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:43:42] [ERROR] Error al insertar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.insertCar (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:23:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:75:13)",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:43:42] [ERROR] Error al insertar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.insertCar (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:23:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:91:13)",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:43:42] [ERROR] Error al obtener coches {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getCoches (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:58:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:115:13)",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:43:42] [ERROR] Error al obtener coches {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getCoches (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:58:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:129:13)",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:43:42] [ERROR] Error al eliminar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteCoche (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:86:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:150:13)",
+  "id_coche": "1",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:43:42] [ERROR] Error al eliminar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteCoche (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:86:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:168:13)",
+  "id_coche": "5",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:43:42] [ERROR] Error al eliminar coche {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteCoche (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Coches\\controladores\\cochesController.js:86:28)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\coches\\coches.routes.test.js:184:13)",
+  "id_coche": "999",
+  "usuario": "test@example.com"
+}
+[2026-03-23 17:43:42] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:41:13)"
+}
+[2026-03-23 17:43:42] [ERROR] Error al desactivar usuario {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.deleteUser (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Perfil\\controladores\\authController.js:136:29)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\usuarios\\usuarios.routes.test.js:172:13)",
+  "id": "1"
+}
+[2026-03-23 17:47:14] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:41:13)"
+}
+[2026-03-23 17:48:40] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:41:13)"
+}
+[2026-03-23 17:49:23] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:41:13)"
+}
+[2026-03-23 17:50:00] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:41:13)"
+}
+[2026-03-23 17:50:20] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:41:13)"
+}
+[2026-03-23 17:50:44] [ERROR] Error al obtener facturas {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getFacturas (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Facturas\\controladores\\facturasController.js:33:32)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\facturas\\facturas.routes.test.js:41:13)"
+}
+[2026-03-23 17:57:31] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:44:13)"
+}
+[2026-03-23 17:57:31] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:55:13)"
+}
+[2026-03-23 17:57:31] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:74:13)"
+}
+[2026-03-23 17:57:31] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:90:13)"
+}
+[2026-03-23 17:57:31] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:107:13)"
+}
+[2026-03-23 17:58:17] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:44:13)"
+}
+[2026-03-23 17:58:17] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:55:13)"
+}
+[2026-03-23 17:58:17] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:74:13)"
+}
+[2026-03-23 17:58:17] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:90:13)"
+}
+[2026-03-23 17:58:17] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:107:13)"
+}
+[2026-03-23 17:59:21] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:44:13)"
+}
+[2026-03-23 17:59:21] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:55:13)"
+}
+[2026-03-23 17:59:21] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:74:13)"
+}
+[2026-03-23 17:59:21] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:90:13)"
+}
+[2026-03-23 17:59:21] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:107:13)"
+}
+[2026-03-23 18:01:50] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:52:13)"
+}
+[2026-03-23 18:01:50] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:63:13)"
+}
+[2026-03-23 18:01:50] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:82:13)"
+}
+[2026-03-23 18:01:50] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:98:13)"
+}
+[2026-03-23 18:01:50] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:115:13)"
+}
+[2026-03-23 18:02:06] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:52:13)"
+}
+[2026-03-23 18:02:06] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:63:13)"
+}
+[2026-03-23 18:02:06] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:82:13)"
+}
+[2026-03-23 18:02:06] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:98:13)"
+}
+[2026-03-23 18:02:06] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:115:13)"
+}
+[2026-03-23 18:04:39] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:52:13)"
+}
+[2026-03-23 18:04:39] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:63:13)"
+}
+[2026-03-23 18:04:39] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:82:13)"
+}
+[2026-03-23 18:04:39] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:98:13)"
+}
+[2026-03-23 18:04:39] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:115:13)"
+}
+[2026-03-23 18:04:52] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:52:13)"
+}
+[2026-03-23 18:04:52] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:63:13)"
+}
+[2026-03-23 18:04:52] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:82:13)"
+}
+[2026-03-23 18:04:52] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:98:13)"
+}
+[2026-03-23 18:04:52] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:115:13)"
+}
+[2026-03-23 18:07:03] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:52:13)"
+}
+[2026-03-23 18:07:03] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:63:13)"
+}
+[2026-03-23 18:07:03] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:82:13)"
+}
+[2026-03-23 18:07:03] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:98:13)"
+}
+[2026-03-23 18:07:03] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:115:13)"
+}
+[2026-03-23 18:07:28] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:52:13)"
+}
+[2026-03-23 18:07:28] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:63:13)"
+}
+[2026-03-23 18:07:28] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:82:13)"
+}
+[2026-03-23 18:07:28] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:98:13)"
+}
+[2026-03-23 18:07:28] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:115:13)"
+}
+[2026-03-23 18:08:39] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:52:13)"
+}
+[2026-03-23 18:08:39] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:63:13)"
+}
+[2026-03-23 18:08:39] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:88:13)"
+}
+[2026-03-23 18:08:39] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:104:13)"
+}
+[2026-03-23 18:08:39] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "(intermediate value) is not iterable",
+  "stack": "TypeError: (intermediate value) is not iterable\n    at Object.<anonymous>.exports.getGasolineras (C:\\Users\\crikranik\\BackendBBDD\\Frontend\\Gasolineras\\controladores\\gasolinerasController.js:46:24)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:121:13)"
+}
+[2026-03-23 18:10:56] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "DB failure",
+  "stack": "Error: DB failure\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:131:52)\n    at Promise.then.completed (C:\\Users\\crikranik\\BackendBBDD\\node_modules\\jest-circus\\build\\utils.js:298:28)\n    at new Promise (<anonymous>)\n    at callAsyncCircusFn (C:\\Users\\crikranik\\BackendBBDD\\node_modules\\jest-circus\\build\\utils.js:231:10)\n    at _callCircusTest (C:\\Users\\crikranik\\BackendBBDD\\node_modules\\jest-circus\\build\\run.js:316:40)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at _runTest (C:\\Users\\crikranik\\BackendBBDD\\node_modules\\jest-circus\\build\\run.js:252:3)\n    at _runTestsForDescribeBlock (C:\\Users\\crikranik\\BackendBBDD\\node_modules\\jest-circus\\build\\run.js:126:9)\n    at _runTestsForDescribeBlock (C:\\Users\\crikranik\\BackendBBDD\\node_modules\\jest-circus\\build\\run.js:121:9)\n    at _runTestsForDescribeBlock (C:\\Users\\crikranik\\BackendBBDD\\node_modules\\jest-circus\\build\\run.js:121:9)\n    at run (C:\\Users\\crikranik\\BackendBBDD\\node_modules\\jest-circus\\build\\run.js:71:3)\n    at runAndTransformResultsToJestFormat (C:\\Users\\crikranik\\BackendBBDD\\node_modules\\jest-circus\\build\\legacy-code-todo-rewrite\\jestAdapterInit.js:122:21)\n    at jestAdapter (C:\\Users\\crikranik\\BackendBBDD\\node_modules\\jest-circus\\build\\legacy-code-todo-rewrite\\jestAdapter.js:79:19)\n    at runTestInternal (C:\\Users\\crikranik\\BackendBBDD\\node_modules\\jest-runner\\build\\runTest.js:367:16)\n    at runTest (C:\\Users\\crikranik\\BackendBBDD\\node_modules\\jest-runner\\build\\runTest.js:444:34)\n    at Object.worker (C:\\Users\\crikranik\\BackendBBDD\\node_modules\\jest-runner\\build\\testWorker.js:106:12)"
+}
+[2026-03-23 18:13:31] [ERROR] Error obteniendo gasolineras: {
+  "service": "my-gasolinera-api",
+  "error": "DB failure",
+  "stack": "Error: DB failure\n    at Object.<anonymous> (C:\\Users\\crikranik\\BackendBBDD\\Tests\\gasolineras\\gasolineras.routes.test.js:131:52)\n    at Promise.then.completed (C:\\Users\\crikranik\\BackendBBDD\\node_modules\\jest-circus\\build\\utils.js:298:28)\n    at new Promise (<anonymous>)\n    at callAsyncCircusFn (C:\\Users\\crikranik\\BackendBBDD\\node_modules\\jest-circus\\build\\utils.js:231:10)\n    at _callCircusTest (C:\\Users\\crikranik\\BackendBBDD\\node_modules\\jest-circus\\build\\run.js:316:40)\n    at processTicksAndRejections (node:internal/process/task_queues:103:5)\n    at _runTest (C:\\Users\\crikranik\\BackendBBDD\\node_modules\\jest-circus\\build\\run.js:252:3)\n    at _runTestsForDescribeBlock (C:\\Users\\crikranik\\BackendBBDD\\node_modules\\jest-circus\\build\\run.js:126:9)\n    at _runTestsForDescribeBlock (C:\\Users\\crikranik\\BackendBBDD\\node_modules\\jest-circus\\build\\run.js:121:9)\n    at _runTestsForDescribeBlock (C:\\Users\\crikranik\\BackendBBDD\\node_modules\\jest-circus\\build\\run.js:121:9)\n    at run (C:\\Users\\crikranik\\BackendBBDD\\node_modules\\jest-circus\\build\\run.js:71:3)\n    at runAndTransformResultsToJestFormat (C:\\Users\\crikranik\\BackendBBDD\\node_modules\\jest-circus\\build\\legacy-code-todo-rewrite\\jestAdapterInit.js:122:21)\n    at jestAdapter (C:\\Users\\crikranik\\BackendBBDD\\node_modules\\jest-circus\\build\\legacy-code-todo-rewrite\\jestAdapter.js:79:19)\n    at runTestInternal (C:\\Users\\crikranik\\BackendBBDD\\node_modules\\jest-runner\\build\\runTest.js:367:16)\n    at runTest (C:\\Users\\crikranik\\BackendBBDD\\node_modules\\jest-runner\\build\\runTest.js:444:34)\n    at Object.worker (C:\\Users\\crikranik\\BackendBBDD\\node_modules\\jest-runner\\build\\testWorker.js:106:12)"
+}

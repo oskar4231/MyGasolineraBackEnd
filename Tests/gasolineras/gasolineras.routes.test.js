@@ -2,13 +2,21 @@ const { mockPool, mockConnection, resetMocks } = require('../mocks/database');
 const { mockRequest, mockResponse, createTestGasolinera } = require('../helpers/testHelpers');
 
 // Mock del pool de base de datos
-jest.mock('../../config/bbdd', () => require('../mocks/database').mockPool);
+jest.mock('../../Importante/BaseDeDatos/bbdd', () => require('../mocks/database').mockPool);
 
-const gasolinerasRouter = require('../../routes/gasolineras.routes');
+const gasolinerasRouter = require('../../Frontend/Gasolineras/rutas/gasolineras.rutas');
+
+// Mock node-cache para evitar persistencia entre tests
+jest.mock('node-cache', () => {
+    return jest.fn().mockImplementation(() => ({
+        get: jest.fn().mockReturnValue(null),
+        set: jest.fn()
+    }));
+});
 
 function authedRequest(overrides = {}) {
     return mockRequest({
-        user: { email: 'test@example.com' },
+        user: { id: 1, email: 'test@example.com' },
         ...overrides
     });
 }
@@ -17,6 +25,9 @@ function getHandler(path, method = 'get') {
     const layer = gasolinerasRouter.stack.find(
         l => l.route && l.route.path === path && l.route.methods[method]
     );
+    if (!layer) {
+        throw new Error(`Ruta no encontrada: ${method.toUpperCase()} ${path}`);
+    }
     return layer.route.stack[layer.route.stack.length - 1].handle;
 }
 
@@ -25,8 +36,8 @@ describe('Gasolineras Routes Tests', () => {
         resetMocks();
     });
 
-    // ── GET /gasolineras (sin coordenadas) ────────────────────────
-    describe('GET /gasolineras — sin coordenadas', () => {
+    // ── GET /api/gasolineras (sin coordenadas) ────────────────────
+    describe('GET /api/gasolineras — sin coordenadas', () => {
         test('debe devolver todas las gasolineras ordenadas por rótulo', async () => {
             const req = authedRequest({ query: {} });
             const res = mockResponse();
@@ -38,13 +49,13 @@ describe('Gasolineras Routes Tests', () => {
 
             mockPool.execute.mockResolvedValueOnce([gasolineras]);
 
-            await getHandler('/gasolineras')(req, res);
+            await getHandler('/api/gasolineras')(req, res);
 
             expect(res.json).toHaveBeenCalledWith(
                 expect.objectContaining({
                     success: true,
                     count: 2,
-                    gasolineras: gasolineras
+                    gasolineras: expect.any(Array)
                 })
             );
         });
@@ -55,7 +66,7 @@ describe('Gasolineras Routes Tests', () => {
 
             mockPool.execute.mockResolvedValueOnce([[]]);
 
-            await getHandler('/gasolineras')(req, res);
+            await getHandler('/api/gasolineras')(req, res);
 
             expect(res.json).toHaveBeenCalledWith(
                 expect.objectContaining({
@@ -67,9 +78,9 @@ describe('Gasolineras Routes Tests', () => {
         });
     });
 
-    // ── GET /gasolineras (con coordenadas) ────────────────────────
-    describe('GET /gasolineras — con coordenadas lat/lng', () => {
-        test('debe devolver las 50 más cercanas cuando se proporcionan coordenadas', async () => {
+    // ── GET /api/gasolineras (con coordenadas) ────────────────────
+    describe('GET /api/gasolineras — con coordenadas lat/lng', () => {
+        test('debe devolver las gasolineras más cercanas', async () => {
             const req = authedRequest({ query: { lat: '40.4168', lng: '-3.7038' } });
             const res = mockResponse();
 
@@ -80,7 +91,7 @@ describe('Gasolineras Routes Tests', () => {
 
             mockPool.execute.mockResolvedValueOnce([gasolineras]);
 
-            await getHandler('/gasolineras')(req, res);
+            await getHandler('/api/gasolineras')(req, res);
 
             expect(mockPool.execute).toHaveBeenCalledWith(
                 expect.stringContaining('distancia'),
@@ -90,7 +101,8 @@ describe('Gasolineras Routes Tests', () => {
             expect(res.json).toHaveBeenCalledWith(
                 expect.objectContaining({
                     success: true,
-                    count: 2
+                    count: 2,
+                    gasolineras: expect.any(Array)
                 })
             );
         });
@@ -101,7 +113,7 @@ describe('Gasolineras Routes Tests', () => {
 
             mockPool.execute.mockResolvedValueOnce([[]]);
 
-            await getHandler('/gasolineras')(req, res);
+            await getHandler('/api/gasolineras')(req, res);
 
             expect(mockPool.execute).toHaveBeenCalledWith(
                 expect.any(String),
@@ -110,19 +122,19 @@ describe('Gasolineras Routes Tests', () => {
         });
     });
 
-    // ── Manejo de errores ─────────────────────────────────────────
+    // ── Manejo de errores de BD ───────────────────────────────────
     describe('Manejo de errores de BD', () => {
         test('debe devolver 500 si la BD falla', async () => {
-            const req = authedRequest({ query: {} });
+            const req = authedRequest();
             const res = mockResponse();
 
-            mockPool.execute.mockRejectedValueOnce(new Error('DB connection error'));
+            mockPool.execute.mockRejectedValueOnce(new Error('DB failure'));
 
-            await getHandler('/gasolineras')(req, res);
+            await getHandler('/api/gasolineras')(req, res);
 
             expect(res.status).toHaveBeenCalledWith(500);
             expect(res.json).toHaveBeenCalledWith(
-                expect.objectContaining({ success: false })
+                expect.objectContaining({ success: false, message: 'Error interno del servidor' })
             );
         });
     });

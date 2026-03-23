@@ -3,18 +3,18 @@ const { mockPool, mockConnection, resetMocks } = require('../mocks/database');
 const { mockRequest, mockResponse, createTestUser } = require('../helpers/testHelpers');
 
 // Mock del pool de base de datos
-jest.mock('../../config/bbdd', () => require('../mocks/database').mockPool);
+jest.mock('../../Importante/BaseDeDatos/bbdd', () => require('../mocks/database').mockPool);
 
 // Mock del servicio de email para no enviar emails reales
-jest.mock('../../config/emailService', () => ({
+jest.mock('../../Backend/Emails/config/emailService', () => ({
     sendPasswordResetEmail: jest.fn().mockResolvedValue(true)
 }));
 
-const usuariosRouter = require('../../routes/usuarios.routes');
+const usuariosRouter = require('../../Frontend/Perfil/rutas/usuarios.rutas');
 
 function getHandler(path, method = 'post') {
     const layer = usuariosRouter.stack.find(
-        l => l.route && l.route.path === path && l.route.methods[method]
+        l => l.route && (l.route.path === path || l.route.path === path.replace(':email', ':id')) && l.route.methods[method]
     );
     return layer.route.stack[layer.route.stack.length - 1].handle;
 }
@@ -35,9 +35,9 @@ describe('Usuarios Routes Tests', () => {
             const res = mockResponse();
 
             // Mock: email no existe
-            mockConnection.query.mockResolvedValueOnce([[]]);
+            mockPool.query.mockResolvedValueOnce([[]]);
             // Mock: inserción exitosa
-            mockConnection.query.mockResolvedValueOnce([{ insertId: 1 }]);
+            mockPool.query.mockResolvedValueOnce([{ insertId: 1 }]);
 
             await getHandler('/register')(request, res);
 
@@ -56,7 +56,7 @@ describe('Usuarios Routes Tests', () => {
             const res = mockResponse();
 
             // Mock: email ya existe
-            mockConnection.query.mockResolvedValueOnce([[{ email: 'existente@example.com' }]]);
+            mockPool.query.mockResolvedValueOnce([[{ email: 'existente@example.com' }]]);
 
             await getHandler('/register')(request, res);
 
@@ -76,8 +76,8 @@ describe('Usuarios Routes Tests', () => {
             const request = req({ body: { email: 'sinombre@example.com', password: 'pass123' } });
             const res = mockResponse();
 
-            mockConnection.query.mockResolvedValueOnce([[]]);
-            mockConnection.query.mockResolvedValueOnce([{ insertId: 2 }]);
+            mockPool.query.mockResolvedValueOnce([[]]);
+            mockPool.query.mockResolvedValueOnce([{ insertId: 2 }]);
 
             await getHandler('/register')(request, res);
 
@@ -97,7 +97,7 @@ describe('Usuarios Routes Tests', () => {
             const request = req({ body: { email: 'test@example.com', password: 'password123' } });
             const res = mockResponse();
 
-            mockConnection.query.mockResolvedValueOnce([[testUser]]);
+            mockPool.query.mockResolvedValueOnce([[testUser]]);
 
             await getHandler('/login')(request, res);
 
@@ -114,7 +114,7 @@ describe('Usuarios Routes Tests', () => {
             const request = req({ body: { email: 'test@example.com', password: 'wrongpassword' } });
             const res = mockResponse();
 
-            mockConnection.query.mockResolvedValueOnce([[testUser]]);
+            mockPool.query.mockResolvedValueOnce([[testUser]]);
 
             await getHandler('/login')(request, res);
 
@@ -125,7 +125,7 @@ describe('Usuarios Routes Tests', () => {
             const request = req({ body: { email: 'noexiste@example.com', password: 'pass123' } });
             const res = mockResponse();
 
-            mockConnection.query.mockResolvedValueOnce([[]]); // Sin resultados
+            mockPool.query.mockResolvedValueOnce([[]]); // Sin resultados
 
             await getHandler('/login')(request, res);
 
@@ -142,18 +142,18 @@ describe('Usuarios Routes Tests', () => {
         });
     });
 
-    // ── DELETE /usuarios/:email ───────────────────────────────────
-    describe('DELETE /usuarios/:email', () => {
+    // ── DELETE /usuarios/:id ───────────────────────────────────
+    describe('DELETE /usuarios/:id', () => {
         test('debe marcar el usuario como inactivo correctamente', async () => {
             const request = req({
-                params: { email: 'test@example.com' },
-                body: { email: 'test@example.com' }
+                params: { id: '1' },
+                user: { id: 1 } // Simular usuario logueado
             });
             const res = mockResponse();
 
-            mockConnection.execute.mockResolvedValueOnce([{ affectedRows: 1 }]);
+            mockPool.query.mockResolvedValueOnce([{ affectedRows: 1 }]);
 
-            await getHandler('/usuarios/:email', 'delete')(request, res);
+            await getHandler('/usuarios/:id', 'delete')(request, res);
 
             expect(res.json).toHaveBeenCalledWith(
                 expect.objectContaining({ success: true })
@@ -162,23 +162,24 @@ describe('Usuarios Routes Tests', () => {
 
         test('debe devolver 404 si el usuario no existe', async () => {
             const request = req({
-                params: { email: 'noexiste@example.com' },
-                body: { email: 'noexiste@example.com' }
+                params: { id: '1' },
+                user: { id: 1 }
             });
             const res = mockResponse();
 
-            mockConnection.execute.mockResolvedValueOnce([{ affectedRows: 0 }]);
+            mockPool.query.mockResolvedValueOnce([{ affectedRows: 0 }]);
+            mockPool.query.mockResolvedValueOnce([[]]); // Usuario no encontrado en check
 
-            await getHandler('/usuarios/:email', 'delete')(request, res);
+            await getHandler('/usuarios/:id', 'delete')(request, res);
 
             expect(res.status).toHaveBeenCalledWith(404);
         });
 
-        test('debe devolver 400 si no se proporciona email en el body', async () => {
-            const request = req({ params: { email: 'test@example.com' }, body: {} });
+        test('debe devolver 400 si no se proporciona id válido', async () => {
+            const request = req({ params: { id: 'abc' } });
             const res = mockResponse();
 
-            await getHandler('/usuarios/:email', 'delete')(request, res);
+            await getHandler('/usuarios/:id', 'delete')(request, res);
 
             expect(res.status).toHaveBeenCalledWith(400);
         });
@@ -187,12 +188,12 @@ describe('Usuarios Routes Tests', () => {
     // ── POST /forgot-password ─────────────────────────────────────
     describe('POST /forgot-password', () => {
         test('debe responder con éxito para email registrado y enviar el email', async () => {
-            const { sendPasswordResetEmail } = require('../../config/emailService');
+            const { sendPasswordResetEmail } = require('../../Backend/Emails/config/emailService');
             const request = req({ body: { email: 'test@example.com' } });
             const res = mockResponse();
 
-            mockConnection.query.mockResolvedValueOnce([[{ email: 'test@example.com' }]]);
-            mockConnection.query.mockResolvedValueOnce([{ insertId: 1 }]);
+            mockPool.query.mockResolvedValueOnce([[{ email: 'test@example.com' }]]);
+            mockPool.query.mockResolvedValueOnce([{ insertId: 1 }]);
 
             await getHandler('/forgot-password')(request, res);
 
@@ -206,7 +207,7 @@ describe('Usuarios Routes Tests', () => {
             const request = req({ body: { email: 'noexiste@example.com' } });
             const res = mockResponse();
 
-            mockConnection.query.mockResolvedValueOnce([[]]); // Email no encontrado
+            mockPool.query.mockResolvedValueOnce([[]]); // Email no encontrado
 
             await getHandler('/forgot-password')(request, res);
 
@@ -232,7 +233,7 @@ describe('Usuarios Routes Tests', () => {
             const request = req({ body: { token: '123456' } });
             const res = mockResponse();
 
-            mockConnection.query.mockResolvedValueOnce([[{
+            mockPool.query.mockResolvedValueOnce([[{
                 token: '123456',
                 email: 'test@example.com',
                 used: false,
@@ -253,7 +254,7 @@ describe('Usuarios Routes Tests', () => {
             const request = req({ body: { token: 'tokeninvalido' } });
             const res = mockResponse();
 
-            mockConnection.query.mockResolvedValueOnce([[]]); // Token no encontrado
+            mockPool.query.mockResolvedValueOnce([[]]); // Token no encontrado
 
             await getHandler('/verify-token')(request, res);
 
@@ -276,12 +277,12 @@ describe('Usuarios Routes Tests', () => {
             const request = req({ body: { token: '123456', newPassword: 'nuevapass123' } });
             const res = mockResponse();
 
-            mockConnection.query.mockResolvedValueOnce([[{
+            mockPool.query.mockResolvedValueOnce([[{
                 token: '123456',
                 email: 'test@example.com'
             }]]);
-            mockConnection.query.mockResolvedValueOnce([{ affectedRows: 1 }]); // UPDATE contraseña
-            mockConnection.query.mockResolvedValueOnce([{ affectedRows: 1 }]); // UPDATE token usado
+            mockPool.query.mockResolvedValueOnce([{ affectedRows: 1 }]); // UPDATE contraseña
+            mockPool.query.mockResolvedValueOnce([{ affectedRows: 1 }]); // UPDATE token usado
 
             await getHandler('/reset-password')(request, res);
 
@@ -294,7 +295,7 @@ describe('Usuarios Routes Tests', () => {
             const request = req({ body: { token: 'tokenexpirado', newPassword: 'nuevapass123' } });
             const res = mockResponse();
 
-            mockConnection.query.mockResolvedValueOnce([[]]); // Token no válido
+            mockPool.query.mockResolvedValueOnce([[]]); // Token no válido
 
             await getHandler('/reset-password')(request, res);
 

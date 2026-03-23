@@ -2,15 +2,15 @@ const { mockPool, mockConnection, resetMocks } = require('../mocks/database');
 const { mockRequest, mockResponse, createTestUser, createTestCoche, generateTestToken } = require('../helpers/testHelpers');
 
 // Mock del pool de base de datos
-jest.mock('../../config/bbdd', () => require('../mocks/database').mockPool);
+jest.mock('../../Importante/BaseDeDatos/bbdd', () => require('../mocks/database').mockPool);
 
 // Importar el router después del mock
-const cochesRouter = require('../../routes/coches.routes');
+const cochesRouter = require('../../Frontend/Coches/rutas/coches.rutas');
 
 // Helper: simular req con user autenticado (como lo haría el middleware)
 function authedRequest(overrides = {}) {
     return mockRequest({
-        user: { email: 'test@example.com' },
+        user: { id: 1, email: 'test@example.com' },
         ...overrides
     });
 }

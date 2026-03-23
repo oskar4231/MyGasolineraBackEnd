@@ -4,7 +4,7 @@ const { mockPool, mockConnection, resetMocks } = require('../mocks/database');
 const { mockRequest, mockResponse } = require('../helpers/testHelpers');
 
 // Mock de módulos con efectos de sistema de ficheros
-jest.mock('../../config/bbdd', () => require('../mocks/database').mockPool);
+jest.mock('../../Importante/BaseDeDatos/bbdd', () => require('../mocks/database').mockPool);
 jest.mock('fs');
 
 // Mock de multer para evitar subida real de archivos
@@ -17,7 +17,7 @@ jest.mock('multer', () => {
 });
 
 // Importar router DESPUÉS de los mocks
-const perfilRouter = require('../../routes/perfil.routes');
+const perfilRouter = require('../../Frontend/Perfil/rutas/perfil.rutas');
 
 function authedRequest(overrides = {}) {
     return mockRequest({

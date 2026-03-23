@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const authenticateToken = require('../../middleware/auth');
+const authenticateToken = require('../../Middleware/Autentificacion/auth');
 const { mockRequest, mockResponse, mockNext, generateTestToken } = require('../helpers/testHelpers');
 
 describe('Middleware: authenticateToken', () => {

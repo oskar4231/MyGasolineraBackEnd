@@ -93,7 +93,7 @@ function mockRequest(overrides = {}) {
     params: {},
     query: {},
     headers: {},
-    user: null,
+    user: { id: 1, email: 'test@example.com' },
     file: null,
     files: null,
     t: (key) => key, // Mock de traducción

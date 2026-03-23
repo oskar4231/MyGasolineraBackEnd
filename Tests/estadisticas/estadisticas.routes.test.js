@@ -2,9 +2,9 @@ const { mockPool, mockConnection, resetMocks } = require('../mocks/database');
 const { mockRequest, mockResponse } = require('../helpers/testHelpers');
 
 // Mock del pool de base de datos
-jest.mock('../../config/bbdd', () => require('../mocks/database').mockPool);
+jest.mock('../../Importante/BaseDeDatos/bbdd', () => require('../mocks/database').mockPool);
 
-const estadisticasRouter = require('../../routes/estadisticas.routes');
+const estadisticasRouter = require('../../Frontend/Estadisticas/rutas/estadisticas.rutas');
 
 function authedRequest(overrides = {}) {
     return mockRequest({

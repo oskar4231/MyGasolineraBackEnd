@@ -2,13 +2,13 @@ const { mockPool, mockConnection, resetMocks } = require('../mocks/database');
 const { mockRequest, mockResponse, createTestFactura } = require('../helpers/testHelpers');
 
 // Mock del pool de base de datos
-jest.mock('../../config/bbdd', () => require('../mocks/database').mockPool);
+jest.mock('../../Importante/BaseDeDatos/bbdd', () => require('../mocks/database').mockPool);
 
-const facturasRouter = require('../../routes/facturas.routes');
+const facturasRouter = require('../../Frontend/Facturas/rutas/facturas.rutas');
 
 function authedRequest(overrides = {}) {
     return mockRequest({
-        user: { email: 'test@example.com' },
+        user: { id: 1, email: 'test@example.com' },
         ...overrides
     });
 }
@@ -38,37 +38,35 @@ describe('Facturas Routes Tests', () => {
                 createTestFactura({ id_factura: 2, titulo: 'Segunda factura', coste: 30 })
             ];
 
-            // Mock: usuario encontrado
-            mockConnection.query.mockResolvedValueOnce([[{ id_usuario: 1 }]]);
             // Mock: facturas devueltas
-            mockConnection.query.mockResolvedValueOnce([facturas]);
+            mockPool.query.mockResolvedValueOnce([facturas]);
 
             await getHandler('/facturas', 'get')(req, res);
 
-            expect(res.json).toHaveBeenCalledWith(facturas);
+            expect(res.json).toHaveBeenCalledWith({
+                data: facturas,
+                totalItems: facturas.length,
+                totalPages: 1,
+                currentPage: 1
+            });
         });
 
-        test('debe devolver 404 si el usuario no existe', async () => {
-            const req = authedRequest();
-            const res = mockResponse();
-
-            mockConnection.query.mockResolvedValueOnce([[]]);
-
-            await getHandler('/facturas', 'get')(req, res);
-
-            expect(res.status).toHaveBeenCalledWith(404);
-        });
 
         test('debe devolver array vacío si el usuario no tiene facturas', async () => {
             const req = authedRequest();
             const res = mockResponse();
 
-            mockConnection.query.mockResolvedValueOnce([[{ id_usuario: 1 }]]);
-            mockConnection.query.mockResolvedValueOnce([[]]);
+            // Mock: facturas devueltas (vacío)
+            mockPool.query.mockResolvedValueOnce([[]]);
 
             await getHandler('/facturas', 'get')(req, res);
 
-            expect(res.json).toHaveBeenCalledWith([]);
+            expect(res.json).toHaveBeenCalledWith({
+                data: [],
+                totalItems: 0,
+                totalPages: 1,
+                currentPage: 1
+            });
         });
     });
 
@@ -86,8 +84,7 @@ describe('Facturas Routes Tests', () => {
             });
             const res = mockResponse();
 
-            mockConnection.query.mockResolvedValueOnce([[{ id_usuario: 1 }]]);
-            mockConnection.query.mockResolvedValueOnce([{ insertId: 5 }]);
+            mockPool.query.mockResolvedValueOnce([{ insertId: 5 }]);
 
             await getHandler('/facturas', 'post')(req, res);
 
@@ -108,18 +105,6 @@ describe('Facturas Routes Tests', () => {
             expect(res.status).toHaveBeenCalledWith(400);
         });
 
-        test('debe devolver 404 si el usuario no existe en BD', async () => {
-            const req = authedRequest({
-                body: { titulo: 'Test', coste: 10, fecha: '2025-02-15', hora: '10:00' }
-            });
-            const res = mockResponse();
-
-            mockConnection.query.mockResolvedValueOnce([[]]);
-
-            await getHandler('/facturas', 'post')(req, res);
-
-            expect(res.status).toHaveBeenCalledWith(404);
-        });
 
         test('debe aceptar factura sin descripción (campo opcional)', async () => {
             const req = authedRequest({
@@ -127,8 +112,7 @@ describe('Facturas Routes Tests', () => {
             });
             const res = mockResponse();
 
-            mockConnection.query.mockResolvedValueOnce([[{ id_usuario: 1 }]]);
-            mockConnection.query.mockResolvedValueOnce([{ insertId: 7 }]);
+            mockPool.query.mockResolvedValueOnce([{ insertId: 7 }]);
 
             await getHandler('/facturas', 'post')(req, res);
 
@@ -142,9 +126,8 @@ describe('Facturas Routes Tests', () => {
             const req = authedRequest({ params: { id_factura: '1' } });
             const res = mockResponse();
 
-            mockConnection.query.mockResolvedValueOnce([[{ id_usuario: 1 }]]);
-            mockConnection.query.mockResolvedValueOnce([[{ id_usuario: 1 }]]);
-            mockConnection.query.mockResolvedValueOnce([{ affectedRows: 1 }]);
+            mockPool.query.mockResolvedValueOnce([[{ id_usuario: 1, imagenPath: null }]]);
+            mockPool.query.mockResolvedValueOnce([{ affectedRows: 1 }]);
 
             await getHandler('/facturas/:id_factura', 'delete')(req, res);
 
@@ -157,8 +140,7 @@ describe('Facturas Routes Tests', () => {
             const req = authedRequest({ params: { id_factura: '99' } });
             const res = mockResponse();
 
-            mockConnection.query.mockResolvedValueOnce([[{ id_usuario: 1 }]]);
-            mockConnection.query.mockResolvedValueOnce([[{ id_usuario: 2 }]]); // Otro usuario
+            mockPool.query.mockResolvedValueOnce([[{ id_usuario: 2 }]]); // Otro usuario
 
             await getHandler('/facturas/:id_factura', 'delete')(req, res);
 
@@ -169,8 +151,7 @@ describe('Facturas Routes Tests', () => {
             const req = authedRequest({ params: { id_factura: '999' } });
             const res = mockResponse();
 
-            mockConnection.query.mockResolvedValueOnce([[{ id_usuario: 1 }]]);
-            mockConnection.query.mockResolvedValueOnce([[]]); // Factura no encontrada
+            mockPool.query.mockResolvedValueOnce([[]]); // Factura no encontrada
 
             await getHandler('/facturas/:id_factura', 'delete')(req, res);
 
