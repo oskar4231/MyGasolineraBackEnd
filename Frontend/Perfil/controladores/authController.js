@@ -17,6 +17,17 @@ exports.register = async (req, res) => {
             });
         }
 
+        if (password.length < 8) {
+            logger.warn('Contraseña demasiado corta en registro', { email });
+            return res.status(400).json({ status: 'error', message: req.t('auth.password_min_length') });
+        }
+
+        const passwordRegex = /^(?=.*[0-9])(?=.*[A-Z])(?=.*[!@#<>?":_`~;[\]\\|=+)(*&^%\-.,ñÑ#$?¿]).{8,}$/;
+        if (!passwordRegex.test(password)) {
+            logger.warn('Contraseña no cumple requisitos en registro', { email });
+            return res.status(400).json({ status: 'error', message: req.t('auth.password_requirements') });
+        }
+
         const [userExists] = await pool.query(QUERIES.AUTH.CHECK_EMAIL_EXISTS, [email]);
         if (userExists.length > 0) {
             logger.warn('Intento de registro con email duplicado', { email });

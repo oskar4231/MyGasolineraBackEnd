@@ -20,7 +20,8 @@
     "token_invalid": "Token inválido o expirado",
     "token_valid": "Token válido",
     "token_password_required": "Token y nueva contraseña son requeridos",
-    "password_min_length": "La contraseña debe tener al menos 6 caracteres",
+    "password_min_length": "La contraseña debe tener al menos 8 caracteres",
+    "password_requirements": "La contraseña debe tener al menos 8 caracteres, un número, una mayúscula y un carácter especial",
     "password_updated": "Contraseña actualizada correctamente"
   },
   "profile": {
